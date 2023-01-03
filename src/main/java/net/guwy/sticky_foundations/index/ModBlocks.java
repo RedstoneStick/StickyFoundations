@@ -58,20 +58,20 @@ public class ModBlocks {
     public static final RegistryObject<Block> PALLADIUM_ORE = registerBlock("palladium_ore", () ->
             new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).
                     strength(3f).explosionResistance(3f).requiresCorrectToolForDrops().
-                    sound(SoundType.STONE), UniformInt.of(0,4)), ModCreativeModeTabs.MAIN);
+                    sound(SoundType.STONE), UniformInt.of(3,7)), ModCreativeModeTabs.MAIN);
     public static final RegistryObject<Block> PALLADIUM_ORE_DEEPSLATE = registerBlock("palladium_ore_deepslate", () ->
             new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).
                     strength(3f).explosionResistance(6f).requiresCorrectToolForDrops().
-                    sound(SoundType.DEEPSLATE), UniformInt.of(0,4)), ModCreativeModeTabs.MAIN);
+                    sound(SoundType.DEEPSLATE), UniformInt.of(3,7)), ModCreativeModeTabs.MAIN);
 
     public static final RegistryObject<Block> PLATINUM_ORE = registerBlock("platinum_ore", () ->
             new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).
                     strength(3f).explosionResistance(3f).requiresCorrectToolForDrops().
-                    sound(SoundType.STONE), UniformInt.of(0,4)), ModCreativeModeTabs.MAIN);
+                    sound(SoundType.STONE), UniformInt.of(3,7)), ModCreativeModeTabs.MAIN);
     public static final RegistryObject<Block> PLATINUM_ORE_DEEPSLATE = registerBlock("platinum_ore_deepslate", () ->
             new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).
                     strength(3f).explosionResistance(6f).requiresCorrectToolForDrops().
-                    sound(SoundType.DEEPSLATE), UniformInt.of(0,4)), ModCreativeModeTabs.MAIN);
+                    sound(SoundType.DEEPSLATE), UniformInt.of(3,7)), ModCreativeModeTabs.MAIN);
 
     public static final RegistryObject<Block> TITANIUM_ORE = registerBlock("titanium_ore", () ->
             new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).
@@ -94,11 +94,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> URANIUM_ORE = registerBlock("uranium_ore", () ->
             new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).
                     strength(3f).explosionResistance(3f).requiresCorrectToolForDrops().
-                    sound(SoundType.STONE), UniformInt.of(0,4)), ModCreativeModeTabs.MAIN);
+                    sound(SoundType.STONE), UniformInt.of(3,7)), ModCreativeModeTabs.MAIN);
     public static final RegistryObject<Block> URANIUM_ORE_DEEPSLATE = registerBlock("uranium_ore_deepslate", () ->
             new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).
                     strength(3f).explosionResistance(6f).requiresCorrectToolForDrops().
-                    sound(SoundType.DEEPSLATE), UniformInt.of(0,4)), ModCreativeModeTabs.MAIN);
+                    sound(SoundType.DEEPSLATE), UniformInt.of(3,7)), ModCreativeModeTabs.MAIN);
 
 
 
