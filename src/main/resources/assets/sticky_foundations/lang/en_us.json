@@ -1,4 +1,6 @@
 {
+  "itemGroup.sticky_foundations_tab": "Sticky Foundations",
+
   "block.sticky_foundations.fluorite_ore": "Fluorite Ore",
   "block.sticky_foundations.fluorite_ore_deepslate": "Deepslate Fluorite Ore",
   "block.sticky_foundations.magnesium_ore": "Magnesium Ore",

@@ -8,7 +8,7 @@ public class ModCreativeModeTabs {
     public static final CreativeModeTab MAIN = new CreativeModeTab("sticky_foundations_tab") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(Items.STICK);
+            return new ItemStack(ModBlocks.URANIUM_ORE.get());
         }
     };
 }

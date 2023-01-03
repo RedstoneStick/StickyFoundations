@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "sticky_foundations:elements/fluorite/palladium_ore"
+    "all": "sticky_foundations:elements/palladium/palladium_ore"
   }
 }

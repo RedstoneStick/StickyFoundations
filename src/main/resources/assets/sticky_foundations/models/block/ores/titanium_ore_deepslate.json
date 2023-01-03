@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "sticky_foundations:elements/fluorite/titanium_ore_deepslate"
+    "all": "sticky_foundations:elements/titanium/titanium_ore_deepslate"
   }
 }
