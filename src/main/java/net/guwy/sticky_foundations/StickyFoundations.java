@@ -3,6 +3,8 @@ package net.guwy.sticky_foundations;
 import com.mojang.logging.LogUtils;
 import net.guwy.sticky_foundations.index.ModBlocks;
 import net.guwy.sticky_foundations.index.ModCreativeModeTabs;
+import net.guwy.sticky_foundations.world.feature.ModConfiguredFeatures;
+import net.guwy.sticky_foundations.world.feature.ModPlacedFeatures;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -24,8 +26,9 @@ public class StickyFoundations {
 
         //ModItems.register(eventBus);
         ModBlocks.register(eventBus);
-        //ModConfiguredFeatures.register(eventBus);
-        //ModPlacedFeatures.register(eventBus);
+
+        ModConfiguredFeatures.register(eventBus);
+        ModPlacedFeatures.register(eventBus);
 
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);

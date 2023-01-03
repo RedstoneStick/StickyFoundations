@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "sticky_foundations:fluorite_ore",
+    "sticky_foundations:fluorite_ore_deepslate",
+    "sticky_foundations:niter_ore",
+    "sticky_foundations:niter_ore_deepslate",
+    "sticky_foundations:magnesium_ore",
+    "sticky_foundations:magnesium_ore_deepslate",
+    "sticky_foundations:palladium_ore",
+    "sticky_foundations:palladium_ore_deepslate",
+    "sticky_foundations:platinum_ore",
+    "sticky_foundations:platinum_ore_deepslate",
+    "sticky_foundations:titanium_ore",
+    "sticky_foundations:titanium_ore_deepslate",
+    "sticky_foundations:thorium_ore",
+    "sticky_foundations:thorium_ore_deepslate",
+    "sticky_foundations:uranium_ore",
+    "sticky_foundations:uranium_ore_deepslate"
+  ]
+}
