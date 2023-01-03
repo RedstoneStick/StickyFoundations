@@ -6,10 +6,10 @@
 # The name of the mod loader type to load - for regular FML @Mod mods it should be javafml
 modLoader="javafml" #mandatory
 # A version range to match for said mod loader - for regular FML @Mod it will be the forge version
-loaderVersion="[44,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
+loaderVersion="[43,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
 # The license for you mod. This is mandatory metadata and allows for easier comprehension of your redistributive properties.
 # Review your options at https://choosealicense.com/. All rights reserved is the default copyright stance, and is thus the default here.
-license="MIT Licence"
+license="MIT"
 # A URL to refer people to when problems occur with this mod
 #issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/" #optional
 # A list of mods - how many allowed here is determined by the individual mod loader
@@ -27,7 +27,7 @@ displayName="Sticky Foundations" #mandatory
 # A URL for the "homepage" for this mod, displayed in the mod UI
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
-logoFile="logo.png" #optional
+logoFile="sticky_foundations.png" #optional
 # A text field displayed in the mod UI
 credits="Thanks for this mod goes to Java" #optional
 # A text field displayed in the mod UI
@@ -43,6 +43,8 @@ authors="Guwy" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
 A mod that adds universal ores, crafting materials and mechanics for Guwy's mods
+
+Hopefully works as intended
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.sticky_foundations]] #optional
@@ -51,7 +53,7 @@ A mod that adds universal ores, crafting materials and mechanics for Guwy's mods
     # Does this dependency have to exist - if not, ordering below must be specified
     mandatory=true #mandatory
     # The version range of the dependency
-    versionRange="[44,)" #mandatory
+    versionRange="[43,)" #mandatory
     # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
     ordering="NONE"
     # Side this dependency is applied on - BOTH, CLIENT or SERVER
@@ -61,12 +63,12 @@ A mod that adds universal ores, crafting materials and mechanics for Guwy's mods
     modId="minecraft"
     mandatory=true
 # This version range declares a minimum of the current minecraft version up to but not including the next major version
-    versionRange="[1.19.3,1.20)"
+    versionRange="[1.19.2,1.20)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.sticky_foundations]]
-modId="create"
-mandatory=true
-versionRange="[0.3.0,)"
-ordering="NONE"
-side="BOTH"
+    modId="create"
+    mandatory=true
+    versionRange="[0.5.0g,0.6.0)"
+    ordering="NONE"
+    side="BOTH"

@@ -1,8 +1,6 @@
-package net.guwy.stickyfoundations;
+package net.guwy.sticky_foundations;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -12,6 +10,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
+@Mod(StickyFoundations.MOD_ID)
 public class StickyFoundations {
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();

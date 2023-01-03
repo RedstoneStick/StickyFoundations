@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "sticky_foundations:elements/fluorite/fluorite_ore_deepslate"
+  }
+}
