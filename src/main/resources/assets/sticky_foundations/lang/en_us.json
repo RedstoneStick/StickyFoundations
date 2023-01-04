@@ -1,22 +1,38 @@
 {
   "itemGroup.sticky_foundations_tab": "Sticky Foundations",
 
+
+
   "block.sticky_foundations.fluorite_ore": "Fluorite Ore",
   "block.sticky_foundations.fluorite_ore_deepslate": "Deepslate Fluorite Ore",
   "item.sticky_foundations.fluorite_cluster": "Fluorite Cluster",
   "item.sticky_foundations.fluorite_dust": "Fluorite Dust",
+
+  "block.sticky_foundations.niter_ore": "Niter Ore",
+  "block.sticky_foundations.niter_ore_deepslate": "Deepslate Niter Ore",
+  "item.sticky_foundations.niter": "Niter",
+
   "block.sticky_foundations.magnesium_ore": "Magnesium Ore",
   "block.sticky_foundations.magnesium_ore_deepslate": "Deepslate Magnesium Ore",
+  "item.sticky_foundations.raw_magnesium": "Raw Magnesium",
+  "item.sticky_foundations.crushed_magnesium": "Crushed Magnesium",
+  "item.sticky_foundations.magnesium_ingot": "Magnesium Ingot",
+  "item.sticky_foundations.magnesium_nugget": "Magnesium Nugget",
+  "item.sticky_foundations.magnesium_dust": "Magnesium Dust",
+
   "block.sticky_foundations.palladium_ore": "Palladium Ore",
   "block.sticky_foundations.palladium_ore_deepslate": "Deepslate Palladium Ore",
+
   "block.sticky_foundations.platinum_ore": "Platinum Ore",
   "block.sticky_foundations.platinum_ore_deepslate": "Deepslate Platinum Ore",
+
   "block.sticky_foundations.thorium_ore": "Thorium Ore",
   "block.sticky_foundations.thorium_ore_deepslate": "Deepslate Thorium Ore",
+
   "block.sticky_foundations.titanium_ore": "Titanium Ore",
   "block.sticky_foundations.titanium_ore_deepslate": "Deepslate Titanium Ore",
+
   "block.sticky_foundations.uranium_ore": "Uranium Ore",
-  "block.sticky_foundations.uranium_ore_deepslate": "Deepslate Uranium Ore",
-  "block.sticky_foundations.niter_ore": "Niter Ore",
-  "block.sticky_foundations.niter_ore_deepslate": "Deepslate Niter Ore"
+  "block.sticky_foundations.uranium_ore_deepslate": "Deepslate Uranium Ore"
+
 }

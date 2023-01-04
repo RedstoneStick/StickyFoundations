@@ -58,6 +58,9 @@ public class ModMinerals {
                     strength(3f).explosionResistance(6f).requiresCorrectToolForDrops().
                     sound(SoundType.DEEPSLATE), UniformInt.of(0,4)), ModCreativeModeTabs.MAIN);
 
+    public static final RegistryObject<Item> NITER = ITEMS.register("niter",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
 
 
     public static final RegistryObject<Block> MAGNESIUM_ORE = registerBlock("magnesium_ore", () ->
@@ -69,6 +72,21 @@ public class ModMinerals {
             new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).
                     strength(3f).explosionResistance(6f).requiresCorrectToolForDrops().
                     sound(SoundType.DEEPSLATE), UniformInt.of(0,4)), ModCreativeModeTabs.MAIN);
+
+    public static final RegistryObject<Item> RAW_MAGNESIUM = ITEMS.register("raw_magnesium",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> CRUSHED_MAGNESIUM = ITEMS.register("crushed_magnesium",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> MAGNESIUM_INGOT = ITEMS.register("magnesium_ingot",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> MAGNESIUM_NUGGET = ITEMS.register("magnesium_nugget",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> MAGNESIUM_DUST = ITEMS.register("magnesium_dust",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
 
 
 
