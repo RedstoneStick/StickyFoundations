@@ -3,6 +3,8 @@
 
   "block.sticky_foundations.fluorite_ore": "Fluorite Ore",
   "block.sticky_foundations.fluorite_ore_deepslate": "Deepslate Fluorite Ore",
+  "item.sticky_foundations.fluorite_cluster": "Fluorite Cluster",
+  "item.sticky_foundations.fluorite_dust": "Fluorite Dust",
   "block.sticky_foundations.magnesium_ore": "Magnesium Ore",
   "block.sticky_foundations.magnesium_ore_deepslate": "Deepslate Magnesium Ore",
   "block.sticky_foundations.palladium_ore": "Palladium Ore",

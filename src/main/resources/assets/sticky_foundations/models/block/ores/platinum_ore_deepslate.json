@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "sticky_foundations:elements/platinum/platinum_ore_deepslate"
+    "all": "sticky_foundations:resources/platinum/platinum_ore_deepslate"
   }
 }
