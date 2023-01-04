@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "sticky_foundations:magnesium_ore"
+  },
+  "result": "sticky_foundations:ash",
+  "experience": 1.0,
+  "cookingtime": 100
+}

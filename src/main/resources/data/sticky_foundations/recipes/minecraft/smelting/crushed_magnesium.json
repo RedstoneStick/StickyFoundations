@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "sticky_foundations:crushed_magnesium"
+  },
+  "result": "sticky_foundations:ash",
+  "experience": 1.0,
+  "cookingtime": 200
+}

@@ -1,0 +1,19 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "sticky_foundations:crushed_magnesium"
+    }
+  ],
+  "results": [
+    {
+      "item": "sticky_foundations:magnesium_nugget",
+      "count": 9
+    },
+    {
+      "item": "sticky_foundations:scrap_metal",
+      "count": 1,
+      "chance": 0.20
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "sticky_foundations:magnesium_ingot"
+    }
+  ],
+  "results": [
+    {
+      "item": "sticky_foundations:magnesium_dust",
+      "count": 1
+    }
+  ],
+  "processingTime": 200
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "sticky_foundations:magnesium_nugget"
+  },
+  "result": "sticky_foundations:burning_magnesium",
+  "count": 1,
+  "experience": 1.0,
+  "cookingtime": 200
+}

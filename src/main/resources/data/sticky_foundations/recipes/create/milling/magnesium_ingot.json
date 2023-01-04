@@ -1,0 +1,14 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "sticky_foundations:magnesium_ingot"
+    }
+  ],
+  "results": [
+    {
+      "item": "sticky_foundations:magnesium_dust"
+    }
+  ],
+  "processingTime": 1000
+}

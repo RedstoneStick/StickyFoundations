@@ -88,6 +88,9 @@ public class ModMinerals {
     public static final RegistryObject<Item> MAGNESIUM_DUST = ITEMS.register("magnesium_dust",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
 
+    public static final RegistryObject<Item> BURNING_MAGNESIUM = ITEMS.register("burning_magnesium",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
 
 
     public static final RegistryObject<Block> PALLADIUM_ORE = registerBlock("palladium_ore", () ->
