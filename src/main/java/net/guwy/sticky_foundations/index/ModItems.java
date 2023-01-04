@@ -28,7 +28,8 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)){
                 @Override
                 public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-                    pTooltipComponents.add(Component.translatable("tooltip.sticky_foundations.ash"));
+                    pTooltipComponents.add(Component.translatable("tooltip.sticky_foundations.ash.1"));
+                    pTooltipComponents.add(Component.translatable("tooltip.sticky_foundations.ash.2"));
                     super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
                 }
             });
