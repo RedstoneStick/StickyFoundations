@@ -1,0 +1,18 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "sticky_foundations:fluorite_cluster"
+    }
+  ],
+  "results": [
+    {
+      "item": "sticky_foundations:fluorite_dust"
+    },
+    {
+      "item": "sticky_foundations:fluorite_dust",
+      "chance": 0.40
+    }
+  ],
+  "processingTime": 400
+}

@@ -1,0 +1,22 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "sticky_foundations:fluorite_cluster"
+    }
+  ],
+  "results": [
+    {
+      "item": "sticky_foundations:fluorite_dust"
+    },
+    {
+      "item": "sticky_foundations:fluorite_dust",
+      "chance": 0.60
+    },
+	{
+		"item": "sticky_foundations:fluorite_dust",
+		"chance": 0.30
+	}
+  ],
+  "processingTime": 200
+}
