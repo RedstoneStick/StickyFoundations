@@ -103,6 +103,9 @@ public class ModMinerals {
                     strength(3f).explosionResistance(6f).requiresCorrectToolForDrops().
                     sound(SoundType.DEEPSLATE), UniformInt.of(3,7)), ModCreativeModeTabs.MAIN);
 
+    public static final RegistryObject<Item> PALLADIUM_NUGGET = ITEMS.register("palladium_nugget",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
 
 
     public static final RegistryObject<Block> PLATINUM_ORE = registerBlock("platinum_ore", () ->
