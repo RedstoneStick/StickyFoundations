@@ -1,13 +1,16 @@
 package net.guwy.sticky_foundations.index;
 
 import net.guwy.sticky_foundations.StickyFoundations;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DropExperienceBlock;
@@ -93,7 +96,22 @@ public class ModMinerals {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
 
     public static final RegistryObject<Item> BURNING_MAGNESIUM = ITEMS.register("burning_magnesium",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)){
+                @Override
+                public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+                    pTooltipComponents.add(Component.literal("[HOT]").withStyle(ChatFormatting.DARK_RED));
+                    super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
+                }
+                @Override
+                public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
+                    pEntity.setSecondsOnFire(1);
+                    super.inventoryTick(pStack, pLevel, pEntity, pSlotId, pIsSelected);
+                }
+                @Override
+                public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
+                    return 2400;
+                }
+            });
 
 
 
