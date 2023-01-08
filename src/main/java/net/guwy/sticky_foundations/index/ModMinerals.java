@@ -104,7 +104,7 @@ public class ModMinerals {
                 }
                 @Override
                 public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
-                    pEntity.setSecondsOnFire(1);
+                    pEntity.setSecondsOnFire(20);
                     super.inventoryTick(pStack, pLevel, pEntity, pSlotId, pIsSelected);
                 }
                 @Override
