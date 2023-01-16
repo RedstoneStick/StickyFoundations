@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "sticky_foundations:crushed_magnesium"
+    "sticky_foundations:crushed_magnesium",
+    "sticky_foundations:crushed_titanium"
   ]
 }

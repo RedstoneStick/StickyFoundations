@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "sticky_foundations:raw_titanium"
+  },
+  "result": "sticky_foundations:titanium_ingot",
+  "experience": 1.0,
+  "cookingtime": 100
+}

@@ -164,7 +164,16 @@ public class ModMinerals {
     public static final RegistryObject<Item> RAW_TITANIUM = ITEMS.register("raw_titanium",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
 
-    public static final RegistryObject<Item> TITANIUM_ORE = ITEMS.register("platinum_dust",
+    public static final RegistryObject<Item> CRUSHED_TITANIUM = ITEMS.register("crushed_titanium",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> TITANIUM_INGOT = ITEMS.register("titanium_ingot",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> TITANIUM_NUGGET = ITEMS.register("titanium_nugget",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> TITANIUM_DUST = ITEMS.register("titanium_dust",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
 
 

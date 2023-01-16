@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "sticky_foundations:platinum_dust"
+  },
+  "result": "sticky_foundations:platinum_ingot",
+  "experience": 1.0,
+  "cookingtime": 100
+}

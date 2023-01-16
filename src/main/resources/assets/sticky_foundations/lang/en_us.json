@@ -27,15 +27,20 @@
 
   "block.sticky_foundations.platinum_ore": "Platinum Ore",
   "block.sticky_foundations.platinum_ore_deepslate": "Deepslate Platinum Ore",
-  "block.sticky_foundations.platinum_nugget": "Platinum Nugget",
-  "block.sticky_foundations.platinum_ingot": "Platinum Ingot",
-  "block.sticky_foundations.platinum_dust": "Platinum Dust",
+  "item.sticky_foundations.platinum_nugget": "Platinum Nugget",
+  "item.sticky_foundations.platinum_ingot": "Platinum Ingot",
+  "item.sticky_foundations.platinum_dust": "Platinum Dust",
 
   "block.sticky_foundations.thorium_ore": "Thorium Ore",
   "block.sticky_foundations.thorium_ore_deepslate": "Deepslate Thorium Ore",
 
   "block.sticky_foundations.titanium_ore": "Titanium Ore",
   "block.sticky_foundations.titanium_ore_deepslate": "Deepslate Titanium Ore",
+  "item.sticky_foundations.raw_titanium": "Raw Titanium",
+  "item.sticky_foundations.crushed_titanium": "Crushed Titanium",
+  "item.sticky_foundations.titanium_ingot": "Titanium Ingot",
+  "item.sticky_foundations.titanium_nugget": "Titanium Nugget",
+  "item.sticky_foundations.titanium_dust": "Titanium Dust",
 
   "block.sticky_foundations.uranium_ore": "Uranium Ore",
   "block.sticky_foundations.uranium_ore_deepslate": "Deepslate Uranium Ore",
