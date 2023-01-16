@@ -1,0 +1,15 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "minecraft:basalt"
+    }
+  ],
+  "results": [
+    {
+      "item": "sticky_foundations:sulfur_dust",
+      "chance": 0.15
+    }
+  ],
+  "processingTime": 250
+}
