@@ -140,6 +140,15 @@ public class ModMinerals {
                     strength(3f).explosionResistance(6f).requiresCorrectToolForDrops().
                     sound(SoundType.DEEPSLATE), UniformInt.of(3,7)), ModCreativeModeTabs.MAIN);
 
+    public static final RegistryObject<Item> PLATINUM_NUGGET = ITEMS.register("platinum_nugget",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> PLATINUM_INGOT = ITEMS.register("platinum_ingot",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> PLATINUM_DUST = ITEMS.register("platinum_dust",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
 
 
     public static final RegistryObject<Block> TITANIUM_ORE = registerBlock("titanium_ore", () ->
@@ -175,6 +184,11 @@ public class ModMinerals {
             new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).
                     strength(3f).explosionResistance(6f).requiresCorrectToolForDrops().
                     sound(SoundType.DEEPSLATE), UniformInt.of(3,7)), ModCreativeModeTabs.MAIN);
+
+
+
+    public static final RegistryObject<Item> SULFUR_DUST = ITEMS.register("sulfur_dust",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
 
 
 

@@ -27,6 +27,9 @@
 
   "block.sticky_foundations.platinum_ore": "Platinum Ore",
   "block.sticky_foundations.platinum_ore_deepslate": "Deepslate Platinum Ore",
+  "block.sticky_foundations.platinum_nugget": "Platinum Nugget",
+  "block.sticky_foundations.platinum_ingot": "Platinum Ingot",
+  "block.sticky_foundations.platinum_dust": "Platinum Dust",
 
   "block.sticky_foundations.thorium_ore": "Thorium Ore",
   "block.sticky_foundations.thorium_ore_deepslate": "Deepslate Thorium Ore",
@@ -36,6 +39,8 @@
 
   "block.sticky_foundations.uranium_ore": "Uranium Ore",
   "block.sticky_foundations.uranium_ore_deepslate": "Deepslate Uranium Ore",
+
+  "block.sticky_foundations.sulfur_dust": "Sulfur Dust",
 
 
 
