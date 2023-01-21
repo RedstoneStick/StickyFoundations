@@ -37,6 +37,42 @@ public class ModMinerals {
 
 
 
+    public static final RegistryObject<Item> IRON_DUST
+            = ITEMS.register("iron_dust",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> IRON_FOIL
+            = ITEMS.register("iron_foil",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> IRON_WIRE
+            = ITEMS.register("iron_wire",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> IRON_COIL
+            = ITEMS.register("iron_coil",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+
+
+    public static final RegistryObject<Item> COPPER_DUST
+            = ITEMS.register("copper_dust",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> COPPER_FOIL
+            = ITEMS.register("copper_foil",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> COPPER_WIRE
+            = ITEMS.register("copper_wire",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> COPPER_COIL
+            = ITEMS.register("copper_coil",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+
+
     public static final RegistryObject<Block> FLUORITE_ORE = registerBlock("fluorite_ore", () ->
             new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).
                     strength(3f).explosionResistance(3f).requiresCorrectToolForDrops().

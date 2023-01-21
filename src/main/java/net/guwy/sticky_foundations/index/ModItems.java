@@ -2,6 +2,10 @@ package net.guwy.sticky_foundations.index;
 
 import net.guwy.sticky_foundations.StickyFoundations;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -35,6 +39,9 @@ public class ModItems {
             });
 
     public static final RegistryObject<Item> SCRAP_METAL = ITEMS.register("scrap_metal",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> EMPTY_COIL = ITEMS.register("empty_coil",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
 
 

@@ -1,0 +1,62 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "tag": "forge:plates/iron"
+  },
+  "transitionalItem": {
+    "item": "create:iron_sheet"
+  },
+  "sequence": [
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "create:iron_sheet"
+        }
+      ],
+      "results": [
+        {
+          "item": "create:iron_sheet"
+        }
+      ]
+    },
+    {
+      "type": "create:cutting",
+      "ingredients": [
+        {
+          "item": "create:iron_sheet"
+        }
+      ],
+      "results": [
+        {
+          "item": "create:iron_sheet"
+        }
+      ],
+      "processingTime": 200
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "create:iron_sheet"
+        },
+        [
+          {
+            "item": "minecraft:stick"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": "create:iron_sheet"
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "item": "sticky_foundations:iron_foil"
+    }
+  ],
+  "loops": 1
+}

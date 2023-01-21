@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xxx",
+    "xyx",
+    "xxx"
+  ],
+  "key": {
+    "x": {
+      "tag": "forge:wires/iron"
+    },
+    "y": {
+      "item": "sticky_foundations:empty_coil"
+    }
+  },
+  "result": {
+    "item": "sticky_foundations:iron_coil",
+    "count": 1
+  }
+}
