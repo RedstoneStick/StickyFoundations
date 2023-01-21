@@ -1,0 +1,62 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "tag": "forge:plates/copper"
+  },
+  "transitionalItem": {
+    "item": "create:copper_sheet"
+  },
+  "sequence": [
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "create:copper_sheet"
+        }
+      ],
+      "results": [
+        {
+          "item": "create:copper_sheet"
+        }
+      ]
+    },
+    {
+      "type": "create:cutting",
+      "ingredients": [
+        {
+          "item": "create:copper_sheet"
+        }
+      ],
+      "results": [
+        {
+          "item": "create:copper_sheet"
+        }
+      ],
+      "processingTime": 200
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "create:copper_sheet"
+        },
+        [
+          {
+            "item": "minecraft:stick"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": "create:copper_sheet"
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "item": "sticky_foundations:copper_foil"
+    }
+  ],
+  "loops": 1
+}
