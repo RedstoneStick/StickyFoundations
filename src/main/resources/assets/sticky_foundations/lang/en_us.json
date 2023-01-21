@@ -13,6 +13,11 @@
   "item.sticky_foundations.copper_wire": "Copper Wire",
   "item.sticky_foundations.copper_coil": "Copper Coil",
 
+  "item.sticky_foundations.gold_dust": "Gold Dust",
+  "item.sticky_foundations.gold_foil": "Gold Foil",
+  "item.sticky_foundations.gold_wire": "Gold Wire",
+  "item.sticky_foundations.gold_coil": "Gold Coil",
+
   "block.sticky_foundations.fluorite_ore": "Fluorite Ore",
   "block.sticky_foundations.fluorite_ore_deepslate": "Deepslate Fluorite Ore",
   "item.sticky_foundations.fluorite_cluster": "Fluorite Cluster",
@@ -30,6 +35,10 @@
   "item.sticky_foundations.magnesium_nugget": "Magnesium Nugget",
   "item.sticky_foundations.magnesium_dust": "Magnesium Dust",
   "item.sticky_foundations.burning_magnesium": "Burning Magnesium",
+  "item.sticky_foundations.magnesium_plate": "Magnesium Plate",
+  "item.sticky_foundations.magnesium_foil": "Magnesium Foil",
+  "item.sticky_foundations.magnesium_wire": "Magnesium Wire",
+  "item.sticky_foundations.magnesium_coil": "Magnesium Coil",
 
   "block.sticky_foundations.palladium_ore": "Palladium Ore",
   "block.sticky_foundations.palladium_ore_deepslate": "Deepslate Palladium Ore",

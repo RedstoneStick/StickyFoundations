@@ -1,0 +1,15 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "minecraft:gold"
+    }
+  ],
+  "results": [
+    {
+      "item": "sticky_foundations:gold_dust",
+      "count": 1
+    }
+  ],
+  "processingTime": 200
+}

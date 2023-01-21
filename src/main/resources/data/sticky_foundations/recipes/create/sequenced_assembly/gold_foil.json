@@ -1,0 +1,62 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "tag": "forge:plates/gold"
+  },
+  "transitionalItem": {
+    "item": "create:golden_sheet"
+  },
+  "sequence": [
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "create:golden_sheet"
+        }
+      ],
+      "results": [
+        {
+          "item": "create:golden_sheet"
+        }
+      ]
+    },
+    {
+      "type": "create:cutting",
+      "ingredients": [
+        {
+          "item": "create:golden_sheet"
+        }
+      ],
+      "results": [
+        {
+          "item": "create:golden_sheet"
+        }
+      ],
+      "processingTime": 200
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "create:golden_sheet"
+        },
+        [
+          {
+            "item": "minecraft:stick"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": "create:golden_sheet"
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "item": "sticky_foundations:gold_foil"
+    }
+  ],
+  "loops": 1
+}

@@ -73,6 +73,24 @@ public class ModMinerals {
 
 
 
+    public static final RegistryObject<Item> GOLD_DUST
+            = ITEMS.register("gold_dust",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> GOLD_FOIL
+            = ITEMS.register("gold_foil",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> GOLD_WIRE
+            = ITEMS.register("gold_wire",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> GOLD_COIL
+            = ITEMS.register("gold_coil",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+
+
     public static final RegistryObject<Block> FLUORITE_ORE = registerBlock("fluorite_ore", () ->
             new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).
                     strength(3f).explosionResistance(3f).requiresCorrectToolForDrops().
@@ -148,6 +166,18 @@ public class ModMinerals {
                     return 240;
                 }
             });
+
+    //public static final RegistryObject<Item> MAGNESIUM_PLATE = ITEMS.register("magnesium_plate",
+    //        () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+//
+    //public static final RegistryObject<Item> MAGNESIUM_FOIL = ITEMS.register("magnesium_foil",
+    //        () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+//
+    //public static final RegistryObject<Item> MAGNESIUM_WIRE = ITEMS.register("magnesium_wire",
+    //        () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+//
+    //public static final RegistryObject<Item> MAGNESIUM_COIL = ITEMS.register("magnesium_coil",
+    //        () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
 
 
 
