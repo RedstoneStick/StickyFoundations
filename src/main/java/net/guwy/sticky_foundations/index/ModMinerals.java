@@ -167,17 +167,17 @@ public class ModMinerals {
                 }
             });
 
-    //public static final RegistryObject<Item> MAGNESIUM_PLATE = ITEMS.register("magnesium_plate",
-    //        () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
-//
-    //public static final RegistryObject<Item> MAGNESIUM_FOIL = ITEMS.register("magnesium_foil",
-    //        () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
-//
-    //public static final RegistryObject<Item> MAGNESIUM_WIRE = ITEMS.register("magnesium_wire",
-    //        () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
-//
-    //public static final RegistryObject<Item> MAGNESIUM_COIL = ITEMS.register("magnesium_coil",
-    //        () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+    public static final RegistryObject<Item> MAGNESIUM_PLATE = ITEMS.register("magnesium_plate",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> MAGNESIUM_FOIL = ITEMS.register("magnesium_foil",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> MAGNESIUM_WIRE = ITEMS.register("magnesium_wire",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> MAGNESIUM_COIL = ITEMS.register("magnesium_coil",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
 
 
 

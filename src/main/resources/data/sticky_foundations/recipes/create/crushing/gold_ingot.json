@@ -2,7 +2,7 @@
   "type": "create:crushing",
   "ingredients": [
     {
-      "item": "minecraft:gold"
+      "item": "minecraft:gold_ingot"
     }
   ],
   "results": [

@@ -1,0 +1,13 @@
+{
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "tag": "forge:ingots/magnesium"
+    }
+  ],
+  "results": [
+    {
+      "item": "sticky_foundations:magnesium_plate"
+    }
+  ]
+}
