@@ -194,6 +194,24 @@ public class ModMinerals {
     public static final RegistryObject<Item> PALLADIUM_NUGGET = ITEMS.register("palladium_nugget",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
 
+    public static final RegistryObject<Item> PALLADIUM_INGOT= ITEMS.register("palladium_ingot",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> PALLADIUM_DUST = ITEMS.register("palladium_dust",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> PALLADIUM_PLATE = ITEMS.register("palladium_plate",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> PALLADIUM_FOIL = ITEMS.register("palladium_foil",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> PALLADIUM_WIRE = ITEMS.register("palladium_wire",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> PALLADIUM_COIL = ITEMS.register("palladium_coil",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
 
 
     public static final RegistryObject<Block> PLATINUM_ORE = registerBlock("platinum_ore", () ->

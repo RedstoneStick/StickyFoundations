@@ -1,0 +1,13 @@
+{
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "tag": "forge:ingots/palladium"
+    }
+  ],
+  "results": [
+    {
+      "item": "sticky_foundations:palladium_plate"
+    }
+  ]
+}

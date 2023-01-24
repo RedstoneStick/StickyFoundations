@@ -1,0 +1,15 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "sticky_foundations:palladium_ingot"
+    }
+  ],
+  "results": [
+    {
+      "item": "sticky_foundations:palladium_dust",
+      "count": 1
+    }
+  ],
+  "processingTime": 200
+}

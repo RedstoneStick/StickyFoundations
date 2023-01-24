@@ -43,6 +43,12 @@
   "block.sticky_foundations.palladium_ore": "Palladium Ore",
   "block.sticky_foundations.palladium_ore_deepslate": "Deepslate Palladium Ore",
   "item.sticky_foundations.palladium_nugget": "Palladium Nugget",
+  "item.sticky_foundations.palladium_ingot": "Palladium Ingot",
+  "item.sticky_foundations.palladium_dust": "Palladium Dust",
+  "item.sticky_foundations.palladium_plate": "Palladium Plate",
+  "item.sticky_foundations.palladium_foil": "Palladium Foil",
+  "item.sticky_foundations.palladium_wire": "Palladium Wire",
+  "item.sticky_foundations.palladium_coil": "Palladium Coil",
 
   "block.sticky_foundations.platinum_ore": "Platinum Ore",
   "block.sticky_foundations.platinum_ore_deepslate": "Deepslate Platinum Ore",

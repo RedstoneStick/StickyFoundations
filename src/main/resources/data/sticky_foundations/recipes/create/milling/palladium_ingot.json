@@ -1,0 +1,14 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "sticky_foundations:palladium_ingot"
+    }
+  ],
+  "results": [
+    {
+      "item": "sticky_foundations:palladium_dust"
+    }
+  ],
+  "processingTime": 1000
+}

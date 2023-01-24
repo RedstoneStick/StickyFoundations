@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "sticky_foundations:palladium_ingot"
+    }
+  ],
+  "result": {
+    "item": "sticky_foundations:palladium_nugget",
+    "count": 9
+  }
+}
