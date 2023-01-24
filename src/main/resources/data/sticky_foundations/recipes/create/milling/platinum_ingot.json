@@ -1,0 +1,14 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "sticky_foundations:platinum_ingot"
+    }
+  ],
+  "results": [
+    {
+      "item": "sticky_foundations:platinum_dust"
+    }
+  ],
+  "processingTime": 1000
+}

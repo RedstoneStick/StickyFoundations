@@ -233,6 +233,18 @@ public class ModMinerals {
     public static final RegistryObject<Item> PLATINUM_DUST = ITEMS.register("platinum_dust",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
 
+    public static final RegistryObject<Item> PLATINUM_PLATE = ITEMS.register("platinum_plate",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> PLATINUM_FOIL = ITEMS.register("platinum_foil",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> PLATINUM_WIRE = ITEMS.register("platinum_wire",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> PLATINUM_COIL = ITEMS.register("platinum_coil",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
 
 
     public static final RegistryObject<Block> TITANIUM_ORE = registerBlock("titanium_ore", () ->

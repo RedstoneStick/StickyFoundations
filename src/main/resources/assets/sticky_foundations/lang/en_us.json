@@ -55,6 +55,10 @@
   "item.sticky_foundations.platinum_nugget": "Platinum Nugget",
   "item.sticky_foundations.platinum_ingot": "Platinum Ingot",
   "item.sticky_foundations.platinum_dust": "Platinum Dust",
+  "item.sticky_foundations.platinum_plate": "Platinum Plate",
+  "item.sticky_foundations.platinum_foil": "Platinum Foil",
+  "item.sticky_foundations.platinum_wire": "Platinum Wire",
+  "item.sticky_foundations.platinum_coil": "Platinum Coil",
 
   "block.sticky_foundations.thorium_ore": "Thorium Ore",
   "block.sticky_foundations.thorium_ore_deepslate": "Deepslate Thorium Ore",
