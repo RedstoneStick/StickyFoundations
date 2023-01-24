@@ -70,6 +70,10 @@
   "item.sticky_foundations.titanium_ingot": "Titanium Ingot",
   "item.sticky_foundations.titanium_nugget": "Titanium Nugget",
   "item.sticky_foundations.titanium_dust": "Titanium Dust",
+  "item.sticky_foundations.titanium_plate": "Titanium Plate",
+  "item.sticky_foundations.titanium_foil": "Titanium Foil",
+  "item.sticky_foundations.titanium_wire": "Titanium Wire",
+  "item.sticky_foundations.titanium_coil": "Titanium Coil",
 
   "block.sticky_foundations.uranium_ore": "Uranium Ore",
   "block.sticky_foundations.uranium_ore_deepslate": "Deepslate Uranium Ore",

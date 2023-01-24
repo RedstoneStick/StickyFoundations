@@ -272,6 +272,18 @@ public class ModMinerals {
     public static final RegistryObject<Item> TITANIUM_DUST = ITEMS.register("titanium_dust",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
 
+    public static final RegistryObject<Item> TITANIUM_PLATE = ITEMS.register("titanium_plate",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> TITANIUM_FOIL = ITEMS.register("titanium_foil",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> TITANIUM_WIRE = ITEMS.register("titanium_wire",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> TITANIUM_COIL = ITEMS.register("titanium_coil",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
 
 
     public static final RegistryObject<Block> THORIUM_ORE = registerBlock("thorium_ore", () ->
