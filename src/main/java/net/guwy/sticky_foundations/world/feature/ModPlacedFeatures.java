@@ -51,10 +51,16 @@ public class ModPlacedFeatures {
                     commonOrePlacement(10, // VeinsPerChunk
                             HeightRangePlacement.triangle(VerticalAnchor.absolute(-70), VerticalAnchor.absolute(30)))));
 
+    public static final RegistryObject<PlacedFeature> BAUXITE_ORE_PLACED = PLACED_FEATURES.register("bauxite_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.BAUXITE_ORE.getHolder().get(),
+                    rareOrePlacement(18, // Veins Every x amount of Chunks
+                             HeightRangePlacement.triangle(VerticalAnchor.absolute(50), VerticalAnchor.absolute(150)))));
+
     public static final RegistryObject<PlacedFeature> URANIUM_ORE_PLACED = PLACED_FEATURES.register("uranium_ore_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.URANIUM_ORE.getHolder().get(),
                     commonOrePlacement(8, // VeinsPerChunk
                             HeightRangePlacement.triangle(VerticalAnchor.absolute(-70), VerticalAnchor.absolute(-22)))));
+
 
 
 

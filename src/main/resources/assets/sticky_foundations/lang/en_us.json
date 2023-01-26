@@ -75,6 +75,9 @@
   "item.sticky_foundations.titanium_wire": "Titanium Wire",
   "item.sticky_foundations.titanium_coil": "Titanium Coil",
 
+  "block.sticky_foundations.bauxite_poor": "Poor Bauxite",
+  "block.sticky_foundations.bauxite_normal": "Bauxite",
+
   "block.sticky_foundations.uranium_ore": "Uranium Ore",
   "block.sticky_foundations.uranium_ore_deepslate": "Deepslate Uranium Ore",
 

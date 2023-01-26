@@ -14,6 +14,7 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DropExperienceBlock;
+import net.minecraft.world.level.block.FallingBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -283,6 +284,18 @@ public class ModMinerals {
 
     public static final RegistryObject<Item> TITANIUM_COIL = ITEMS.register("titanium_coil",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+
+
+    public static final RegistryObject<Block> BAUXITE_POOR = registerBlock("bauxite_poor", () ->
+            new FallingBlock(BlockBehaviour.Properties.of(Material.SAND).
+                    strength(1f).explosionResistance(1f).
+                    sound(SoundType.SAND)), ModCreativeModeTabs.MAIN);
+
+    public static final RegistryObject<Block> BAUXITE_NORMAL = registerBlock("bauxite_normal", () ->
+            new FallingBlock(BlockBehaviour.Properties.of(Material.SAND).
+                    strength(1f).explosionResistance(1f).
+                    sound(SoundType.SAND)), ModCreativeModeTabs.MAIN);
 
 
 
