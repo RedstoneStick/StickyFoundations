@@ -1,0 +1,62 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "tag": "forge:plates/aluminum"
+  },
+  "transitionalItem": {
+    "item": "sticky_foundations:aluminum_plate"
+  },
+  "sequence": [
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "sticky_foundations:aluminum_plate"
+        }
+      ],
+      "results": [
+        {
+          "item": "sticky_foundations:aluminum_plate"
+        }
+      ]
+    },
+    {
+      "type": "create:cutting",
+      "ingredients": [
+        {
+          "item": "sticky_foundations:aluminum_plate"
+        }
+      ],
+      "results": [
+        {
+          "item": "sticky_foundations:aluminum_plate"
+        }
+      ],
+      "processingTime": 200
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "sticky_foundations:aluminum_plate"
+        },
+        [
+          {
+            "item": "minecraft:stick"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": "sticky_foundations:aluminum_plate"
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "item": "sticky_foundations:aluminum_foil"
+    }
+  ],
+  "loops": 1
+}

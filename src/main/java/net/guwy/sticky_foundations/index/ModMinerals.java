@@ -287,18 +287,6 @@ public class ModMinerals {
 
 
 
-    public static final RegistryObject<Block> BAUXITE_POOR = registerBlock("bauxite_poor", () ->
-            new FallingBlock(BlockBehaviour.Properties.of(Material.SAND).
-                    strength(1f).explosionResistance(1f).
-                    sound(SoundType.SAND)), ModCreativeModeTabs.MAIN);
-
-    public static final RegistryObject<Block> BAUXITE_NORMAL = registerBlock("bauxite_normal", () ->
-            new FallingBlock(BlockBehaviour.Properties.of(Material.SAND).
-                    strength(1f).explosionResistance(1f).
-                    sound(SoundType.SAND)), ModCreativeModeTabs.MAIN);
-
-
-
     public static final RegistryObject<Block> THORIUM_ORE = registerBlock("thorium_ore", () ->
             new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).
                     strength(3f).explosionResistance(3f).requiresCorrectToolForDrops().
@@ -320,6 +308,42 @@ public class ModMinerals {
             new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).
                     strength(3f).explosionResistance(6f).requiresCorrectToolForDrops().
                     sound(SoundType.DEEPSLATE), UniformInt.of(3,7)), ModCreativeModeTabs.MAIN);
+
+
+
+    public static final RegistryObject<Block> BAUXITE_POOR = registerBlock("bauxite_poor", () ->
+            new FallingBlock(BlockBehaviour.Properties.of(Material.SAND).
+                    strength(1f).explosionResistance(1f).
+                    sound(SoundType.SAND)), ModCreativeModeTabs.MAIN);
+
+    public static final RegistryObject<Block> BAUXITE_NORMAL = registerBlock("bauxite_normal", () ->
+            new FallingBlock(BlockBehaviour.Properties.of(Material.SAND).
+                    strength(1f).explosionResistance(1f).
+                    sound(SoundType.SAND)), ModCreativeModeTabs.MAIN);
+
+    //public static final RegistryObject<Item> CRUSHED_ALUMINUM = ITEMS.register("crushed_aluminum",
+    //        () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> ALUMINUM_INGOT = ITEMS.register("aluminum_ingot",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> ALUMINUM_NUGGET = ITEMS.register("aluminum_nugget",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> ALUMINUM_DUST = ITEMS.register("aluminum_dust",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> ALUMINUM_PLATE = ITEMS.register("aluminum_plate",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> ALUMINUM_FOIL = ITEMS.register("aluminum_foil",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> ALUMINUM_WIRE = ITEMS.register("aluminum_wire",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> ALUMINUM_COIL = ITEMS.register("aluminum_coil",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
 
 
 

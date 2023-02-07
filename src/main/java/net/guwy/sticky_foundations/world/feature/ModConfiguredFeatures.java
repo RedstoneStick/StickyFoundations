@@ -65,15 +65,6 @@ public class ModConfiguredFeatures {
     public static final RegistryObject<ConfiguredFeature<?, ?>> TITANIUM_ORE = CONFIGURED_FEATURES.register("titanium_ore",
             () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_TITANIUM_ORES.get(),10)));
 
-    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_BAUXITE_ORES = Suppliers.memoize(() -> List.of(
-            OreConfiguration.target(NATURAL_FOLIAGE, ModMinerals.BAUXITE_POOR.get().defaultBlockState()),
-            OreConfiguration.target(NATURAL_SOIL, ModMinerals.BAUXITE_NORMAL.get().defaultBlockState()),
-            OreConfiguration.target(OreFeatures.NATURAL_STONE, ModMinerals.BAUXITE_NORMAL.get().defaultBlockState()),
-            OreConfiguration.target(GRASS, Blocks.AIR.defaultBlockState()),
-            OreConfiguration.target(SNOW_LAYER, Blocks.AIR.defaultBlockState())));
-    public static final RegistryObject<ConfiguredFeature<?, ?>> BAUXITE_ORE = CONFIGURED_FEATURES.register("bauxite_ore",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_BAUXITE_ORES.get(),64)));
-
     public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_THORIUM_ORES = Suppliers.memoize(() -> List.of(
             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModMinerals.THORIUM_ORE.get().defaultBlockState()),
             OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModMinerals.THORIUM_ORE_DEEPSLATE.get().defaultBlockState())));
@@ -85,6 +76,15 @@ public class ModConfiguredFeatures {
             OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModMinerals.URANIUM_ORE_DEEPSLATE.get().defaultBlockState())));
     public static final RegistryObject<ConfiguredFeature<?, ?>> URANIUM_ORE = CONFIGURED_FEATURES.register("uranium_ore",
             () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_URANIUM_ORES.get(),6)));
+
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_BAUXITE_ORES = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(NATURAL_FOLIAGE, ModMinerals.BAUXITE_POOR.get().defaultBlockState()),
+            OreConfiguration.target(NATURAL_SOIL, ModMinerals.BAUXITE_NORMAL.get().defaultBlockState()),
+            OreConfiguration.target(OreFeatures.NATURAL_STONE, ModMinerals.BAUXITE_NORMAL.get().defaultBlockState()),
+            OreConfiguration.target(GRASS, Blocks.AIR.defaultBlockState()),
+            OreConfiguration.target(SNOW_LAYER, Blocks.AIR.defaultBlockState())));
+    public static final RegistryObject<ConfiguredFeature<?, ?>> BAUXITE_ORE = CONFIGURED_FEATURES.register("bauxite_ore",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_BAUXITE_ORES.get(),64)));
 
 
     public static void register(IEventBus eventBus) {

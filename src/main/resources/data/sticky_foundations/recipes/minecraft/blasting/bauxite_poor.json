@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "sticky_foundations:bauxite_poor"
+  },
+  "result": "minecraft:terracotta",
+  "experience": 1.0,
+  "cookingtime": 100
+}

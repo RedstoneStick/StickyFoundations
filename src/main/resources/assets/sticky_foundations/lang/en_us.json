@@ -77,6 +77,13 @@
 
   "block.sticky_foundations.bauxite_poor": "Poor Bauxite",
   "block.sticky_foundations.bauxite_normal": "Bauxite",
+  "item.sticky_foundations.aluminum_ingot": "Aluminum Ingot",
+  "item.sticky_foundations.aluminum_nugget": "Aluminum Nugget",
+  "item.sticky_foundations.aluminum_dust": "Aluminum Dust",
+  "item.sticky_foundations.aluminum_plate": "Aluminum Plate",
+  "item.sticky_foundations.aluminum_foil": "Aluminum Foil",
+  "item.sticky_foundations.aluminum_wire": "Aluminum Wire",
+  "item.sticky_foundations.aluminum_coil": "Aluminum Coil",
 
   "block.sticky_foundations.uranium_ore": "Uranium Ore",
   "block.sticky_foundations.uranium_ore_deepslate": "Deepslate Uranium Ore",

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xxx",
+    "xxx",
+    "xxx"
+  ],
+  "key": {
+    "x": {
+      "item": "sticky_foundations:aluminum_nugget"
+    }
+  },
+  "result": {
+    "item": "sticky_foundations:aluminum_ingot",
+    "count": 1
+  }
+}

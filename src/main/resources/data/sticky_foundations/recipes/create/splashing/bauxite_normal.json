@@ -1,0 +1,24 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "sticky_foundations:bauxite_normal"
+    }
+  ],
+  "results": [
+    {
+      "item": "sticky_foundations:aluminum_nugget",
+      "count": 9
+    },
+    {
+      "item": "sticky_foundations:aluminum_nugget",
+      "count": 6,
+      "chance": 0.30
+    },
+    {
+      "item": "minecraft:clay_ball",
+      "count": 1,
+      "chance": 0.60
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "sticky_foundations:bauxite_normal"
+  },
+  "result": "minecraft:terracotta",
+  "experience": 1.0,
+  "cookingtime": 200
+}
