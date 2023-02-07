@@ -1,0 +1,71 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "forge:dusts/saltpeter"
+    },
+    {
+      "tag": "forge:dusts/saltpeter"
+    },
+    {
+      "tag": "forge:dusts/saltpeter"
+    },
+    {
+      "tag": "forge:dusts/saltpeter"
+    },
+    {
+      "tag": "forge:dusts/saltpeter"
+    },
+    {
+      "tag": "forge:dusts/saltpeter"
+    },
+    {
+      "tag": "forge:dusts/saltpeter"
+    },
+    {
+      "tag": "forge:dusts/saltpeter"
+    },
+    {
+      "tag": "forge:dusts/saltpeter"
+    },
+    {
+      "tag": "forge:dusts/saltpeter"
+    },
+    {
+      "tag": "forge:dusts/saltpeter"
+    },
+    {
+      "tag": "forge:dusts/saltpeter"
+    },
+    {
+      "tag": "forge:dusts/saltpeter"
+    },
+    {
+      "tag": "forge:dusts/saltpeter"
+    },
+    {
+      "tag": "forge:dusts/saltpeter"
+    },
+    {
+      "item": "minecraft:charcoal"
+    },
+    {
+      "item": "minecraft:charcoal"
+    },
+    {
+      "item": "minecraft:charcoal"
+    },
+    {
+      "tag": "forge:dusts/sulfur"
+    },
+    {
+      "tag": "forge:dusts/sulfur"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:gunpowder",
+      "count": 20
+    }
+  ]
+}
