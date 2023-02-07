@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xxx",
+    "xxx",
+    "xxx"
+  ],
+  "key": {
+    "x": {
+      "item": "sticky_foundations:tiny_pile_of_gunpowder"
+    }
+  },
+  "result": {
+    "item": "minecraft:gunpowder"
+  }
+}

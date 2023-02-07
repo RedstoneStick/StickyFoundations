@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " x ",
+    "bxb",
+    "zkz"
+  ],
+  "key": {
+    "k": {
+      "item": "sticky_foundations:circuitry_basic"
+    },
+    "z": {
+      "tag": "forge:plates/iron"
+    },
+    "x": {
+      "item": "create:shaft"
+    },
+    "b": {
+      "tag": "forge:coils/copper"
+    }
+  },
+  "result": {
+    "item": "sticky_foundations:motor"
+  }
+}

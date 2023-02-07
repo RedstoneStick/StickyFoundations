@@ -53,7 +53,7 @@ public class ModItems {
     public static final RegistryObject<Item> MOLDING_BOWL = ITEMS.register("molding_bowl",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
 
-    public static final RegistryObject<Item> TINY_PILE_OF_GUNPOWDER = ITEMS.register("ting_pile_of_gunpowder",
+    public static final RegistryObject<Item> TINY_PILE_OF_GUNPOWDER = ITEMS.register("tiny_pile_of_gunpowder",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
 
 

@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "sticky_foundations:item/tiny_pile_of_gunpowder"
+  }
+}
