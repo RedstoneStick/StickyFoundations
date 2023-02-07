@@ -90,6 +90,14 @@
 
   "item.sticky_foundations.sulfur_dust": "Sulfur Dust",
 
+  "item.sticky_foundations.steel_ingot": "Steel Ingot",
+  "item.sticky_foundations.steel_nugget": "Steel Nugget",
+  "item.sticky_foundations.steel_dust": "Steel Dust",
+  "item.sticky_foundations.steel_plate": "Steel Plate",
+  "item.sticky_foundations.steel_foil": "Steel Foil",
+  "item.sticky_foundations.steel_wire": "Steel Wire",
+  "item.sticky_foundations.steel_coil": "Steel Coil",
+
 
 
   "item.sticky_foundations.ash": "Ash",
@@ -98,5 +106,13 @@
 
   "item.sticky_foundations.scrap_metal": "Scrap Metal",
 
-  "item.sticky_foundations.empty_coil": "Empty Coil"
+  "item.sticky_foundations.empty_coil": "Empty Coil",
+
+  "item.sticky_foundations.circuitry_basic": "Basic Circuitry",
+
+  "item.sticky_foundations.motor": "Motor",
+
+  "item.sticky_foundations.molding_bowl": "Molding Bowl",
+
+  "item.sticky_foundations.ting_pile_of_gunpowder": "Tiny Pile Of Gunpowder"
 }

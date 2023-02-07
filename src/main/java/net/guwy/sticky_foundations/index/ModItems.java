@@ -44,6 +44,18 @@ public class ModItems {
     public static final RegistryObject<Item> EMPTY_COIL = ITEMS.register("empty_coil",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
 
+    public static final RegistryObject<Item> CIRCUITRY_BASIC = ITEMS.register("circuitry_basic",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> MOTOR = ITEMS.register("motor",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> MOLDING_BOWL = ITEMS.register("molding_bowl",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> TINY_PILE_OF_GUNPOWDER = ITEMS.register("ting_pile_of_gunpowder",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
 
 
     public static void register(IEventBus eventBus){

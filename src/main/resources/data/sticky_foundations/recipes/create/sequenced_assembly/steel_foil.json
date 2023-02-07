@@ -1,0 +1,62 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "tag": "forge:plates/steel"
+  },
+  "transitionalItem": {
+    "item": "sticky_foundations:steel_plate"
+  },
+  "sequence": [
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "sticky_foundations:steel_plate"
+        }
+      ],
+      "results": [
+        {
+          "item": "sticky_foundations:steel_plate"
+        }
+      ]
+    },
+    {
+      "type": "create:cutting",
+      "ingredients": [
+        {
+          "item": "sticky_foundations:steel_plate"
+        }
+      ],
+      "results": [
+        {
+          "item": "sticky_foundations:steel_plate"
+        }
+      ],
+      "processingTime": 200
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "sticky_foundations:steel_plate"
+        },
+        [
+          {
+            "item": "minecraft:stick"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": "sticky_foundations:steel_plate"
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "item": "sticky_foundations:steel_foil"
+    }
+  ],
+  "loops": 1
+}

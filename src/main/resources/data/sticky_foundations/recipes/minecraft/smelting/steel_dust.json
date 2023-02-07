@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "sticky_foundations:steel_dust"
+  },
+  "result": "sticky_foundations:steel_ingot",
+  "experience": 1.0,
+  "cookingtime": 200
+}

@@ -1,0 +1,15 @@
+{
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "sticky_foundations:steel_foil"
+    }
+  ],
+  "results": [
+    {
+      "item": "sticky_foundations:steel_wire",
+      "count": 8
+    }
+  ],
+  "processingTime": 200
+}
