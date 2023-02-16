@@ -164,7 +164,7 @@ public class ModMinerals {
                 }
                 @Override
                 public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
-                    return 240;
+                    return 2400;
                 }
             });
 

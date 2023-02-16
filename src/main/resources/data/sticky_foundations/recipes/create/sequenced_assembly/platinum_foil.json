@@ -8,6 +8,24 @@
   },
   "sequence": [
     {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "sticky_foundations:platinum_plate"
+        },
+        [
+          {
+            "item": "minecraft:stick"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": "sticky_foundations:platinum_plate"
+        }
+      ]
+    },
+    {
       "type": "create:pressing",
       "ingredients": [
         {
@@ -33,24 +51,6 @@
         }
       ],
       "processingTime": 200
-    },
-    {
-      "type": "create:deploying",
-      "ingredients": [
-        {
-          "item": "sticky_foundations:platinum_plate"
-        },
-        [
-          {
-            "item": "minecraft:stick"
-          }
-        ]
-      ],
-      "results": [
-        {
-          "item": "sticky_foundations:platinum_plate"
-        }
-      ]
     }
   ],
   "results": [

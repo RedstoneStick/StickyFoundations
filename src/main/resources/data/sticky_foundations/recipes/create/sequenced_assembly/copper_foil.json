@@ -8,6 +8,24 @@
   },
   "sequence": [
     {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "create:copper_sheet"
+        },
+        [
+          {
+            "item": "minecraft:stick"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": "create:copper_sheet"
+        }
+      ]
+    },
+    {
       "type": "create:pressing",
       "ingredients": [
         {
@@ -33,24 +51,6 @@
         }
       ],
       "processingTime": 200
-    },
-    {
-      "type": "create:deploying",
-      "ingredients": [
-        {
-          "item": "create:copper_sheet"
-        },
-        [
-          {
-            "item": "minecraft:stick"
-          }
-        ]
-      ],
-      "results": [
-        {
-          "item": "create:copper_sheet"
-        }
-      ]
     }
   ],
   "results": [
