@@ -1,6 +1,7 @@
 package net.guwy.sticky_foundations.index;
 
 import net.guwy.sticky_foundations.StickyFoundations;
+import net.guwy.sticky_foundations.content.TestItem;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
@@ -55,6 +56,11 @@ public class ModItems {
 
     public static final RegistryObject<Item> TINY_PILE_OF_GUNPOWDER = ITEMS.register("tiny_pile_of_gunpowder",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+
+
+    public static final RegistryObject<Item> TEST_ITEM = ITEMS.register("test_item",
+            () -> new TestItem(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
 
 
 

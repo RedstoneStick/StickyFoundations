@@ -15,6 +15,8 @@ public class ModTags {
         public static final TagKey<Block> NATURAL_SOIL = tag("natural_soil");
         public static final TagKey<Block> NATURAL_FOLIAGE = tag("natural_foliage");
 
+
+
         private static TagKey<Block> tag(String name){
             return BlockTags.create(new ResourceLocation(StickyFoundations.MOD_ID, name));
         }
@@ -26,6 +28,17 @@ public class ModTags {
 
     public static class Items {
         public static final TagKey<Item> PLANKS = minecraftTags("planks");
+
+        public static final TagKey<Item> URANIUM_INGOT = forgeTags("ingots/uranium");
+        public static final TagKey<Item> URANIUM_NUGGET = forgeTags("nuggets/uranium");
+        public static final TagKey<Item> URANIUM_RAW = forgeTags("raw_materials/uranium");
+        public static final TagKey<Item> URANIUM_PLATE = forgeTags("plates/uranium");
+        public static final TagKey<Item> URANIUM_DUST = forgeTags("dusts/uranium");
+        public static final TagKey<Item> URANIUM_ORE = forgeTags("ores/uranium");
+        public static final TagKey<Item> URANIUM_BLOCK = forgeTags("storage_blocks/uranium");
+        public static final TagKey<Item> URANIUM_BLOCK_RAW = forgeTags("storage_blocks/raw_uranium");
+
+
 
         private static TagKey<Item> tag(String name){
             return ItemTags.create(new ResourceLocation(StickyFoundations.MOD_ID, name));

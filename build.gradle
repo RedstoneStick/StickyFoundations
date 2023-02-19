@@ -188,6 +188,16 @@ dependencies {
     // at runtime, use the full JEI jar for Forge
     runtimeOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}"))
 
+
+
+    implementation fg.deobf("curse.maven:mekanism-268560:4385637")
+    implementation fg.deobf("curse.maven:powah-633483:4183078")
+    implementation fg.deobf("curse.maven:architechtury-419699:4384406")
+    implementation fg.deobf("curse.maven:cloth_config-348521:3972423")
+    implementation fg.deobf("curse.maven:immersive_engineering-231951:4370621")
+
+
+
     //runtimeOnly fg.deobf("curse.maven:jer-240630:3951643")
 
     // Real mod deobf dependency examples - these get remapped to your current mappings
