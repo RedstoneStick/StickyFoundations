@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "sticky_foundations:thorium_ore"
+  },
+  "result": "sticky_foundations:thorium_ingot",
+  "experience": 1.0,
+  "cookingtime": 100
+}

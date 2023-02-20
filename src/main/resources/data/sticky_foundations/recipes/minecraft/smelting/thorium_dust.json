@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "sticky_foundations:thorium_dust"
+  },
+  "result": "sticky_foundations:thorium_ingot",
+  "experience": 1.0,
+  "cookingtime": 200
+}

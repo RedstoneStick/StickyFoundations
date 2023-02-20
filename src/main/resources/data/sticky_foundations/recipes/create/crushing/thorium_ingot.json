@@ -1,0 +1,15 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "sticky_foundations:thorium_ingot"
+    }
+  ],
+  "results": [
+    {
+      "item": "sticky_foundations:thorium_dust",
+      "count": 1
+    }
+  ],
+  "processingTime": 200
+}

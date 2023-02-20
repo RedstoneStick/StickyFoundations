@@ -62,6 +62,11 @@
 
   "block.sticky_foundations.thorium_ore": "Thorium Ore",
   "block.sticky_foundations.thorium_ore_deepslate": "Deepslate Thorium Ore",
+  "item.sticky_foundations.raw_thorium": "Raw Thorium",
+  "item.sticky_foundations.crushed_thorium": "Crushed Thorium",
+  "item.sticky_foundations.thorium_ingot": "Thorium Ingot",
+  "item.sticky_foundations.thorium_nugget": "Thorium Nugget",
+  "item.sticky_foundations.thorium_dust": "Thorium Dust",
 
   "block.sticky_foundations.titanium_ore": "Titanium Ore",
   "block.sticky_foundations.titanium_ore_deepslate": "Deepslate Titanium Ore",
