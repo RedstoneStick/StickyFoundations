@@ -38,6 +38,15 @@ public class ModTags {
         public static final TagKey<Item> URANIUM_BLOCK = forgeTags("storage_blocks/uranium");
         public static final TagKey<Item> URANIUM_BLOCK_RAW = forgeTags("storage_blocks/raw_uranium");
 
+        public static final TagKey<Item> THORIUM_INGOT = forgeTags("ingots/thorium");
+        public static final TagKey<Item> THORIUM_NUGGET = forgeTags("nuggets/thorium");
+        public static final TagKey<Item> THORIUM_RAW = forgeTags("raw_materials/thorium");
+        public static final TagKey<Item> THORIUM_PLATE = forgeTags("plates/thorium");
+        public static final TagKey<Item> THORIUM_DUST = forgeTags("dusts/thorium");
+        public static final TagKey<Item> THORIUM_ORE = forgeTags("ores/thorium");
+        public static final TagKey<Item> THORIUM_BLOCK = forgeTags("storage_blocks/thorium");
+        public static final TagKey<Item> THORIUM_BLOCK_RAW = forgeTags("storage_blocks/raw_thorium");
+
 
 
         private static TagKey<Item> tag(String name){

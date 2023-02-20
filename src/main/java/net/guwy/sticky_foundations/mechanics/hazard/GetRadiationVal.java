@@ -34,6 +34,15 @@ public class GetRadiationVal {
         else if (itemStack.is(ModTags.Items.URANIUM_BLOCK)) {return 3.5;}
         else if (itemStack.is(ModTags.Items.URANIUM_BLOCK_RAW)) {return 0.2;}
 
+        else if (itemStack.is(ModTags.Items.THORIUM_INGOT)) {return 0.1;}
+        else if (itemStack.is(ModTags.Items.THORIUM_NUGGET)) {return 0.01;}
+        else if (itemStack.is(ModTags.Items.THORIUM_RAW)) {return 0.006;}
+        else if (itemStack.is(ModTags.Items.THORIUM_PLATE)) {return 0.1;}
+        else if (itemStack.is(ModTags.Items.THORIUM_DUST)) {return 0.3;}
+        else if (itemStack.is(ModTags.Items.THORIUM_ORE)) {return 0.004;}
+        else if (itemStack.is(ModTags.Items.THORIUM_BLOCK)) {return 1.0;}
+        else if (itemStack.is(ModTags.Items.THORIUM_BLOCK_RAW)) {return 0.06;}
+
 
 
         else {
