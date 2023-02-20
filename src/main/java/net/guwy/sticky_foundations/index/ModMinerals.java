@@ -1,6 +1,7 @@
 package net.guwy.sticky_foundations.index;
 
 import net.guwy.sticky_foundations.StickyFoundations;
+import net.guwy.sticky_foundations.content.items.BasicRadioactiveItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
@@ -301,7 +302,7 @@ public class ModMinerals {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
 
     public static final RegistryObject<Item> CRUSHED_THORIUM = ITEMS.register("crushed_thorium",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+            () -> new BasicRadioactiveItem(new Item.Properties().tab(ModCreativeModeTabs.MAIN), 0.3));
 
     public static final RegistryObject<Item> THORIUM_INGOT = ITEMS.register("thorium_ingot",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
@@ -387,6 +388,14 @@ public class ModMinerals {
 
     public static final RegistryObject<Item> STEEL_COIL = ITEMS.register("steel_coil",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+
+
+    public static final RegistryObject<Item> THORIUM_FUEL_INGOT = ITEMS.register("thorium_fuel_ingot",
+            () -> new BasicRadioactiveItem(new Item.Properties().tab(ModCreativeModeTabs.MAIN), 1.75));
+
+    public static final RegistryObject<Item> THORIUM_FUEL_NUGGET = ITEMS.register("thorium_fuel_nugget",
+            () -> new BasicRadioactiveItem(new Item.Properties().tab(ModCreativeModeTabs.MAIN), 0.175));
 
 
 

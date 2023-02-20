@@ -8,7 +8,12 @@
   "results": [
     {
       "item": "sticky_foundations:thorium_nugget",
-      "count": 18
+      "count": 9
+    },
+    {
+      "item": "sticky_foundations:thorium_nugget",
+      "count": 9,
+      "chance": 0.60
     },
     {
       "item": "minecraft:barrier",

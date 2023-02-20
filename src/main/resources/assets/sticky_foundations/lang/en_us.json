@@ -64,9 +64,9 @@
   "block.sticky_foundations.thorium_ore_deepslate": "Deepslate Thorium Ore",
   "item.sticky_foundations.raw_thorium": "Raw Thorium",
   "item.sticky_foundations.crushed_thorium": "Crushed Thorium",
-  "item.sticky_foundations.thorium_ingot": "Thorium Ingot",
-  "item.sticky_foundations.thorium_nugget": "Thorium Nugget",
-  "item.sticky_foundations.thorium_dust": "Thorium Dust",
+  "item.sticky_foundations.thorium_ingot": "Thorium-232 Ingot",
+  "item.sticky_foundations.thorium_nugget": "Thorium-232 Nugget",
+  "item.sticky_foundations.thorium_dust": "Thorium-232 Dust",
 
   "block.sticky_foundations.titanium_ore": "Titanium Ore",
   "block.sticky_foundations.titanium_ore_deepslate": "Deepslate Titanium Ore",
@@ -102,6 +102,9 @@
   "item.sticky_foundations.steel_foil": "Steel Foil",
   "item.sticky_foundations.steel_wire": "Steel Wire",
   "item.sticky_foundations.steel_coil": "Steel Coil",
+
+  "item.sticky_foundations.thorium_fuel_ingot": "Ingot of Thorium Fuel",
+  "item.sticky_foundations.thorium_fuel_nugget": "Nugget of Thorium Fuel",
 
 
 
