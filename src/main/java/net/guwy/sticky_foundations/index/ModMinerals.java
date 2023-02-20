@@ -297,6 +297,21 @@ public class ModMinerals {
                     strength(3f).explosionResistance(6f).requiresCorrectToolForDrops().
                     sound(SoundType.DEEPSLATE), UniformInt.of(0,4)), ModCreativeModeTabs.MAIN);
 
+    public static final RegistryObject<Item> RAW_THORIUM = ITEMS.register("raw_thorium",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> CRUSHED_THORIUM = ITEMS.register("crushed_thorium",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> THORIUM_INGOT = ITEMS.register("thorium_ingot",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> THORIUM_NUGGET = ITEMS.register("thorium_nugget",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> THORIUM_DUST = ITEMS.register("thorium_dust",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
 
 
     public static final RegistryObject<Block> URANIUM_ORE = registerBlock("uranium_ore", () ->

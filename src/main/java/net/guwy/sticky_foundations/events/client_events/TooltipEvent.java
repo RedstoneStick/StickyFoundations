@@ -16,14 +16,27 @@ public class TooltipEvent {
         ItemStack itemStack = event.getItemStack();
         Item item = itemStack.getItem();
 
+
+        // Radiation Tooltip
         double radiationVal = GetRadiationVal.getVal(itemStack);
-
         if(radiationVal != 0){
-            Component tooltip = Component.literal(
-                    Double.toString(radiationVal)).append("RAD/s")
-                    .withStyle(ChatFormatting.GOLD);
+            Component tooltip;
 
+
+            tooltip = Component.literal(
+                    Double.toString(radiationVal)).append("RAD/s")
+                    .withStyle(ChatFormatting.YELLOW);
             event.getToolTip().add(tooltip);
+
+
+            int count = itemStack.getCount();
+            if(count > 1){
+                tooltip = Component.literal("Stack: ")
+                        .append(Double.toString(GetRadiationVal.getStackVal(itemStack)))
+                        .append("RAD/s")
+                        .withStyle(ChatFormatting.YELLOW);
+                event.getToolTip().add(tooltip);
+            }
         }
 
     }
