@@ -92,6 +92,11 @@
 
   "block.sticky_foundations.uranium_ore": "Uranium Ore",
   "block.sticky_foundations.uranium_ore_deepslate": "Deepslate Uranium Ore",
+  "item.sticky_foundations.raw_uranium": "Raw Uranium",
+  "item.sticky_foundations.crushed_uranium": "Crushed Uranium",
+  "item.sticky_foundations.uranium_ingot": "Uranium Ingot",
+  "item.sticky_foundations.uranium_nugget": "Uranium Nugget",
+  "item.sticky_foundations.uranium_dust": "Uranium Dust",
 
   "item.sticky_foundations.sulfur_dust": "Sulfur Dust",
 
@@ -105,6 +110,9 @@
 
   "item.sticky_foundations.thorium_fuel_ingot": "Ingot of Thorium Fuel",
   "item.sticky_foundations.thorium_fuel_nugget": "Nugget of Thorium Fuel",
+
+  "item.sticky_foundations.radium_ingot": "Radium-226 Ingot",
+  "item.sticky_foundations.radium_nugget": "Radium-226 Nugget",
 
 
 

@@ -2,23 +2,22 @@
   "type": "create:splashing",
   "ingredients": [
     {
-      "item": "sticky_foundations:crushed_thorium"
+      "item": "sticky_foundations:crushed_uranium"
     }
   ],
   "results": [
     {
-      "item": "sticky_foundations:thorium_nugget",
+      "item": "sticky_foundations:uranium_nugget",
       "count": 9
-    },
-    {
-      "item": "sticky_foundations:thorium_nugget",
-      "count": 9,
-      "chance": 0.60
     },
     {
       "item": "sticky_foundations:uranium_nugget",
       "count": 9,
       "chance": 0.60
+    },
+    {
+      "item": "sticky_foundations:radium_nugget",
+      "count": 1
     },
     {
       "item": "minecraft:flint",

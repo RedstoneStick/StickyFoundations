@@ -325,6 +325,21 @@ public class ModMinerals {
                     strength(3f).explosionResistance(6f).requiresCorrectToolForDrops().
                     sound(SoundType.DEEPSLATE), UniformInt.of(3,7)), ModCreativeModeTabs.MAIN);
 
+    public static final RegistryObject<Item> RAW_URANIUM = ITEMS.register("raw_uranium",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> CRUSHED_URANIUM = ITEMS.register("crushed_uranium",
+            () -> new BasicRadioactiveItem(new Item.Properties().tab(ModCreativeModeTabs.MAIN), 1.05));
+
+    public static final RegistryObject<Item> URANIUM_INGOT = ITEMS.register("uranium_ingot",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> URANIUM_NUGGET = ITEMS.register("uranium_nugget",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+    public static final RegistryObject<Item> URANIUM_DUST = ITEMS.register("uranium_dust",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
 
 
     public static final RegistryObject<Block> BAUXITE_POOR = registerBlock("bauxite_poor", () ->
@@ -388,6 +403,14 @@ public class ModMinerals {
 
     public static final RegistryObject<Item> STEEL_COIL = ITEMS.register("steel_coil",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+
+
+
+    public static final RegistryObject<Item> RADIUM_INGOT = ITEMS.register("radium_ingot",
+            () -> new BasicRadioactiveItem(new Item.Properties().tab(ModCreativeModeTabs.MAIN), 7.5));
+
+    public static final RegistryObject<Item> RADIUM_NUGGET = ITEMS.register("radium_nugget",
+            () -> new BasicRadioactiveItem(new Item.Properties().tab(ModCreativeModeTabs.MAIN), 0.75));
 
 
 

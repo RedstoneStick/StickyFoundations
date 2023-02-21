@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "sticky_foundations:raw_uranium"
+  },
+  "result": "sticky_foundations:uranium_ingot",
+  "experience": 1.0,
+  "cookingtime": 100
+}

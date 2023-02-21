@@ -1,18 +1,9 @@
 package net.guwy.sticky_foundations.mechanics.hazard;
 
-import blusunrize.immersiveengineering.common.register.IEItems;
-import com.simibubi.create.content.contraptions.components.press.MechanicalPressTileEntity;
-import com.simibubi.create.foundation.block.ITE;
+import com.simibubi.create.AllItems;
 import net.guwy.sticky_foundations.index.ModTags;
-import net.minecraft.core.Registry;
-import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.DoorBlock;
-import net.minecraftforge.energy.EnergyStorage;
-import net.minecraftforge.registries.RegistryManager;
-import net.minecraftforge.registries.RegistryObject;
 
 public class GetRadiationVal {
     public static double getVal(ItemStack itemStack){
@@ -20,7 +11,13 @@ public class GetRadiationVal {
 
         if(item instanceof RadiatedItem){
             RadiatedItem radiatedItem = (RadiatedItem) item;
-            return radiatedItem.radiationVal();
+
+            double val = radiatedItem.radiationVal();
+            val = val * 1000;
+            val = (double) Math.round(val);
+            val = val / 1000;
+
+            return val;
         }
 
 
@@ -43,6 +40,8 @@ public class GetRadiationVal {
         else if (itemStack.is(ModTags.Items.THORIUM_BLOCK)) {return 1.0;}
         else if (itemStack.is(ModTags.Items.THORIUM_BLOCK_RAW)) {return 0.06;}
 
+        else if (itemStack.getItem().equals(AllItems.CRUSHED_URANIUM.get())) {return 1.05;}
+
 
 
         else {
@@ -51,7 +50,12 @@ public class GetRadiationVal {
     }
 
     public static double getStackVal(ItemStack itemStack){
-        return getVal(itemStack) * itemStack.getCount();
+        double val = getVal(itemStack) * itemStack.getCount();
+        val = val * 1000;
+        val = (double) Math.round(val);
+        val = val / 1000;
+        return val;
+
     }
 }
 

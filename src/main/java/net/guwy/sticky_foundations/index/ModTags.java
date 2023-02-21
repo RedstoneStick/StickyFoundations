@@ -62,6 +62,8 @@ public class ModTags {
         }
     }
 
+
+
     public static boolean isItemPresentInTag(ItemStack itemStack, TagKey<Item> tagKey){
         return itemStack.is(tagKey);
     }
