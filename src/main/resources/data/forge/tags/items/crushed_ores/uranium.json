@@ -2,6 +2,6 @@
   "replace": false,
   "values": [
     "sticky_foundations:crushed_uranium",
-    "create:crushed_uranium"
+    "create:crushed_uranium_ore"
   ]
 }
