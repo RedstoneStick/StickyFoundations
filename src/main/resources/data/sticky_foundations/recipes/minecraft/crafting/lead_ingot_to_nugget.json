@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "sticky_foundations:radium_ingot"
+      "item": "sticky_foundations:lead_ingot"
     }
   ],
   "result": {
-    "item": "sticky_foundations:radium_nugget",
+    "item": "sticky_foundations:lead_nugget",
     "count": 9
   }
 }

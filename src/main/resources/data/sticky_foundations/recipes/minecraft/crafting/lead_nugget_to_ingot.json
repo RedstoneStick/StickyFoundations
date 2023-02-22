@@ -7,11 +7,11 @@
   ],
   "key": {
     "x": {
-      "item": "sticky_foundations:radium_nugget"
+      "item": "sticky_foundations:lead_nugget"
     }
   },
   "result": {
-    "item": "sticky_foundations:radium_ingot",
+    "item": "sticky_foundations:lead_ingot",
     "count": 1
   }
 }
