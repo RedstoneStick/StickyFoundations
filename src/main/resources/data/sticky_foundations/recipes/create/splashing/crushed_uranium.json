@@ -9,20 +9,6 @@
     {
       "item": "sticky_foundations:uranium_nugget",
       "count": 9
-    },
-    {
-      "item": "sticky_foundations:uranium_nugget",
-      "count": 9,
-      "chance": 0.60
-    },
-    {
-      "item": "sticky_foundations:radium_nugget",
-      "count": 1
-    },
-    {
-      "item": "minecraft:flint",
-      "count": 1,
-      "chance": 0.20
     }
   ]
 }
