@@ -1,12 +1,7 @@
 package net.guwy.sticky_foundations.index;
 
 import net.guwy.sticky_foundations.StickyFoundations;
-import net.guwy.sticky_foundations.content.TestItem;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -19,7 +14,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class ModItems {
+public class SFItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, StickyFoundations.MOD_ID);
 
     /* Example
@@ -30,7 +25,7 @@ public class ModItems {
 
 
     public static final RegistryObject<Item> ASH = ITEMS.register("ash",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)){
+            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)){
                 @Override
                 public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
                     pTooltipComponents.add(Component.translatable("tooltip.sticky_foundations.ash.1"));
@@ -40,27 +35,22 @@ public class ModItems {
             });
 
     public static final RegistryObject<Item> SCRAP_METAL = ITEMS.register("scrap_metal",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
 
     public static final RegistryObject<Item> EMPTY_COIL = ITEMS.register("empty_coil",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
 
     public static final RegistryObject<Item> CIRCUITRY_BASIC = ITEMS.register("circuitry_basic",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
 
     public static final RegistryObject<Item> MOTOR = ITEMS.register("motor",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
 
     public static final RegistryObject<Item> MOLDING_BOWL = ITEMS.register("molding_bowl",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
 
     public static final RegistryObject<Item> TINY_PILE_OF_GUNPOWDER = ITEMS.register("tiny_pile_of_gunpowder",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
-
-
-
-    public static final RegistryObject<Item> TEST_ITEM = ITEMS.register("test_item",
-            () -> new TestItem(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
+            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
 
 
 

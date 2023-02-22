@@ -10,7 +10,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class ModTags {
+public class SFTags {
     public static class Blocks {
         public static final TagKey<Block> NATURAL_SOIL = tag("natural_soil");
         public static final TagKey<Block> NATURAL_FOLIAGE = tag("natural_foliage");
@@ -37,6 +37,7 @@ public class ModTags {
         public static final TagKey<Item> URANIUM_ORE = forgeTags("ores/uranium");
         public static final TagKey<Item> URANIUM_BLOCK = forgeTags("storage_blocks/uranium");
         public static final TagKey<Item> URANIUM_BLOCK_RAW = forgeTags("storage_blocks/raw_uranium");
+        public static final TagKey<Item> URANIUM_CRUSHED = forgeTags("crushed_ores/uranium");
 
         public static final TagKey<Item> THORIUM_INGOT = forgeTags("ingots/thorium");
         public static final TagKey<Item> THORIUM_NUGGET = forgeTags("nuggets/thorium");
@@ -46,6 +47,7 @@ public class ModTags {
         public static final TagKey<Item> THORIUM_ORE = forgeTags("ores/thorium");
         public static final TagKey<Item> THORIUM_BLOCK = forgeTags("storage_blocks/thorium");
         public static final TagKey<Item> THORIUM_BLOCK_RAW = forgeTags("storage_blocks/raw_thorium");
+        public static final TagKey<Item> THORIUM_CRUSHED = forgeTags("crushed_ores/thorium");
 
 
 

@@ -1,8 +1,8 @@
 package net.guwy.sticky_foundations;
 
 import com.mojang.logging.LogUtils;
-import net.guwy.sticky_foundations.index.ModItems;
-import net.guwy.sticky_foundations.index.ModMinerals;
+import net.guwy.sticky_foundations.index.SFItems;
+import net.guwy.sticky_foundations.index.SFMinerals;
 import net.guwy.sticky_foundations.world.feature.ModConfiguredFeatures;
 import net.guwy.sticky_foundations.world.feature.ModPlacedFeatures;
 import net.minecraftforge.common.MinecraftForge;
@@ -24,8 +24,8 @@ public class StickyFoundations {
         // Register the setup method for modloading
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModItems.register(eventBus);
-        ModMinerals.register(eventBus);
+        SFItems.register(eventBus);
+        SFMinerals.register(eventBus);
 
         ModConfiguredFeatures.register(eventBus);
         ModPlacedFeatures.register(eventBus);
