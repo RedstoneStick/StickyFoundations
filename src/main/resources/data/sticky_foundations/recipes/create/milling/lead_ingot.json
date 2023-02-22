@@ -2,12 +2,13 @@
   "type": "create:milling",
   "ingredients": [
     {
-      "item": "sticky_foundations:palladium_ingot"
+      "item": "sticky_foundations:lead_ingot"
     }
   ],
   "results": [
     {
-      "item": "sticky_foundations:palladium_dust"
+      "item": "sticky_foundations:lead_dust",
+      "count": 1
     }
   ],
   "processingTime": 200

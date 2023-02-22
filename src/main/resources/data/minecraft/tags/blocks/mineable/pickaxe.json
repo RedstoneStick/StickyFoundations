@@ -16,6 +16,8 @@
     "sticky_foundations:thorium_ore",
     "sticky_foundations:thorium_ore_deepslate",
     "sticky_foundations:uranium_ore",
-    "sticky_foundations:uranium_ore_deepslate"
+    "sticky_foundations:uranium_ore_deepslate",
+    "sticky_foundations:lead_ore",
+    "sticky_foundations:lead_ore_deepslate"
   ]
 }

@@ -373,6 +373,45 @@ public class SFMinerals {
 
 
 
+    public static final RegistryObject<Block> LEAD_ORE = registerBlock("lead_ore", () ->
+            new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).
+                    strength(3f).explosionResistance(3f).requiresCorrectToolForDrops().
+                    sound(SoundType.STONE), UniformInt.of(3,7)), SFCreativeModTabs.MAIN);
+
+    public static final RegistryObject<Block> LEAD_ORE_DEEPSLATE = registerBlock("lead_ore_deepslate", () ->
+            new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).
+                    strength(3f).explosionResistance(6f).requiresCorrectToolForDrops().
+                    sound(SoundType.DEEPSLATE), UniformInt.of(3,7)), SFCreativeModTabs.MAIN);
+
+    public static final RegistryObject<Item> RAW_LEAD = ITEMS.register("raw_lead",
+            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+
+    public static final RegistryObject<Item> CRUSHED_LEAD = ITEMS.register("crushed_lead",
+            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+
+    public static final RegistryObject<Item> LEAD_INGOT = ITEMS.register("lead_ingot",
+            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+
+    public static final RegistryObject<Item> LEAD_NUGGET = ITEMS.register("lead_nugget",
+            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+
+    public static final RegistryObject<Item> LEAD_DUST = ITEMS.register("lead_dust",
+            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+
+    public static final RegistryObject<Item> LEAD_PLATE = ITEMS.register("lead_plate",
+            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+
+    public static final RegistryObject<Item> LEAD_FOIL = ITEMS.register("lead_foil",
+            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+
+    public static final RegistryObject<Item> LEAD_WIRE = ITEMS.register("lead_wire",
+            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+
+    public static final RegistryObject<Item> LEAD_COIL = ITEMS.register("lead_coil",
+            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+
+
+
     public static final RegistryObject<Item> SULFUR_DUST = ITEMS.register("sulfur_dust",
             () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
 

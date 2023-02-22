@@ -14,6 +14,8 @@
     "sticky_foundations:uranium_ore",
     "sticky_foundations:uranium_ore_deepslate",
     "sticky_foundations:bauxite_poor",
-    "sticky_foundations:bauxite_normal"
+    "sticky_foundations:bauxite_normal",
+    "sticky_foundations:lead_ore",
+    "sticky_foundations:lead_ore_deepslate"
   ]
 }

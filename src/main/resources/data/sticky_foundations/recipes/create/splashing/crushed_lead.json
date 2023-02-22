@@ -1,0 +1,29 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "sticky_foundations:crushed_lead"
+    }
+  ],
+  "results": [
+    {
+      "item": "sticky_foundations:lead_nugget",
+      "count": 9
+    },
+    {
+      "item": "sticky_foundations:lead_nugget",
+      "count": 9,
+      "chance": 0.60
+    },
+    {
+      "item": "minecraft:gold_nugget",
+      "count": 9,
+      "chance": 0.60
+    },
+    {
+      "item": "minecraft:flint",
+      "count": 1,
+      "chance": 0.20
+    }
+  ]
+}

@@ -48,18 +48,23 @@ public class ModPlacedFeatures {
 
     public static final RegistryObject<PlacedFeature> THORIUM_ORE_PLACED = PLACED_FEATURES.register("thorium_ore_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.THORIUM_ORE.getHolder().get(),
-                    commonOrePlacement(10, // VeinsPerChunk
+                    commonOrePlacement(14, // VeinsPerChunk
                             HeightRangePlacement.triangle(VerticalAnchor.absolute(-70), VerticalAnchor.absolute(30)))));
 
     public static final RegistryObject<PlacedFeature> URANIUM_ORE_PLACED = PLACED_FEATURES.register("uranium_ore_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.URANIUM_ORE.getHolder().get(),
                     commonOrePlacement(8, // VeinsPerChunk
-                            HeightRangePlacement.triangle(VerticalAnchor.absolute(-70), VerticalAnchor.absolute(-22)))));
+                            HeightRangePlacement.triangle(VerticalAnchor.absolute(-70), VerticalAnchor.absolute(0)))));
 
     public static final RegistryObject<PlacedFeature> BAUXITE_ORE_PLACED = PLACED_FEATURES.register("bauxite_ore_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.BAUXITE_ORE.getHolder().get(),
                     rareOrePlacement(18, // Veins Every x amount of Chunks
                             HeightRangePlacement.triangle(VerticalAnchor.absolute(50), VerticalAnchor.absolute(150)))));
+
+    public static final RegistryObject<PlacedFeature> LEAD_ORE_PLACED = PLACED_FEATURES.register("lead_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.LEAD_ORE.getHolder().get(),
+                    commonOrePlacement(14, // VeinsPerChunk
+                            HeightRangePlacement.triangle(VerticalAnchor.absolute(-66), VerticalAnchor.absolute(40)))));
 
 
 

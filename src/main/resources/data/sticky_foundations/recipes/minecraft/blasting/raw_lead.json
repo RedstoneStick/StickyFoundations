@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "sticky_foundations:raw_lead"
+  },
+  "result": "sticky_foundations:lead_ingot",
+  "experience": 1.0,
+  "cookingtime": 100
+}

@@ -1,0 +1,13 @@
+{
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "tag": "forge:ingots/lead"
+    }
+  ],
+  "results": [
+    {
+      "item": "sticky_foundations:lead_plate"
+    }
+  ]
+}

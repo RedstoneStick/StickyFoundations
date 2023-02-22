@@ -2,6 +2,9 @@
   "replace": false,
   "values": [
     "sticky_foundations:crushed_magnesium",
-    "sticky_foundations:crushed_titanium"
+    "sticky_foundations:crushed_titanium",
+    "sticky_foundations:crushed_thorium",
+    "sticky_foundations:crushed_uranium",
+    "sticky_foundations:crushed_lead"
   ]
 }

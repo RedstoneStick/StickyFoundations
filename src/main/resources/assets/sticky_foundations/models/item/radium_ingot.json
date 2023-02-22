@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "sticky_foundations:resources/radium/radium_ingot"
-  }
-}
