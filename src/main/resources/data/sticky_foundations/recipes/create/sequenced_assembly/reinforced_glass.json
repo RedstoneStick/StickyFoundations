@@ -1,0 +1,48 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "minecraft:glass_pane"
+  },
+  "transitionalItem": {
+    "item": "minecraft:glass_pane"
+  },
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "minecraft:glass_pane"
+        },
+        [
+          {
+            "tag": "forge:plates/steel"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": "minecraft:glass_pane"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "minecraft:glass_pane"
+        }
+      ],
+      "results": [
+        {
+          "item": "minecraft:glass_pane"
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "item": "sticky_foundations:reinforced_glass"
+    }
+  ],
+  "loops": 3
+}

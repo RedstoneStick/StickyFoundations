@@ -1,0 +1,95 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "tag": "forge:plates/titanium"
+  },
+  "transitionalItem": {
+    "item": "sticky_foundations:titanium_plate"
+  },
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "sticky_foundations:titanium_plate"
+        },
+        [
+          {
+            "item": "sticky_foundations:insulator"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": "sticky_foundations:titanium_plate"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "sticky_foundations:titanium_plate"
+        },
+        [
+          {
+            "tag": "forge:wires/gold"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": "sticky_foundations:titanium_plate"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "sticky_foundations:titanium_plate"
+        }
+      ],
+      "results": [
+        {
+          "item": "sticky_foundations:titanium_plate"
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "item": "sticky_foundations:circuitry_advanced",
+      "chance": 120.0
+    },
+    {
+      "item": "sticky_foundations:titanium_plate",
+      "chance": 8.0
+    },
+    {
+      "item": "sticky_foundations:gold_wire",
+      "chance": 8.0
+    },
+    {
+      "item": "sticky_foundations:insulator",
+      "chance": 5.0
+    },
+    {
+      "item": "sticky_foundations:scrap_metal",
+      "chance": 2.0
+    },
+    {
+      "item": "create:crushed_gold_ore",
+      "chance": 2.0
+    },
+    {
+      "item": "minecraft:gold_nugget",
+      "chance": 2.0
+    },
+    {
+      "item": "sticky_foundations:titanium_ingot",
+      "chance": 2.0
+    }
+  ],
+  "loops": 1
+}

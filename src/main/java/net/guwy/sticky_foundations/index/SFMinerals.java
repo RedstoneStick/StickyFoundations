@@ -440,6 +440,11 @@ public class SFMinerals {
 
 
 
+    public static final RegistryObject<Item> COAL_DUST = ITEMS.register("coal_dust",
+            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+
+
+
 
 
 

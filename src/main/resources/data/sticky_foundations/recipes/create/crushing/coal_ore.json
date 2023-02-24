@@ -1,0 +1,15 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "tag": "forge:ores/coal"
+    }
+  ],
+  "results": [
+    {
+      "item": "sticky_foundations:coal_dust",
+      "count": 1
+    }
+  ],
+  "processingTime": 200
+}

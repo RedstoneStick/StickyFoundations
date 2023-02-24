@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "yxy"
+  ],
+  "key": {
+    "x": {
+      "tag": "minecraft:wool"
+    },
+	"y": {
+      "item": "minecraft:string"
+	}
+  },
+  "result": {
+    "item": "sticky_foundations:insulator",
+    "count": 4
+  }
+}

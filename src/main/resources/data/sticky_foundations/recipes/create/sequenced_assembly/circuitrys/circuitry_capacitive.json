@@ -1,0 +1,119 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "sticky_foundations:circuitry_enhanced"
+  },
+  "transitionalItem": {
+    "item": "sticky_foundations:circuitry_enhanced"
+  },
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "sticky_foundations:circuitry_enhanced"
+        },
+        [
+          {
+            "item": "sticky_foundations:insulator"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": "sticky_foundations:circuitry_enhanced"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "sticky_foundations:circuitry_enhanced"
+        },
+        [
+          {
+            "item": "create:super_glue"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": "sticky_foundations:circuitry_enhanced"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "sticky_foundations:circuitry_enhanced"
+        },
+        [
+          {
+            "item": "create:electron_tube"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": "sticky_foundations:circuitry_enhanced"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "sticky_foundations:circuitry_enhanced"
+        },
+        [
+          {
+            "item": "create:electron_tube"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": "sticky_foundations:circuitry_enhanced"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "sticky_foundations:circuitry_enhanced"
+        }
+      ],
+      "results": [
+        {
+          "item": "sticky_foundations:circuitry_enhanced"
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "item": "sticky_foundations:circuitry_capacitive",
+      "chance": 120.0
+    },
+    {
+      "item": "sticky_foundations:circuitry_enhanced",
+      "chance": 8.0
+    },
+    {
+      "item": "create:electron_tube",
+      "chance": 12.0
+    },
+    {
+      "item": "sticky_foundations:insulator",
+      "chance": 8.0
+    },
+    {
+      "item": "sticky_foundations:scrap_metal",
+      "chance": 2.0
+    }
+  ],
+  "loops": 1
+}

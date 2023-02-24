@@ -43,6 +43,30 @@ public class SFItems {
     public static final RegistryObject<Item> CIRCUITRY_BASIC = ITEMS.register("circuitry_basic",
             () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
 
+    public static final RegistryObject<Item> CIRCUITRY_ENHANCED = ITEMS.register("circuitry_enhanced",
+            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+
+    public static final RegistryObject<Item> CIRCUITRY_ADVANCED = ITEMS.register("circuitry_advanced",
+            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+
+    public static final RegistryObject<Item> CIRCUITRY_INDUSTRIAL = ITEMS.register("circuitry_industrial",
+            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+
+    public static final RegistryObject<Item> CIRCUITRY_CAPACITIVE = ITEMS.register("circuitry_capacitive",
+            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+
+    public static final RegistryObject<Item> CIRCUITRY_AVIONICS = ITEMS.register("circuitry_avionics",
+            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+
+    public static final RegistryObject<Item> CIRCUITRY_OVERCLOCKED = ITEMS.register("circuitry_overclocked",
+            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+
+    public static final RegistryObject<Item> CIRCUITRY_RELIABLE = ITEMS.register("circuitry_reliable",
+            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+
+    public static final RegistryObject<Item> CIRCUITRY_RELIABLE_ASSEMBLY = ITEMS.register("circuitry_reliable_assembly",
+            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+
     public static final RegistryObject<Item> MOTOR = ITEMS.register("motor",
             () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
 
@@ -50,6 +74,12 @@ public class SFItems {
             () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
 
     public static final RegistryObject<Item> TINY_PILE_OF_GUNPOWDER = ITEMS.register("tiny_pile_of_gunpowder",
+            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+
+    public static final RegistryObject<Item> REINFORCED_GLASS = ITEMS.register("reinforced_glass",
+            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+
+    public static final RegistryObject<Item> INSULATOR = ITEMS.register("insulator",
             () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
 
 

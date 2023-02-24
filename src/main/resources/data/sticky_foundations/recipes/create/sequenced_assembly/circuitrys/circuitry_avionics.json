@@ -1,0 +1,141 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "sticky_foundations:circuitry_advanced"
+  },
+  "transitionalItem": {
+    "item": "sticky_foundations:circuitry_advanced"
+  },
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "sticky_foundations:circuitry_advanced"
+        },
+        [
+          {
+            "item": "create:electron_tube"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": "sticky_foundations:circuitry_advanced"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "sticky_foundations:circuitry_advanced"
+        },
+        [
+          {
+            "item": "sticky_foundations:circuitry_basic"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": "sticky_foundations:circuitry_advanced"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "sticky_foundations:circuitry_advanced"
+        },
+        [
+          {
+            "item": "minecraft:redstone"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": "sticky_foundations:circuitry_advanced"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "sticky_foundations:circuitry_advanced"
+        },
+        [
+          {
+            "item": "minecraft:amethyst_shard"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": "sticky_foundations:circuitry_advanced"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "sticky_foundations:circuitry_advanced"
+        },
+        [
+          {
+            "item": "sticky_foundations:insulator"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": "sticky_foundations:circuitry_advanced"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "sticky_foundations:circuitry_advanced"
+        }
+      ],
+      "results": [
+        {
+          "item": "sticky_foundations:circuitry_advanced"
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "item": "sticky_foundations:circuitry_avionics",
+      "chance": 120.0
+    },
+    {
+      "item": "sticky_foundations:circuitry_basic",
+      "chance": 8.0
+    },
+    {
+      "item": "minecraft:amethyst_shard",
+      "chance": 8.0
+    },
+    {
+      "item": "sticky_foundations:insulator",
+      "chance": 8.0
+    },
+    {
+      "item": "sticky_foundations:copper_wire",
+      "chance": 2.0
+    },
+    {
+      "item": "create:electron_tube",
+      "chance": 4.0
+    }
+  ],
+  "loops": 1
+}

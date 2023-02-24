@@ -1,0 +1,28 @@
+{
+  "type": "create:mechanical_crafting",
+  "pattern": [
+    "L",
+    "R",
+    "S",
+    "R",
+    "H"
+  ],
+  "key": {
+    "L": {
+      "item": "sticky_foundations:reinforced_glass"
+    },
+    "R": {
+      "item": "sticky_foundations:insulator"
+    },
+    "H": {
+      "tag": "forge:plates/steel"
+    },
+    "S": {
+      "item": "sticky_foundations:circuitry_advanced"
+    }
+  },
+  "result": {
+    "item": "sticky_foundations:circuitry_reliable_assembly"
+  },
+  "acceptMirrored": false
+}

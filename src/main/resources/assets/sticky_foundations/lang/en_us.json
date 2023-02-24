@@ -120,6 +120,8 @@
   "item.sticky_foundations.lead_wire": "Lead Wire",
   "item.sticky_foundations.lead_coil": "Lead Coil",
 
+  "item.sticky_foundations.coal_dust": "Coal Dust",
+
 
   "item.sticky_foundations.ash": "Ash",
   "tooltip.sticky_foundations.ash.1": "§7I hate ash",
@@ -130,8 +132,20 @@
   "item.sticky_foundations.empty_coil": "Empty Coil",
 
   "item.sticky_foundations.circuitry_basic": "Basic Circuitry",
+  "item.sticky_foundations.circuitry_enhanced": "Enhanced Circuitry",
+  "item.sticky_foundations.circuitry_advanced": "Advanced Circuitry",
+  "item.sticky_foundations.circuitry_industrial": "Industrial Circuitry",
+  "item.sticky_foundations.circuitry_capacitive": "Capacitive Circuitry",
+  "item.sticky_foundations.circuitry_avionics": "Avionics Circuitry",
+  "item.sticky_foundations.circuitry_overclocked": "Overclocked Circuitry",
+  "item.sticky_foundations.circuitry_reliable": "Reliable Circuitry",
+  "item.sticky_foundations.circuitry_reliable_assembly": "Reliable Circuitry Assembly",
 
   "item.sticky_foundations.motor": "Motor",
+
+  "item.sticky_foundations.reinforced_glass": "Reinforced Glass",
+
+  "item.sticky_foundations.insulator": "Insulator",
 
   "item.sticky_foundations.molding_bowl": "Molding Bowl",
 
