@@ -4,14 +4,14 @@
     "tag": "forge:plates/gold"
   },
   "transitionalItem": {
-    "item": "create:golden_sheet"
+    "item": "minecraft:stick"
   },
   "sequence": [
     {
       "type": "create:deploying",
       "ingredients": [
         {
-          "item": "create:golden_sheet"
+          "item": "minecraft:stick"
         },
         [
           {
@@ -21,7 +21,7 @@
       ],
       "results": [
         {
-          "item": "create:golden_sheet"
+          "item": "minecraft:stick"
         }
       ]
     },
@@ -29,12 +29,12 @@
       "type": "create:pressing",
       "ingredients": [
         {
-          "item": "create:golden_sheet"
+          "item": "minecraft:stick"
         }
       ],
       "results": [
         {
-          "item": "create:golden_sheet"
+          "item": "minecraft:stick"
         }
       ]
     },
@@ -42,12 +42,12 @@
       "type": "create:cutting",
       "ingredients": [
         {
-          "item": "create:golden_sheet"
+          "item": "minecraft:stick"
         }
       ],
       "results": [
         {
-          "item": "create:golden_sheet"
+          "item": "minecraft:stick"
         }
       ],
       "processingTime": 200

@@ -4,14 +4,14 @@
     "tag": "forge:plates/copper"
   },
   "transitionalItem": {
-    "item": "create:copper_sheet"
+    "item": "minecraft:stick"
   },
   "sequence": [
     {
       "type": "create:deploying",
       "ingredients": [
         {
-          "item": "create:copper_sheet"
+          "item": "minecraft:stick"
         },
         [
           {
@@ -21,7 +21,7 @@
       ],
       "results": [
         {
-          "item": "create:copper_sheet"
+          "item": "minecraft:stick"
         }
       ]
     },
@@ -29,12 +29,12 @@
       "type": "create:pressing",
       "ingredients": [
         {
-          "item": "create:copper_sheet"
+          "item": "minecraft:stick"
         }
       ],
       "results": [
         {
-          "item": "create:copper_sheet"
+          "item": "minecraft:stick"
         }
       ]
     },
@@ -42,12 +42,12 @@
       "type": "create:cutting",
       "ingredients": [
         {
-          "item": "create:copper_sheet"
+          "item": "minecraft:stick"
         }
       ],
       "results": [
         {
-          "item": "create:copper_sheet"
+          "item": "minecraft:stick"
         }
       ],
       "processingTime": 200

@@ -4,14 +4,14 @@
     "tag": "forge:plates/lead"
   },
   "transitionalItem": {
-    "item": "sticky_foundations:aluminum_plate"
+    "item": "minecraft:stick"
   },
   "sequence": [
     {
       "type": "create:deploying",
       "ingredients": [
         {
-          "item": "sticky_foundations:lead_plate"
+          "item": "minecraft:stick"
         },
         [
           {
@@ -21,7 +21,7 @@
       ],
       "results": [
         {
-          "item": "sticky_foundations:lead_plate"
+          "item": "minecraft:stick"
         }
       ]
     },
@@ -29,12 +29,12 @@
       "type": "create:pressing",
       "ingredients": [
         {
-          "item": "sticky_foundations:lead_plate"
+          "item": "minecraft:stick"
         }
       ],
       "results": [
         {
-          "item": "sticky_foundations:lead_plate"
+          "item": "minecraft:stick"
         }
       ]
     },
@@ -42,12 +42,12 @@
       "type": "create:cutting",
       "ingredients": [
         {
-          "item": "sticky_foundations:lead_plate"
+          "item": "minecraft:stick"
         }
       ],
       "results": [
         {
-          "item": "sticky_foundations:lead_plate"
+          "item": "minecraft:stick"
         }
       ],
       "processingTime": 200
