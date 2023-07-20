@@ -153,6 +153,13 @@
 
 
 
-  "message.rsimm.example": "example"
+  "onscreen_message.sticky_foundations.overpressure": "The Pressure Of The Water Is Crushing You",
+  "onscreen_message.sticky_foundations.thin_air.low_air": "It's hard to breathe properly here",
+  "onscreen_message.sticky_foundations.thin_air.no_air": "You can't breathe",
+  "onscreen_message.sticky_foundations.thin_air.equipment.low_air": "It's getting hard to breathe",
 
+
+
+  "death.attack.water_overpressure": "%1$s was crushed to death by extreme pressure",
+  "death.attack.water_overpressure_easter_egg": "%1$s has tried to visit Titanic"
 }

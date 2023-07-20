@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 4,
+  "ingredient": {
+    "tag": "forge:plates/platinum"
+  },
+  "result": "sticky_foundations:platinum_wire"
+}

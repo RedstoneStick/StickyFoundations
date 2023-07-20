@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 4,
+  "ingredient": {
+    "tag": "forge:plates/gold"
+  },
+  "result": "sticky_foundations:gold_wire"
+}

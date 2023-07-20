@@ -3,11 +3,13 @@ package net.guwy.sticky_foundations;
 import com.mojang.logging.LogUtils;
 import net.guwy.sticky_foundations.index.SFItems;
 import net.guwy.sticky_foundations.index.SFMinerals;
+import net.guwy.sticky_foundations.index.SFNetworking;
 import net.guwy.sticky_foundations.world.feature.ModConfiguredFeatures;
 import net.guwy.sticky_foundations.world.feature.ModPlacedFeatures;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -19,6 +21,14 @@ public class StickyFoundations {
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
     public static final String MOD_ID = "sticky_foundations";
+
+
+
+    // Is mod loaded variables
+    private static boolean createLoaded = false;
+    private static boolean mekanismLoaded = false;
+
+
 
     public StickyFoundations() {
         // Register the setup method for modloading
@@ -36,10 +46,17 @@ public class StickyFoundations {
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+
+        // Is mod loaded checks
+        createLoaded = ModList.get().isLoaded("create");
+        mekanismLoaded = ModList.get().isLoaded("mekanism");
     }
+
+
 
     private void commonSetup(final FMLCommonSetupEvent event){
         event.enqueueWork(() -> {
+            SFNetworking.register();
         });
     }
 
@@ -55,5 +72,17 @@ public class StickyFoundations {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
         }
+    }
+
+
+
+    // Is mod loaded returnals
+    public static boolean isCreateLoaded()
+    {
+        return createLoaded;
+    }
+    public static boolean isMekanismLoaded()
+    {
+        return mekanismLoaded;
     }
 }

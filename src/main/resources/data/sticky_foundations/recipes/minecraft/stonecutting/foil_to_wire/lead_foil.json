@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 8,
+  "ingredient": {
+    "item": "sticky_foundations:lead_foil"
+  },
+  "result": "sticky_foundations:lead_wire"
+}

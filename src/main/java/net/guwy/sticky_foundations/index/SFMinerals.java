@@ -454,34 +454,23 @@ public class SFMinerals {
         registerBlockItem(name, toReturn, tab);
         return toReturn;
     }
+    private static <T extends Block> RegistryObject<T> registerBlockWithoutTab(String name, Supplier<T> block){
+        RegistryObject<T> toReturn = BLOCKS.register(name, block);
+        registerBlockItemWithoutTab(name, toReturn);
+        return toReturn;
+    }
+
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block,
                                                                             CreativeModeTab tab){
         return SFMinerals.BLOCK_ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
     }
-
-
-    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block,
-                                                                     CreativeModeTab tab, String tooltipKey){
-        RegistryObject<T> toReturn = BLOCKS.register(name, block);
-        registerBlockItem(name, toReturn, tab, tooltipKey);
-        return toReturn;
+    private static <T extends Block> RegistryObject<Item> registerBlockItemWithoutTab(String name, RegistryObject<T> block){
+        return SFMinerals.BLOCK_ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
-    private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block,
-                                                                            CreativeModeTab tab, String tooltipKey){
-        return SFMinerals.BLOCK_ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)){
-            @Override
-            public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-                pTooltip.add(Component.literal(tooltipKey));
-            }
-        });
-    }
-
 
     private static <T extends Block> RegistryObject<T> registerBlockWithoutBlockItem(String name, Supplier<T> block){
         return BLOCKS.register(name, block);
     }
-
-
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

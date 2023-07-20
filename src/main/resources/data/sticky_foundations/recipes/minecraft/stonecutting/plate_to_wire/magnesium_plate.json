@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 4,
+  "ingredient": {
+    "tag": "forge:plates/magnesium"
+  },
+  "result": "sticky_foundations:magnesium_wire"
+}
