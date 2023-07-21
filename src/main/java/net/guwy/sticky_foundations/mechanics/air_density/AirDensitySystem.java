@@ -155,7 +155,8 @@ public class AirDensitySystem {
 
                 IBreathingMaskAtHighAltitudes breathingMask = (IBreathingMaskAtHighAltitudes) player.getItemBySlot(EquipmentSlot.HEAD).getItem();
 
-                consumption = breathingMask.SupplyAirAtHighAltitudes() ? 0 : consumption;
+                // If the value is true consumption = 0, else just keep as is
+                if(breathingMask.SupplyAirAtHighAltitudesClientCheck(player)) consumption = 0;
             }
 
             // If all fails check for any mod compatibility
