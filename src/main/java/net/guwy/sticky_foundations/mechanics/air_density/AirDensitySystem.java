@@ -1,20 +1,18 @@
 package net.guwy.sticky_foundations.mechanics.air_density;
 
-import me.shedaniel.math.Dimension;
 import net.guwy.sticky_foundations.StickyFoundations;
 import net.guwy.sticky_foundations.client.onscreen_message.SFMessagesOnDisplay;
 import net.guwy.sticky_foundations.compat.create.SFCreateAirDensityCompat;
 import net.guwy.sticky_foundations.compat.mekanism.SFMekanismAirDensityCompat;
-import net.minecraft.data.worldgen.DimensionTypes;
-import net.minecraft.data.worldgen.biome.OverworldBiomes;
+import net.guwy.sticky_foundations.index.SFConfigs;
+import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.dimension.DimensionDefaults;
-import net.minecraft.world.level.dimension.DimensionType;
-import net.minecraft.world.level.storage.DimensionDataStorage;
 import net.minecraftforge.event.TickEvent;
+
+import java.util.function.Supplier;
 
 public class AirDensitySystem {
     /** Atmospheric density and breathing altitudes are unlinked for gameplay purposes
@@ -63,42 +61,41 @@ public class AirDensitySystem {
         private static final double EXTRA_OXYGEN_CONSUMED_WHEN_RUNNING = 3;
 
         private static final double POINT_0 = 128 + (128 * OXYGEN_REGENERATION_AT_128 / (OXYGEN_REGENERATION_AT_128 - OXYGEN_REGENERATION_AT_256)); // The height at which the oxygen regen becomes 0
-        private static final boolean SHOULD_OXYGEN_SYSTEM_WORK = true;    // Temporarily hardcoded, replace with config function
+        private static final Supplier<Boolean> SHOULD_OXYGEN_SYSTEM_WORK = SFConfigs.Client.ACTIVATE_BREATHABLE_AIR_MECHANICS;
 
 
 
         public static void OnClientPlayerTickEvent(TickEvent.PlayerTickEvent event){
 
-            if(SHOULD_OXYGEN_SYSTEM_WORK){
+            if(SHOULD_OXYGEN_SYSTEM_WORK.get()
+            && event.player.getLevel().dimension() == Level.OVERWORLD){
+
                 Player player = event.player;
 
-                if(player.getLevel().dimension().equals(Level.OVERWORLD)){
+                // Don't work when unnecessary or when underwater
+                if(player.getY() >= 128 || OXYGEN_SUPPLY < 100
+                        && !player.isUnderWater()){
 
-                    // Don't work when unnecessary or when underwater
-                    if(player.getY() >= 128 || OXYGEN_SUPPLY < 100
-                            && !player.isUnderWater()){
+                    // Handle oxygen consumption
+                    AddOxygen(-GetOxygenConsumption(player));
 
-                        // Handle oxygen consumption
-                        AddOxygen(-GetOxygenConsumption(player));
+                    // Handle oxygen regen
+                    AddOxygen(GetOxygenRegen(player.getY()));
 
-                        // Handle oxygen regen
-                        AddOxygen(GetOxygenRegen(player.getY()));
-
-                        // Handle onscreen messages
-                        // Onscreen messages are handled with the oxygen consumption
+                    // Handle onscreen messages
+                    // Onscreen messages are handled with the oxygen consumption
 
 
-                        // Debug
-                        // player.sendSystemMessage(Component.literal("0 Point = " + Double.toString(POINT_0)));
-                        // player.sendSystemMessage(Component.literal("Current Modifier = " + Double.toString(OXYGEN_SUPPLY)));
-                        // OXYGEN_SUPPLY = 0;
+                    // Debug
+                    // player.sendSystemMessage(Component.literal("0 Point = " + Double.toString(POINT_0)));
+                    // player.sendSystemMessage(Component.literal("Current Modifier = " + Double.toString(OXYGEN_SUPPLY)));
+                    // OXYGEN_SUPPLY = 0;
 
-                    }
-                } else {
-
-                    // Fill the oxygen supply if the player isn't in overwold
-                    OXYGEN_SUPPLY = OXYGEN_CAPACITY;
                 }
+            } else {
+
+                // Fill the oxygen supply if the player isn't in overwold or the config is false
+                OXYGEN_SUPPLY = OXYGEN_CAPACITY;
             }
         }
 

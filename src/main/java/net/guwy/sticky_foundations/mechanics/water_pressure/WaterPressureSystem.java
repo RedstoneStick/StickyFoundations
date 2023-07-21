@@ -1,14 +1,24 @@
 package net.guwy.sticky_foundations.mechanics.water_pressure;
 
 import net.guwy.sticky_foundations.client.onscreen_message.SFMessagesOnDisplay;
+import net.guwy.sticky_foundations.content.network_packets.WaterPressureDamageRequestC2SPacket;
+import net.guwy.sticky_foundations.index.SFConfigs;
 import net.guwy.sticky_foundations.index.SFDamageSources;
+import net.guwy.sticky_foundations.index.SFNetworking;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.BubbleColumnBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.event.TickEvent;
+
+import java.util.function.Supplier;
 
 public class WaterPressureSystem {
     /** In ocean biomes the depth is taken relative to sea level (y 62)
@@ -17,34 +27,30 @@ public class WaterPressureSystem {
      */
     private static final int SEA_LEVEL = 62, OVERPRESSURE_DEPTH = 20;
 
+    private static final Supplier<Boolean> SHOULD_WATER_PRESSURE_SYSTEM_WORK = SFConfigs.Client.ACTIVATE_WATER_PRESSURE_MECHANICS;
+
 
 
     public static void OnClientPlayerTickEvent(TickEvent.PlayerTickEvent event){
-        if (IsUnderTooMuchPressure(event.player)){
-            if (!isPlayerPressureProof(event.player)){
-                SFMessagesOnDisplay.addNewMessage(Component.translatable("onscreen_message.sticky_foundations.overpressure").getString());
+
+        if (SHOULD_WATER_PRESSURE_SYSTEM_WORK.get()) {
+
+            if (IsUnderTooMuchPressure(event.player)){
+
+                if (!isPlayerPressureProof(event.player)){
+
+                    // Handle onscreen message
+                    SFMessagesOnDisplay.addNewMessage(Component.translatable("onscreen_message.sticky_foundations.overpressure").getString());
+
+                    // Handle damaging of player
+                    if(event.player.tickCount % 20 == 0) SFNetworking.sendToServer(new WaterPressureDamageRequestC2SPacket());
+                }
             }
         }
     }
 
+    // Unused
     public static void OnServerPlayerTickEvent(TickEvent.PlayerTickEvent event){
-        Player player = event.player;
-
-        // Operate Every Second
-        if(player.tickCount % 20 == 0){
-            if (IsUnderTooMuchPressure(event.player)){
-                if (!isPlayerPressureProof(event.player)){
-
-                    // Randomize damage type for funni death message
-                    if(Math.random() < 0.95){
-                        player.hurt(SFDamageSources.WATER_OVERPRESSURE, getDamageFromDepth(player));
-                    } else {
-                        player.hurt(SFDamageSources.WATER_OVERPRESSURE_EASTER_EGG, getDamageFromDepth(player));
-                    }
-
-                }
-            }
-        }
     }
 
 
@@ -87,6 +93,14 @@ public class WaterPressureSystem {
             else if(level.getBlockState(player.getOnPos().offset(0, OVERPRESSURE_DEPTH, 0)).getBlock() == Blocks.WATER){
 
                 isTooMuchPressure = true;
+            }
+
+
+            // Do a pass to check if the player's head is in a bubble column
+            BlockState blockState = player.getLevel().getBlockState(player.getOnPos().offset(0, 1, 0));
+
+            if(blockState.getBlock() instanceof BubbleColumnBlock){
+                isTooMuchPressure = false;
             }
         }
 

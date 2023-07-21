@@ -1,6 +1,7 @@
 package net.guwy.sticky_foundations;
 
 import com.mojang.logging.LogUtils;
+import net.guwy.sticky_foundations.index.SFConfigs;
 import net.guwy.sticky_foundations.index.SFItems;
 import net.guwy.sticky_foundations.index.SFMinerals;
 import net.guwy.sticky_foundations.index.SFNetworking;
@@ -10,7 +11,9 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -43,6 +46,9 @@ public class StickyFoundations {
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);
         eventBus.addListener(this::commonSetup);
+
+        // Config registries
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, SFConfigs.Client.SPEC, "sticky_foundations-client.toml");
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

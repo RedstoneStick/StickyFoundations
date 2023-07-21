@@ -48,7 +48,7 @@ import net.minecraftforge.fml.common.Mod;
                 if(event.side == LogicalSide.SERVER){
                     if(event.phase == TickEvent.Phase.END){
 
-                        WaterPressureSystem.OnServerPlayerTickEvent(event);
+
                     }
                 }
             }

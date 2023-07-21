@@ -2,6 +2,7 @@ package net.guwy.sticky_foundations.events;
 
 import net.guwy.sticky_foundations.StickyFoundations;
 import net.guwy.sticky_foundations.client.onscreen_message.SFMessagesOnDisplay;
+import net.guwy.sticky_foundations.client.view_bobbing.ViewBobbing;
 import net.guwy.sticky_foundations.events.client_events.RegisterGuiOverlaysEventHandler;
 import net.guwy.sticky_foundations.mechanics.air_density.AirDensitySystem;
 import net.guwy.sticky_foundations.mechanics.water_pressure.WaterPressureSystem;
@@ -24,6 +25,8 @@ public class ModClientEvents {
                     SFMessagesOnDisplay.onClientTick();
                     WaterPressureSystem.OnClientPlayerTickEvent(event);
                     AirDensitySystem.BreathingAltitudes.OnClientPlayerTickEvent(event);
+
+                    ViewBobbing.MouseBobbing.ClientTickAccessor(event);
                 }
             }
         }
