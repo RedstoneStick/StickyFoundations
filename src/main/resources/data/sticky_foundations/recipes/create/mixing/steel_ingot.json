@@ -14,5 +14,14 @@
       "count": 1
     }
   ],
-  "heatRequirement": "superheated"
+  "heatRequirement": "superheated",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:mod_loaded",
+        "modid": "immersiveengineering"
+      }
+    }
+  ]
 }

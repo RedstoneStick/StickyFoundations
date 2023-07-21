@@ -8,6 +8,7 @@ import net.guwy.sticky_foundations.index.SFConfigs;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.TickEvent;
@@ -149,17 +150,31 @@ public class AirDensitySystem {
                 consumption = 0;
             }
 
-            // Consumption negation with create mod
-            if(StickyFoundations.isCreateLoaded()){
+            // Consumption negation with built in api supporting helmets
+            else if (player.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof IBreathingMaskAtHighAltitudes){
 
-                if(SFCreateAirDensityCompat.shouldNegateAirConsumption(player)) consumption = 0;
+                IBreathingMaskAtHighAltitudes breathingMask = (IBreathingMaskAtHighAltitudes) player.getItemBySlot(EquipmentSlot.HEAD).getItem();
+
+                consumption = breathingMask.SupplyAirAtHighAltitudes() ? 0 : consumption;
             }
 
-            // Consumption negation with mekanism mod
-            if(StickyFoundations.isMekanismLoaded()){
+            // If all fails check for any mod compatibility
+            else {
 
-                if(SFMekanismAirDensityCompat.shouldNegateAirConsumption(player)) consumption = 0;
+                // Consumption negation with create mod
+                if(StickyFoundations.isCreateLoaded()){
+
+                    if(SFCreateAirDensityCompat.shouldNegateAirConsumption(player)) consumption = 0;
+                }
+
+                // Consumption negation with mekanism mod
+                if(StickyFoundations.isMekanismLoaded()){
+
+                    if(SFMekanismAirDensityCompat.shouldNegateAirConsumption(player)) consumption = 0;
+                }
             }
+
+
 
 
 
