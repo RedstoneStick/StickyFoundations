@@ -153,6 +153,12 @@
 
 
 
+  "tooltip.sticky_foundations.visor.outer.water": "§3Visor is wet, wiping will clean all gunk",
+  "tooltip.sticky_foundations.visor.outer.gunk": "Visor is dirty",
+  "tooltip.sticky_foundations.visor.outer.wipe": "Press §6[Shift+Right Click] with empty hand§r to wipe the visor",
+
+
+
   "onscreen_message.sticky_foundations.overpressure": "The Pressure Of The Water Is Crushing You",
   "onscreen_message.sticky_foundations.thin_air.low_air": "It's hard to breathe properly here",
   "onscreen_message.sticky_foundations.thin_air.no_air": "You can't breathe",

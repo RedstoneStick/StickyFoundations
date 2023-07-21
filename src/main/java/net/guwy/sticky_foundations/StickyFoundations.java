@@ -1,10 +1,7 @@
 package net.guwy.sticky_foundations;
 
 import com.mojang.logging.LogUtils;
-import net.guwy.sticky_foundations.index.SFConfigs;
-import net.guwy.sticky_foundations.index.SFItems;
-import net.guwy.sticky_foundations.index.SFMinerals;
-import net.guwy.sticky_foundations.index.SFNetworking;
+import net.guwy.sticky_foundations.index.*;
 import net.guwy.sticky_foundations.world.feature.ModConfiguredFeatures;
 import net.guwy.sticky_foundations.world.feature.ModPlacedFeatures;
 import net.minecraftforge.common.MinecraftForge;

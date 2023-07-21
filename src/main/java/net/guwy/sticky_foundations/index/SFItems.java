@@ -1,7 +1,10 @@
 package net.guwy.sticky_foundations.index;
 
 import net.guwy.sticky_foundations.StickyFoundations;
+import net.guwy.sticky_foundations.content.items.AdminArmorItem;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -21,6 +24,9 @@ public class SFItems {
     public static final RegistryObject<Item> TITANIUM_INGOT = ITEMS.register("titanium_ingot",
             () -> new Item(new Item.Properties().tab(ModCreativeModTabs.MATERIALS)));
      */
+
+    // public static final RegistryObject<Item> ADMIN_HELMET = ITEMS.register("admin_helmet",
+    //         () -> new AdminArmorItem(ArmorMaterials.DIAMOND, EquipmentSlot.HEAD, new Item.Properties().tab(SFCreativeModTabs.MAIN)));
 
 
 

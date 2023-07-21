@@ -4,7 +4,7 @@ import net.minecraftforge.common.ForgeConfigSpec;
 
 public class SFConfigs {
 
-    public class Client{
+    public static class Client{
 
         public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
         public static final ForgeConfigSpec SPEC;
@@ -14,6 +14,7 @@ public class SFConfigs {
         public static final ForgeConfigSpec.ConfigValue<Boolean> ACTIVATE_WATER_PRESSURE_MECHANICS;
         public static final ForgeConfigSpec.ConfigValue<Boolean> ACTIVATE_BREATHABLE_AIR_MECHANICS;
         public static final ForgeConfigSpec.ConfigValue<Double> HUD_SWAY_MULTIPLIER;
+        public static final ForgeConfigSpec.ConfigValue<Boolean> DRAW_VISOR_GUNK;
 
 
         static {
@@ -32,6 +33,11 @@ public class SFConfigs {
                     .comment("The amount to multiply the hud sway")
                     .comment("0 will turn off the hud sway, turning View Bobbing off in game will do the same thing as well")
                     .defineInRange("Hud sway multiplier", 1.0, 0.0, 100.0);
+
+            DRAW_VISOR_GUNK = BUILDER.comment("")
+                    .comment("Whether or not to draw the visor gunk")
+                    .comment("Even if disabled the gunk will accumulate, so expect a surprise once you turn it on again")
+                    .define("Draw Visor Gunk", true);
 
 
             BUILDER.pop();

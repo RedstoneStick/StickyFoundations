@@ -2,6 +2,7 @@ package net.guwy.sticky_foundations.events;
 
 import net.guwy.sticky_foundations.StickyFoundations;
 import net.guwy.sticky_foundations.client.onscreen_message.SFMessagesOnDisplay;
+import net.guwy.sticky_foundations.events.server_events.PlayerServerTickEventsOrganizer;
 import net.guwy.sticky_foundations.mechanics.water_pressure.WaterPressureSystem;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Entity;
@@ -48,7 +49,7 @@ import net.minecraftforge.fml.common.Mod;
                 if(event.side == LogicalSide.SERVER){
                     if(event.phase == TickEvent.Phase.END){
 
-
+                        PlayerServerTickEventsOrganizer.init(event);
                     }
                 }
             }

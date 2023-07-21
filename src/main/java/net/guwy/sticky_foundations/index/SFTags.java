@@ -15,6 +15,11 @@ public class SFTags {
         public static final TagKey<Block> NATURAL_SOIL = tag("natural_soil");
         public static final TagKey<Block> NATURAL_FOLIAGE = tag("natural_foliage");
 
+        public static final TagKey<Block> MASK_SAND = tag("mask_sand");
+        public static final TagKey<Block> MASK_DIRT = tag("mask_dirt");
+        public static final TagKey<Block> MASK_MUD = tag("mask_mud");
+        public static final TagKey<Block> MASK_SOOT = tag("mask_soot");
+
 
 
         private static TagKey<Block> tag(String name){
