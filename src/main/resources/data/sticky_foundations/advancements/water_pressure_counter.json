@@ -1,0 +1,52 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:turtle_helmet"
+    },
+    "title": "One With the Fishes",
+    "description": "Surprisingly Water Breathing makes you immune to the extreme pressures",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "sticky_foundations:water_pressure",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:location_check",
+            "offsetY": 20,
+            "predicate": {
+              "dimension": "minecraft:overworld",
+              "fluid": {
+                "tag": "minecraft:water"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:location_check",
+            "offsetY": 1,
+            "predicate": {
+              "dimension": "minecraft:overworld",
+              "fluid": {
+                "tag": "minecraft:water"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "effects": {
+                "minecraft:water_breathing": {}
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

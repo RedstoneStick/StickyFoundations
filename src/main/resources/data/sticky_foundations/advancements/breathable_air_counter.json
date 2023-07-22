@@ -1,0 +1,44 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:turtle_helmet"
+    },
+    "title": "Skyfish",
+    "description": "Strangely enough, Water Breathing makes you immune to the effects Oxygen Deprevation",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "sticky_foundations:breathable_air",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "position": {
+                "y": {
+                  "min": 128,
+                  "max": 10000
+                }
+              },
+              "dimension": "minecraft:overworld"
+            }
+          },
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "effects": {
+                "minecraft:water_breathing": {}
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

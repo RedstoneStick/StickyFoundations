@@ -1,0 +1,18 @@
+{
+  "display": {
+    "icon": {
+      "item": "sticky_foundations:raw_titanium"
+    },
+    "title": "Sticky Foundations",
+    "description": "Welcome To Sticky Foundations",
+    "background": "sticky_foundations:textures/resources/aluminum/bauxite_poor.png",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed"
+    }
+  }
+}

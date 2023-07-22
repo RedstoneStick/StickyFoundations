@@ -1,0 +1,53 @@
+{
+  "display": {
+    "icon": {
+      "item": "mekanism:scuba_mask"
+    },
+    "title": "Handy",
+    "description": "You can breathe at high altitudes with a Scuba Suit from Mekanism mod",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "sticky_foundations:breathable_air_counter",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "position": {
+                "y": {
+                  "min": 128,
+                  "max": 10000
+                }
+              },
+              "dimension": "minecraft:overworld"
+            }
+          },
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "equipment": {
+                "head": {
+                  "items": [
+                    "mekanism:scuba_mask"
+                  ]
+                },
+                "chest": {
+                  "items": [
+                    "mekanism:scuba_tank"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
