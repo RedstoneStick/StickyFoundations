@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xxx",
+    "xxx",
+    "xxx"
+  ],
+  "key": {
+    "x": {
+      "item": "sticky_foundations:raw_magnesium"
+    }
+  },
+  "result": {
+    "item": "sticky_foundations:raw_magnesium_block",
+    "count": 1
+  }
+}

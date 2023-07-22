@@ -3,7 +3,7 @@
   "ingredient": {
     "item": "sticky_foundations:crushed_magnesium"
   },
-  "result": "sticky_foundations:ash",
+  "result": "minecraft:copper_ingot",
   "experience": 1.0,
   "cookingtime": 200
 }

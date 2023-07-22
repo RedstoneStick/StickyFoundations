@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "sticky_foundations:resources/titanium/raw_titanium"
+    "layer0": "sticky_foundations:resources/titanium/rutile"
   }
 }

@@ -6,8 +6,11 @@ import net.guwy.sticky_foundations.client.view_bobbing.ViewBobbing;
 import net.guwy.sticky_foundations.events.client_events.PlayerClientTickEventsOrganizer;
 import net.guwy.sticky_foundations.events.client_events.PlayerInteractRightClickEmptyHandler;
 import net.guwy.sticky_foundations.events.client_events.RegisterGuiOverlaysEventHandler;
+import net.guwy.sticky_foundations.index.SFMinerals;
 import net.guwy.sticky_foundations.mechanics.air_density.AirDensitySystem;
 import net.guwy.sticky_foundations.mechanics.water_pressure.WaterPressureSystem;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.event.TickEvent;
@@ -15,6 +18,7 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 public class ModClientEvents {
     @Mod.EventBusSubscriber(modid = StickyFoundations.MOD_ID, value = Dist.CLIENT)

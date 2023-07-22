@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "sticky_foundations:resources/lead/raw_lead_block"
+  }
+}

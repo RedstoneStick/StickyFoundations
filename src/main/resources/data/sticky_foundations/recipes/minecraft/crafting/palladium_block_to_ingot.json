@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "sticky_foundations:palladium_block"
+    }
+  ],
+  "result": {
+    "item": "sticky_foundations:palladium_ingot",
+    "count": 9
+  }
+}

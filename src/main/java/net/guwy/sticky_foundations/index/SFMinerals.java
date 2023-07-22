@@ -31,9 +31,6 @@ public class SFMinerals {
 
 
 
-
-
-
     public static final RegistryObject<Item> IRON_DUST
             = ITEMS.register("iron_dust",
             () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
@@ -109,12 +106,12 @@ public class SFMinerals {
     public static final RegistryObject<Block> NITER_ORE = registerBlock("niter_ore", () ->
             new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).
                     strength(3f).explosionResistance(3f).requiresCorrectToolForDrops().
-                    sound(SoundType.STONE), UniformInt.of(0,4)), SFCreativeModTabs.MAIN);
+                    sound(SoundType.STONE), UniformInt.of(0,1)), SFCreativeModTabs.MAIN);
 
     public static final RegistryObject<Block> NITER_ORE_DEEPSLATE = registerBlock("niter_ore_deepslate", () ->
             new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).
                     strength(3f).explosionResistance(6f).requiresCorrectToolForDrops().
-                    sound(SoundType.DEEPSLATE), UniformInt.of(0,4)), SFCreativeModTabs.MAIN);
+                    sound(SoundType.DEEPSLATE), UniformInt.of(0,1)), SFCreativeModTabs.MAIN);
 
     public static final RegistryObject<Item> NITER = ITEMS.register("niter",
             () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
@@ -122,14 +119,24 @@ public class SFMinerals {
 
 
     public static final RegistryObject<Block> MAGNESIUM_ORE = registerBlock("magnesium_ore", () ->
-            new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).
+            new Block(BlockBehaviour.Properties.of(Material.STONE).
                     strength(3f).explosionResistance(3f).requiresCorrectToolForDrops().
-                    sound(SoundType.STONE), UniformInt.of(0,4)), SFCreativeModTabs.MAIN);
+                    sound(SoundType.STONE)), SFCreativeModTabs.MAIN);
 
     public static final RegistryObject<Block> MAGNESIUM_ORE_DEEPSLATE = registerBlock("magnesium_ore_deepslate", () ->
-            new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).
+            new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).
                     strength(3f).explosionResistance(6f).requiresCorrectToolForDrops().
-                    sound(SoundType.DEEPSLATE), UniformInt.of(0,4)), SFCreativeModTabs.MAIN);
+                    sound(SoundType.DEEPSLATE)), SFCreativeModTabs.MAIN);
+
+    public static final RegistryObject<Block> RAW_MAGNESIUM_BLOCK = registerBlock("raw_magnesium_block", () ->
+            new Block(BlockBehaviour.Properties.of(Material.DIRT, MaterialColor.COLOR_BLUE).
+                    strength(6f).explosionResistance(5f).requiresCorrectToolForDrops()
+                    .sound(SoundType.GRAVEL)), SFCreativeModTabs.MAIN);
+
+    public static final RegistryObject<Block> MAGNESIUM_BLOCK = registerBlock("magnesium_block", () ->
+            new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_LIGHT_GRAY).
+                    strength(6f).explosionResistance(5f).requiresCorrectToolForDrops()
+                    .sound(SoundType.METAL)), SFCreativeModTabs.MAIN);
 
     public static final RegistryObject<Item> RAW_MAGNESIUM = ITEMS.register("raw_magnesium",
             () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
@@ -181,12 +188,17 @@ public class SFMinerals {
     public static final RegistryObject<Block> PALLADIUM_ORE = registerBlock("palladium_ore", () ->
             new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).
                     strength(3f).explosionResistance(3f).requiresCorrectToolForDrops().
-                    sound(SoundType.STONE), UniformInt.of(3,7)), SFCreativeModTabs.MAIN);
+                    sound(SoundType.STONE), UniformInt.of(1,4)), SFCreativeModTabs.MAIN);
 
     public static final RegistryObject<Block> PALLADIUM_ORE_DEEPSLATE = registerBlock("palladium_ore_deepslate", () ->
             new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).
                     strength(3f).explosionResistance(6f).requiresCorrectToolForDrops().
-                    sound(SoundType.DEEPSLATE), UniformInt.of(3,7)), SFCreativeModTabs.MAIN);
+                    sound(SoundType.DEEPSLATE), UniformInt.of(1,4)), SFCreativeModTabs.MAIN);
+
+    public static final RegistryObject<Block> PALLADIUM_BLOCK = registerBlock("palladium_block", () ->
+            new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_YELLOW).
+                    strength(6f).explosionResistance(5f).requiresCorrectToolForDrops()
+                    .sound(SoundType.METAL)), SFCreativeModTabs.MAIN);
 
     public static final RegistryObject<Item> PALLADIUM_NUGGET = ITEMS.register("palladium_nugget",
             () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
@@ -212,14 +224,19 @@ public class SFMinerals {
 
 
     public static final RegistryObject<Block> PLATINUM_ORE = registerBlock("platinum_ore", () ->
-            new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).
+            new Block(BlockBehaviour.Properties.of(Material.STONE).
                     strength(3f).explosionResistance(3f).requiresCorrectToolForDrops().
-                    sound(SoundType.STONE), UniformInt.of(3,7)), SFCreativeModTabs.MAIN);
+                    sound(SoundType.STONE)), SFCreativeModTabs.MAIN);
 
     public static final RegistryObject<Block> PLATINUM_ORE_DEEPSLATE = registerBlock("platinum_ore_deepslate", () ->
-            new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).
+            new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).
                     strength(3f).explosionResistance(6f).requiresCorrectToolForDrops().
-                    sound(SoundType.DEEPSLATE), UniformInt.of(3,7)), SFCreativeModTabs.MAIN);
+                    sound(SoundType.DEEPSLATE)), SFCreativeModTabs.MAIN);
+
+    public static final RegistryObject<Block> PLATINUM_BLOCK = registerBlock("platinum_block", () ->
+            new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_LIGHT_GRAY).
+                    strength(6f).explosionResistance(5f).requiresCorrectToolForDrops()
+                    .sound(SoundType.METAL)), SFCreativeModTabs.MAIN);
 
     public static final RegistryObject<Item> PLATINUM_NUGGET = ITEMS.register("platinum_nugget",
             () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
@@ -245,14 +262,24 @@ public class SFMinerals {
 
 
     public static final RegistryObject<Block> TITANIUM_ORE = registerBlock("titanium_ore", () ->
-            new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).
+            new Block(BlockBehaviour.Properties.of(Material.STONE).
                     strength(3f).explosionResistance(3f).requiresCorrectToolForDrops().
-                    sound(SoundType.STONE), UniformInt.of(0,4)), SFCreativeModTabs.MAIN);
+                    sound(SoundType.STONE)), SFCreativeModTabs.MAIN);
 
     public static final RegistryObject<Block> TITANIUM_ORE_DEEPSLATE = registerBlock("titanium_ore_deepslate", () ->
-            new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).
+            new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).
                     strength(3f).explosionResistance(6f).requiresCorrectToolForDrops().
-                    sound(SoundType.DEEPSLATE), UniformInt.of(0,4)), SFCreativeModTabs.MAIN);
+                    sound(SoundType.DEEPSLATE)), SFCreativeModTabs.MAIN);
+
+    public static final RegistryObject<Block> RUTILE_BLOCK = registerBlock("rutile_block", () ->
+            new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_RED).
+                    strength(6f).explosionResistance(5f).requiresCorrectToolForDrops()
+                    .sound(SoundType.METAL).noOcclusion()), SFCreativeModTabs.MAIN);
+
+    public static final RegistryObject<Block> TITANIUM_BLOCK = registerBlock("titanium_block", () ->
+            new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_YELLOW).
+                    strength(6f).explosionResistance(5f).requiresCorrectToolForDrops()
+                    .sound(SoundType.METAL)), SFCreativeModTabs.MAIN);
 
     public static final RegistryObject<Item> RAW_TITANIUM = ITEMS.register("raw_titanium",
             () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
@@ -284,56 +311,56 @@ public class SFMinerals {
 
 
     public static final RegistryObject<Block> THORIUM_ORE = registerBlock("thorium_ore", () ->
-            new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).
+            new Block(BlockBehaviour.Properties.of(Material.STONE).
                     strength(3f).explosionResistance(3f).requiresCorrectToolForDrops().
-                    sound(SoundType.STONE), UniformInt.of(0,4)), SFCreativeModTabs.MAIN);
+                    sound(SoundType.STONE)));
 
     public static final RegistryObject<Block> THORIUM_ORE_DEEPSLATE = registerBlock("thorium_ore_deepslate", () ->
-            new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).
+            new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).
                     strength(3f).explosionResistance(6f).requiresCorrectToolForDrops().
-                    sound(SoundType.DEEPSLATE), UniformInt.of(0,4)), SFCreativeModTabs.MAIN);
+                    sound(SoundType.DEEPSLATE)));
 
     public static final RegistryObject<Item> RAW_THORIUM = ITEMS.register("raw_thorium",
-            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> CRUSHED_THORIUM = ITEMS.register("crushed_thorium",
-            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> THORIUM_INGOT = ITEMS.register("thorium_ingot",
-            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> THORIUM_NUGGET = ITEMS.register("thorium_nugget",
-            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> THORIUM_DUST = ITEMS.register("thorium_dust",
-            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+            () -> new Item(new Item.Properties()));
 
 
 
     public static final RegistryObject<Block> URANIUM_ORE = registerBlock("uranium_ore", () ->
             new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).
                     strength(3f).explosionResistance(3f).requiresCorrectToolForDrops().
-                    sound(SoundType.STONE), UniformInt.of(3,7)), SFCreativeModTabs.MAIN);
+                    sound(SoundType.STONE), UniformInt.of(1,2)));
 
     public static final RegistryObject<Block> URANIUM_ORE_DEEPSLATE = registerBlock("uranium_ore_deepslate", () ->
             new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).
                     strength(3f).explosionResistance(6f).requiresCorrectToolForDrops().
-                    sound(SoundType.DEEPSLATE), UniformInt.of(3,7)), SFCreativeModTabs.MAIN);
+                    sound(SoundType.DEEPSLATE), UniformInt.of(1,2)));
 
     public static final RegistryObject<Item> RAW_URANIUM = ITEMS.register("raw_uranium",
-            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> CRUSHED_URANIUM = ITEMS.register("crushed_uranium",
-            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> URANIUM_INGOT = ITEMS.register("uranium_ingot",
-            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> URANIUM_NUGGET = ITEMS.register("uranium_nugget",
-            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> URANIUM_DUST = ITEMS.register("uranium_dust",
-            () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
+            () -> new Item(new Item.Properties()));
 
 
 
@@ -346,6 +373,11 @@ public class SFMinerals {
             new FallingBlock(BlockBehaviour.Properties.of(Material.SAND).
                     strength(1f).explosionResistance(1f).
                     sound(SoundType.SAND)), SFCreativeModTabs.MAIN);
+
+    public static final RegistryObject<Block> ALUMINUM_BLOCK = registerBlock("aluminum_block", () ->
+            new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_LIGHT_GRAY).
+                    strength(6f).explosionResistance(5f).requiresCorrectToolForDrops()
+                    .sound(SoundType.METAL)), SFCreativeModTabs.MAIN);
 
     //public static final RegistryObject<Item> CRUSHED_ALUMINUM = ITEMS.register("crushed_aluminum",
     //        () -> new Item(new Item.Properties().tab(ModCreativeModeTabs.MAIN)));
@@ -374,14 +406,24 @@ public class SFMinerals {
 
 
     public static final RegistryObject<Block> LEAD_ORE = registerBlock("lead_ore", () ->
-            new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).
+            new Block(BlockBehaviour.Properties.of(Material.STONE).
                     strength(3f).explosionResistance(3f).requiresCorrectToolForDrops().
-                    sound(SoundType.STONE), UniformInt.of(3,7)), SFCreativeModTabs.MAIN);
+                    sound(SoundType.STONE)), SFCreativeModTabs.MAIN);
 
     public static final RegistryObject<Block> LEAD_ORE_DEEPSLATE = registerBlock("lead_ore_deepslate", () ->
-            new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).
+            new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).
                     strength(3f).explosionResistance(6f).requiresCorrectToolForDrops().
-                    sound(SoundType.DEEPSLATE), UniformInt.of(3,7)), SFCreativeModTabs.MAIN);
+                    sound(SoundType.DEEPSLATE)), SFCreativeModTabs.MAIN);
+
+    public static final RegistryObject<Block> RAW_LEAD_BLOCK = registerBlock("raw_lead_block", () ->
+            new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BLUE).
+                    strength(6f).explosionResistance(5f).requiresCorrectToolForDrops()
+                    .sound(SoundType.STONE)), SFCreativeModTabs.MAIN);
+
+    public static final RegistryObject<Block> LEAD_BLOCK = registerBlock("lead_block", () ->
+            new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BLUE).
+                    strength(6f).explosionResistance(5f).requiresCorrectToolForDrops()
+                    .sound(SoundType.METAL)), SFCreativeModTabs.MAIN);
 
     public static final RegistryObject<Item> RAW_LEAD = ITEMS.register("raw_lead",
             () -> new Item(new Item.Properties().tab(SFCreativeModTabs.MAIN)));
@@ -454,9 +496,10 @@ public class SFMinerals {
         registerBlockItem(name, toReturn, tab);
         return toReturn;
     }
-    private static <T extends Block> RegistryObject<T> registerBlockWithoutTab(String name, Supplier<T> block){
+    /** No creative mod tab */
+    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
-        registerBlockItemWithoutTab(name, toReturn);
+        registerBlockItem(name, toReturn);
         return toReturn;
     }
 
@@ -464,7 +507,8 @@ public class SFMinerals {
                                                                             CreativeModeTab tab){
         return SFMinerals.BLOCK_ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
     }
-    private static <T extends Block> RegistryObject<Item> registerBlockItemWithoutTab(String name, RegistryObject<T> block){
+    /** No creative mod tab */
+    private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block){
         return SFMinerals.BLOCK_ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 

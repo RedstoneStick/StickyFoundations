@@ -11,9 +11,9 @@
       "count": 9
     },
     {
-      "item": "sticky_foundations:scrap_metal",
+      "item": "minecraft:oxidized_copper",
       "count": 1,
-      "chance": 0.20
+      "chance": 0.12
     }
   ]
 }

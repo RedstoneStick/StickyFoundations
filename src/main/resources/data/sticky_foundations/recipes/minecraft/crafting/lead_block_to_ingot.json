@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "sticky_foundations:lead_block"
+    }
+  ],
+  "result": {
+    "item": "sticky_foundations:lead_ingot",
+    "count": 9
+  }
+}

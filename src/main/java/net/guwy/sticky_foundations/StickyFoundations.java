@@ -4,6 +4,8 @@ import com.mojang.logging.LogUtils;
 import net.guwy.sticky_foundations.index.*;
 import net.guwy.sticky_foundations.world.feature.ModConfiguredFeatures;
 import net.guwy.sticky_foundations.world.feature.ModPlacedFeatures;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -68,16 +70,6 @@ public class StickyFoundations {
 
     private void setup(final FMLCommonSetupEvent event) {
     }
-
-    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-    public static class ClientModEvents {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) {
-        }
-    }
-
-
 
     // Is mod loaded returnals
     public static boolean isCreateLoaded()
