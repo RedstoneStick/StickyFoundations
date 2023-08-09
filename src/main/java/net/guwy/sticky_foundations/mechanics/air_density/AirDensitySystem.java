@@ -67,36 +67,33 @@ public class AirDensitySystem {
 
 
         public static void OnClientPlayerTickEvent(TickEvent.PlayerTickEvent event){
+            Player player = Minecraft.getInstance().player;
 
-            if(SHOULD_OXYGEN_SYSTEM_WORK.get()
-            && event.player.getLevel().dimension() == Level.OVERWORLD){
+            // Check if the player is the one who runs the game
+            if(player == event.player){
 
-                Player player = event.player;
+                if(SHOULD_OXYGEN_SYSTEM_WORK.get()
+                        && player.getLevel().dimension() == Level.OVERWORLD){
 
-                // Don't work when unnecessary or when underwater
-                if(player.getY() >= 128 || OXYGEN_SUPPLY < 100
-                        && !player.isUnderWater()){
+                    // Don't work when unnecessary or when underwater
+                    if(player.getY() >= 128 || OXYGEN_SUPPLY < 100
+                            && !player.isUnderWater()){
 
-                    // Handle oxygen consumption
-                    AddOxygen(-GetOxygenConsumption(player));
+                        // Handle oxygen consumption
+                        AddOxygen(-GetOxygenConsumption(player));
 
-                    // Handle oxygen regen
-                    AddOxygen(GetOxygenRegen(player.getY()));
+                        // Handle oxygen regen
+                        AddOxygen(GetOxygenRegen(player.getY()));
 
-                    // Handle onscreen messages
-                    // Onscreen messages are handled with the oxygen consumption
+                        // Handle onscreen messages
+                        // Onscreen messages are handled with the oxygen consumption
 
+                    }
+                } else {
 
-                    // Debug
-                    // player.sendSystemMessage(Component.literal("0 Point = " + Double.toString(POINT_0)));
-                    // player.sendSystemMessage(Component.literal("Current Modifier = " + Double.toString(OXYGEN_SUPPLY)));
-                    // OXYGEN_SUPPLY = 0;
-
+                    // Fill the oxygen supply if the player isn't in overwold or the config is false
+                    OXYGEN_SUPPLY = OXYGEN_CAPACITY;
                 }
-            } else {
-
-                // Fill the oxygen supply if the player isn't in overwold or the config is false
-                OXYGEN_SUPPLY = OXYGEN_CAPACITY;
             }
         }
 

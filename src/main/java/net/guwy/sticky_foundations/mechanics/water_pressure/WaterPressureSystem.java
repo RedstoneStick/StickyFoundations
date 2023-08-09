@@ -32,18 +32,23 @@ public class WaterPressureSystem {
 
 
     public static void OnClientPlayerTickEvent(TickEvent.PlayerTickEvent event){
+        Player player = Minecraft.getInstance().player;
 
-        if (SHOULD_WATER_PRESSURE_SYSTEM_WORK.get()) {
+        // Check if the player is the one who runs the game
+        if(player == event.player){
 
-            if (IsUnderTooMuchPressure(event.player)){
+            if (SHOULD_WATER_PRESSURE_SYSTEM_WORK.get()) {
 
-                if (!isPlayerPressureProof(event.player)){
+                if (IsUnderTooMuchPressure(player)){
 
-                    // Handle onscreen message
-                    SFMessagesOnDisplay.addNewMessage(Component.translatable("onscreen_message.sticky_foundations.overpressure").getString());
+                    if (!isPlayerPressureProof(player)){
 
-                    // Handle damaging of player
-                    if(event.player.tickCount % 20 == 0) SFNetworking.sendToServer(new WaterPressureDamageRequestC2SPacket());
+                        // Handle onscreen message
+                        SFMessagesOnDisplay.addNewMessage(Component.translatable("onscreen_message.sticky_foundations.overpressure").getString());
+
+                        // Handle damaging of player
+                        if(player.tickCount % 20 == 0) SFNetworking.sendToServer(new WaterPressureDamageRequestC2SPacket());
+                    }
                 }
             }
         }
