@@ -28,7 +28,7 @@ public interface IVisorItem {
     /** Put "pTooltipComponents.addAll(IVisorItem.VisorGunkTooltip(pStack));"
      * in a items append hover text to display visor gunk tooltips
      */
-    default List<Component> VisorGunkTooltip(ItemStack pStack){
+    static List<Component> VisorGunkTooltip(ItemStack pStack){
         List<Component> pTooltipComponents = new ArrayList<Component>();
 
         double totalVisorGunk = IVisorItem.getOuterGunkSum(pStack);
