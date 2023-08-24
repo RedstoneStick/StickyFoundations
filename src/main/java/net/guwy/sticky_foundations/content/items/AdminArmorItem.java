@@ -27,7 +27,7 @@ public class AdminArmorItem extends ArmorItem implements IVisorItem {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.addAll(VisorGunkTooltip(pStack));
+        pTooltipComponents.addAll(IVisorItem.VisorGunkTooltip(pStack));
         super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
     }
 }
