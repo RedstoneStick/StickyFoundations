@@ -1,6 +1,7 @@
 package net.guwy.sticky_foundations.index;
 
 import net.guwy.sticky_foundations.StickyFoundations;
+import net.guwy.sticky_foundations.content.network_packets.CrawlC2SPacket;
 import net.guwy.sticky_foundations.content.network_packets.CreateAirDensitySyncC2SPacket;
 import net.guwy.sticky_foundations.content.network_packets.VisorWipeC2SPacket;
 import net.guwy.sticky_foundations.content.network_packets.WaterPressureDamageRequestC2SPacket;

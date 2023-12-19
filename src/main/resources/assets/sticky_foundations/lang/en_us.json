@@ -176,5 +176,10 @@
 
 
   "death.attack.water_overpressure": "%1$s was crushed to death by extreme pressure",
-  "death.attack.water_overpressure_easter_egg": "%1$s has tried to visit Titanic"
+  "death.attack.water_overpressure_easter_egg": "%1$s has tried to visit Titanic",
+
+
+
+  "key.category.sticky_foundations.main": "Sticky Foundations",
+  "key.sticky_foundations.crawl_key": "Crawl"
 }
