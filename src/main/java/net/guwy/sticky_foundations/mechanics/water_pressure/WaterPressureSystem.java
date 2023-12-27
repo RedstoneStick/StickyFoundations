@@ -39,15 +39,15 @@ public class WaterPressureSystem {
 
             if (SHOULD_WATER_PRESSURE_SYSTEM_WORK.get()) {
 
-                if (IsUnderTooMuchPressure(player)){
+                if (IsUnderTooMuchPressure(event.player)){
 
-                    if (!isPlayerPressureProof(player)){
+                    if (!isPlayerPressureProof(event.player)){
 
                         // Handle onscreen message
                         SFMessagesOnDisplay.addNewMessage(Component.translatable("onscreen_message.sticky_foundations.overpressure").getString());
 
                         // Handle damaging of player
-                        if(player.tickCount % 20 == 0) SFNetworking.sendToServer(new WaterPressureDamageRequestC2SPacket());
+                        if(event.player.tickCount % 20 == 0) SFNetworking.sendToServer(new WaterPressureDamageRequestC2SPacket());
                     }
                 }
             }

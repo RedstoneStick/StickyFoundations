@@ -1,9 +1,5 @@
 package net.guwy.sticky_foundations.events.client_events;
 
-import com.mojang.blaze3d.platform.InputConstants;
-import net.guwy.sticky_foundations.content.network_packets.CrawlC2SPacket;
-import net.guwy.sticky_foundations.index.SFKeyBindings;
-import net.guwy.sticky_foundations.index.SFNetworking;
 import net.minecraftforge.client.event.InputEvent;
 
 public class OnKeyInputHandler {

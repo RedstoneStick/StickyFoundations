@@ -8,7 +8,15 @@ public class NumberToTextConverter {
     private static final int THOUSAND = 1000;
 
 
+    /** The naming didn't made sense,
+     *  use BigNumberToText() instead.
+     *  Keeping this to not break old code*/
+    @Deprecated
     public static String EnergyToText(int energy){
+        return BigNumberToText(energy);
+    }
+
+    public static String BigNumberToText(int energy){
         String text;
         double val;
 
