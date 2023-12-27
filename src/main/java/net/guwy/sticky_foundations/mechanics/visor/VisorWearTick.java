@@ -90,13 +90,13 @@ public class VisorWearTick {
                 }
 
                 // Debug
-                 player.sendSystemMessage(Component.literal("sand: " + IVisorItem.getOuterSand(itemStack)));
-                 player.sendSystemMessage(Component.literal("dirt: " + IVisorItem.getOuterDirt(itemStack)));
-                 player.sendSystemMessage(Component.literal("mud: " + IVisorItem.getOuterMud(itemStack)));
-                 player.sendSystemMessage(Component.literal("sooth: " + IVisorItem.getOuterSoot(itemStack)));
-                 player.sendSystemMessage(Component.literal("water: " + IVisorItem.getOuterWater(itemStack)));
-                 player.sendSystemMessage(Component.literal("block: " + onBlock.getBlock().getName().getString()));
-                 player.sendSystemMessage(Component.literal("-----"));
+                // player.sendSystemMessage(Component.literal("sand: " + IVisorItem.getOuterSand(itemStack)));
+                // player.sendSystemMessage(Component.literal("dirt: " + IVisorItem.getOuterDirt(itemStack)));
+                // player.sendSystemMessage(Component.literal("mud: " + IVisorItem.getOuterMud(itemStack)));
+                // player.sendSystemMessage(Component.literal("sooth: " + IVisorItem.getOuterSoot(itemStack)));
+                // player.sendSystemMessage(Component.literal("water: " + IVisorItem.getOuterWater(itemStack)));
+                // player.sendSystemMessage(Component.literal("block: " + onBlock.getBlock().getName().getString()));
+                // player.sendSystemMessage(Component.literal("-----"));
             }
         }
     }
