@@ -1,16 +1,15 @@
 package net.guwy.sticky_foundations.mechanics.water_pressure;
 
+import net.guwy.sticky_foundations.StickyFoundations;
 import net.guwy.sticky_foundations.client.onscreen_message.SFMessagesOnDisplay;
+import net.guwy.sticky_foundations.compat.mekanism.SFMekanismWaterPressureCompat;
 import net.guwy.sticky_foundations.content.network_packets.WaterPressureDamageRequestC2SPacket;
 import net.guwy.sticky_foundations.index.SFConfigs;
-import net.guwy.sticky_foundations.index.SFDamageSources;
 import net.guwy.sticky_foundations.index.SFNetworking;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
@@ -25,7 +24,9 @@ public class WaterPressureSystem {
      * In other biomes its relative to water blocks above your head
      * Lower than 20m is too much depth for the player without water breathing
      */
-    private static final int SEA_LEVEL = 62, OVERPRESSURE_DEPTH = 20;
+    private static final Supplier<Integer> SEA_LEVEL = SFConfigs.Client.WATER_PRESSURE_SEA_LEVEL,
+            OVERPRESSURE_DEPTH = SFConfigs.Client.WATER_PRESSURE_OVERPRESSURE_DEPTH,
+            BASE_DAMAGE = SFConfigs.Client.WATER_PRESSURE_BASE_DAMAGE;
 
     private static final Supplier<Boolean> SHOULD_WATER_PRESSURE_SYSTEM_WORK = SFConfigs.Client.ACTIVATE_WATER_PRESSURE_MECHANICS;
 
@@ -47,15 +48,11 @@ public class WaterPressureSystem {
                         SFMessagesOnDisplay.addNewMessage(Component.translatable("onscreen_message.sticky_foundations.overpressure").getString());
 
                         // Handle damaging of player
-                        if(event.player.tickCount % 20 == 0) SFNetworking.sendToServer(new WaterPressureDamageRequestC2SPacket());
+                        if(event.player.tickCount % 20 == 0) SFNetworking.sendToServer(new WaterPressureDamageRequestC2SPacket(getDamageFromDepth(player)));
                     }
                 }
             }
         }
-    }
-
-    // Unused
-    public static void OnServerPlayerTickEvent(TickEvent.PlayerTickEvent event){
     }
 
 
@@ -67,7 +64,7 @@ public class WaterPressureSystem {
         if(level.getBiome(player.getOnPos()).is(BiomeTags.IS_OCEAN)){
 
             // Damage will increase by 2 for every 5 blocks you're under the depth limit
-            return 2 + ((SEA_LEVEL - OVERPRESSURE_DEPTH - player.blockPosition().getY()) / 5 * 2);
+            return BASE_DAMAGE.get() + ((SEA_LEVEL.get() - OVERPRESSURE_DEPTH.get() - player.blockPosition().getY()) / 5 * BASE_DAMAGE.get());
         }
 
         // Handle for Non Ocean Biomes
@@ -88,14 +85,14 @@ public class WaterPressureSystem {
 
             // Handle for Ocean Biomes
             if(level.getBiome(player.getOnPos()).is(BiomeTags.IS_OCEAN)){
-                if (player.getY() < SEA_LEVEL - OVERPRESSURE_DEPTH){
+                if (player.getY() < SEA_LEVEL.get() - OVERPRESSURE_DEPTH.get()){
 
                     isTooMuchPressure = true;
                 }
             }
 
             // Handle for Non Ocean Biomes
-            else if(level.getBlockState(player.getOnPos().offset(0, OVERPRESSURE_DEPTH, 0)).getBlock() == Blocks.WATER){
+            else if(level.getBlockState(player.getOnPos().offset(0, OVERPRESSURE_DEPTH.get(), 0)).getBlock() == Blocks.WATER){
 
                 isTooMuchPressure = true;
             }
@@ -115,6 +112,8 @@ public class WaterPressureSystem {
 
 
     private static boolean isPlayerPressureProof(Player player){
-        return player.hasEffect(MobEffects.WATER_BREATHING) || player.hasEffect(MobEffects.CONDUIT_POWER);
+        return player.hasEffect(MobEffects.WATER_BREATHING)
+                || player.hasEffect(MobEffects.CONDUIT_POWER)
+                || (StickyFoundations.isMekanismLoaded() ? SFMekanismWaterPressureCompat.shouldNegateWaterPressure(player) : false);
     }
 }
