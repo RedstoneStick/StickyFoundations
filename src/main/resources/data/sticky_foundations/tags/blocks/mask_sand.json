@@ -19,5 +19,9 @@
     "minecraft:green_concrete_powder",
     "minecraft:red_concrete_powder",
     "minecraft:black_concrete_powder"
+  ],
+  "optional": [
+    "mekanism:block_salt",
+    "immersiveengineering:slag_gravel"
   ]
 }

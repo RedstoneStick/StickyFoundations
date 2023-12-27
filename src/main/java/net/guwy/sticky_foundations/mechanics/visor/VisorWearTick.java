@@ -23,7 +23,7 @@ public class VisorWearTick {
     /** Processing of Screen Gunk **/
     public static void process(Player player){
 
-        // Process every half a second
+        // Process every x amount of seconds
         if(player.tickCount % (20 * HANDLE_EVERY_X_AMOUNT_OF_SECONDS) == 0){
 
             ItemStack itemStack = player.getItemBySlot(EquipmentSlot.HEAD);
@@ -48,9 +48,8 @@ public class VisorWearTick {
                 if(player.isUnderWater()){
                     IVisorItem.setOuterWater(itemStack, 1);
 
-                    /** Water Cleans faster if there is a large quantity of gunk
-                     * and slower if there is less
-                     */
+                    // Water Cleans faster if there is a large quantity of gunk
+                    // and slower if there is less
                     if(IVisorItem.getOuterSand(itemStack) > WATER_THRESHOLD) IVisorItem.addOuterSand(itemStack, WATER_CLEANSING_RATE_ABOVE_T);
                     else IVisorItem.addOuterSand(itemStack, WATER_CLEANSING_RATE_BELOW_T);
 

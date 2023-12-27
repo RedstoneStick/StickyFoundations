@@ -22,7 +22,7 @@ public class OxygenIconOverlay {
     public static final IGuiOverlay OXYGEN_OVERLAY = (((gui, poseStack, partialTick, screenWidth, screenHeight) -> {
 
         // Only display when the oxygen isn't full
-        if(AirDensitySystem.BreathingAltitudes.OXYGEN_SUPPLY < AirDensitySystem.BreathingAltitudes.OXYGEN_CAPACITY){
+        if(AirDensitySystem.BreathingAltitudes.OXYGEN_SUPPLY < AirDensitySystem.BreathingAltitudes.OXYGEN_CAPACITY.get()){
 
             RenderSystem.enableBlend();
             RenderSystem.setShader(GameRenderer::getPositionTexShader);
@@ -43,7 +43,7 @@ public class OxygenIconOverlay {
 
 
             // Render Bar
-            int barWidth = (int) (31 * (AirDensitySystem.BreathingAltitudes.OXYGEN_SUPPLY / AirDensitySystem.BreathingAltitudes.OXYGEN_CAPACITY));
+            int barWidth = (int) (31 * (AirDensitySystem.BreathingAltitudes.OXYGEN_SUPPLY / AirDensitySystem.BreathingAltitudes.OXYGEN_CAPACITY.get()));
             GuiComponent.blit(poseStack, screenWidth / 2 - 8 + bobX, screenHeight / 2 + 26 + bobY
                     , 0, 10
                     , barWidth, 5

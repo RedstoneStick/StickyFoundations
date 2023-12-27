@@ -70,7 +70,7 @@ public class WaterPressureSystem {
         // Handle for Non Ocean Biomes
         else {
 
-            return 2;
+            return BASE_DAMAGE.get();
         }
     }
 
@@ -112,8 +112,11 @@ public class WaterPressureSystem {
 
 
     private static boolean isPlayerPressureProof(Player player){
+        boolean mekanismCompat = false;
+        if(StickyFoundations.isMekanismLoaded()) mekanismCompat = SFMekanismWaterPressureCompat.shouldNegateWaterPressure(player);
+
         return player.hasEffect(MobEffects.WATER_BREATHING)
                 || player.hasEffect(MobEffects.CONDUIT_POWER)
-                || (StickyFoundations.isMekanismLoaded() ? SFMekanismWaterPressureCompat.shouldNegateWaterPressure(player) : false);
+                || mekanismCompat;
     }
 }

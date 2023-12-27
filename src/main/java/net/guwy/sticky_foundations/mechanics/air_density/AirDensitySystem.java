@@ -29,8 +29,8 @@ public class AirDensitySystem {
      * above 256 blocks you can't breathe when you don't run
      */
 
-
-
+    /** Unused
+     * */
     public static class AtmosphericDensity {
 
         public static double GetAtmosphericDensity(int yLevel){
@@ -48,20 +48,16 @@ public class AirDensitySystem {
      */
     public static class BreathingAltitudes {
 
-        static final double OXYGEN_CAPACITY = 100;
-        static double OXYGEN_SUPPLY = OXYGEN_CAPACITY;
+        static final Supplier<Double> OXYGEN_CAPACITY = SFConfigs.Client.AIR_CAPACITY;
+        static double OXYGEN_SUPPLY = OXYGEN_CAPACITY.get();
 
-        /** Will use a static value for 64 and below
-         * Will use the same curve between 128 and 256 for anything above as well
-         */
-        private static final double OXYGEN_REGENERATION_AT_64_AND_BELOW = 10;
-        private static final double OXYGEN_REGENERATION_AT_128 = 5;
-        private static final double OXYGEN_REGENERATION_AT_256 = 2;
+        private static final Supplier<Double> IDLE_CONSUMPTION = SFConfigs.Client.AIR_CONSUMPTION_IDLE;
+        private static final Supplier<Double> RUNNING_CONSUMPTION = SFConfigs.Client.AIR_EXTRA_CONSUMPTION_RUNNING;
+        private static final Supplier<Integer> ALT_MAX_REGEN = SFConfigs.Client.AIR_MAX_ALT_FOR_MAX_REGEN;
+        private static final Supplier<Integer> ALT_MAX_RUNNING = SFConfigs.Client.AIR_MAX_ALT_FOR_RUNNING_REGEN;
+        private static final Supplier<Integer> ALT_MAX_IDLE = SFConfigs.Client.AIR_MAX_ALT_FOR_IDLE_REGEN;
+        private static final Supplier<Integer> ALT_NO_REGEN = SFConfigs.Client.AIR_ALT_FOR_NO_REGEN;
 
-        private static final double OXYGEN_CONSUMPTION_BY_DEFAULT = 2;
-        private static final double EXTRA_OXYGEN_CONSUMED_WHEN_RUNNING = 3;
-
-        private static final double POINT_0 = 128 + (128 * OXYGEN_REGENERATION_AT_128 / (OXYGEN_REGENERATION_AT_128 - OXYGEN_REGENERATION_AT_256)); // The height at which the oxygen regen becomes 0
         private static final Supplier<Boolean> SHOULD_OXYGEN_SYSTEM_WORK = SFConfigs.Client.ACTIVATE_BREATHABLE_AIR_MECHANICS;
 
 
@@ -76,7 +72,7 @@ public class AirDensitySystem {
                         && player.getLevel().dimension() == Level.OVERWORLD){
 
                     // Don't work when unnecessary or when underwater
-                    if(player.getY() >= 128 || OXYGEN_SUPPLY < 100
+                    if(player.getY() >= ALT_MAX_RUNNING.get() || OXYGEN_SUPPLY < OXYGEN_CAPACITY.get()
                             && !player.isUnderWater()){
 
                         // Handle oxygen consumption
@@ -84,6 +80,7 @@ public class AirDensitySystem {
 
                         // Handle oxygen regen
                         AddOxygen(GetOxygenRegen(player.getY()));
+                        player.sendSystemMessage(Component.literal("Air Regen: " + GetOxygenRegen(player.getY())));
 
                         // Handle onscreen messages
                         // Onscreen messages are handled with the oxygen consumption
@@ -92,7 +89,7 @@ public class AirDensitySystem {
                 } else {
 
                     // Fill the oxygen supply if the player isn't in overwold or the config is false
-                    OXYGEN_SUPPLY = OXYGEN_CAPACITY;
+                    OXYGEN_SUPPLY = OXYGEN_CAPACITY.get();
                 }
             }
         }
@@ -100,7 +97,7 @@ public class AirDensitySystem {
 
 
         private static void AddOxygen(double val){
-            OXYGEN_SUPPLY = Math.max(0, Math.min( OXYGEN_CAPACITY, OXYGEN_SUPPLY + val));
+            OXYGEN_SUPPLY = Math.max(0, Math.min( OXYGEN_CAPACITY.get(), OXYGEN_SUPPLY + val));
         }
 
 
@@ -108,17 +105,30 @@ public class AirDensitySystem {
         private static double GetOxygenRegen(double yLevel){
             double val = 0;
 
-            if(yLevel < 64){
+            int altMaxRegen = ALT_MAX_REGEN.get(),
+            altMaxRunning = Math.max(altMaxRegen, ALT_MAX_RUNNING.get()),
+            altMaxIdle = Math.max(altMaxRunning, ALT_MAX_IDLE.get()),
+            altMax = Math.max(altMaxIdle, ALT_NO_REGEN.get());
+            double idleConsumption = IDLE_CONSUMPTION.get(),
+            runningConsumption = idleConsumption + RUNNING_CONSUMPTION.get();
 
-                val = 10;
-            } else if(yLevel < 128){
+            if (yLevel < altMaxRegen){
+                val = runningConsumption * 4;
+            }
 
-                val = OXYGEN_REGENERATION_AT_64_AND_BELOW - ((yLevel - 64) / 64 * (OXYGEN_REGENERATION_AT_64_AND_BELOW - OXYGEN_REGENERATION_AT_128));
-            } else if(yLevel < POINT_0){
+            else if (yLevel < altMaxRunning){
+                val = map(yLevel, altMaxRegen, altMaxRunning, 10, runningConsumption);
+            }
 
-                val = OXYGEN_REGENERATION_AT_128 - ((yLevel - 128) / (POINT_0 - 128) * OXYGEN_REGENERATION_AT_128);
-            } else {
+            else if (yLevel < altMaxIdle){
+                val = map(yLevel, altMaxRunning, altMaxIdle, runningConsumption, idleConsumption);
+            }
 
+            else if (yLevel < altMax){
+                val = map(yLevel, altMaxIdle, altMax, idleConsumption, 0);
+            }
+
+            else {
                 val = 0;
             }
 
@@ -133,12 +143,10 @@ public class AirDensitySystem {
             double consumption;
 
             // Base consumption
-            consumption = OXYGEN_CONSUMPTION_BY_DEFAULT;
+            consumption = IDLE_CONSUMPTION.get();
 
             // Extra consumption when running
-            if(player.isSprinting()) consumption += EXTRA_OXYGEN_CONSUMED_WHEN_RUNNING;
-
-
+            if(player.isSprinting()) consumption += RUNNING_CONSUMPTION.get();
 
             // Consumption negation with vanilla features
             if(player.hasEffect(MobEffects.WATER_BREATHING)
@@ -172,14 +180,8 @@ public class AirDensitySystem {
                 }
             }
 
-
-
-
-
             // Handle onscreen messages
             if(consumption > 0) HandleOnScreenMessages(player);
-
-
 
             return consumption;
         }
@@ -195,6 +197,14 @@ public class AirDensitySystem {
             else if (playerY > 128 && player.isSprinting()){
                 SFMessagesOnDisplay.addNewMessage(Component.translatable("onscreen_message.sticky_foundations.thin_air.low_air").getString());
             }
+        }
+
+
+
+        /** Map function from Arduino*/
+        private static double map(double x, double in_min, double in_max, double out_min, double out_max)
+        {
+            return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
         }
     }
 }

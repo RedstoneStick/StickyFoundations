@@ -20,7 +20,7 @@ public class TunnelVisionOverlay {
     public static final IGuiOverlay TUNNEL_VISION_OVERLAY = (((gui, poseStack, partialTick, screenWidth, screenHeight) -> {
 
         // Only display when the oxygen isn't full
-        if(AirDensitySystem.BreathingAltitudes.OXYGEN_SUPPLY < AirDensitySystem.BreathingAltitudes.OXYGEN_CAPACITY){
+        if(AirDensitySystem.BreathingAltitudes.OXYGEN_SUPPLY < AirDensitySystem.BreathingAltitudes.OXYGEN_CAPACITY.get()){
 
             RenderSystem.enableBlend();
             RenderSystem.setShader(GameRenderer::getPositionTexShader);
@@ -32,7 +32,7 @@ public class TunnelVisionOverlay {
 
             // Render tunnel vision
 
-            double oxygenPercentage = AirDensitySystem.BreathingAltitudes.OXYGEN_SUPPLY / AirDensitySystem.BreathingAltitudes.OXYGEN_CAPACITY;
+            double oxygenPercentage = AirDensitySystem.BreathingAltitudes.OXYGEN_SUPPLY / AirDensitySystem.BreathingAltitudes.OXYGEN_CAPACITY.get();
             int zoom = (int) (MAX_ZOOM * oxygenPercentage);
 
             int xPos = 0 - zoom;

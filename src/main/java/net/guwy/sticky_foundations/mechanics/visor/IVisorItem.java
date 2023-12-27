@@ -51,7 +51,7 @@ public interface IVisorItem {
 
 
     /** Passes it to the VisorWearTick class for
-     * easier on the yes programming in here
+     * easier programming with the interface
      */
     default void ProcessVisorGunk(Player player){
         VisorWearTick.process(player);
@@ -147,24 +147,7 @@ public interface IVisorItem {
                 //Lazy Animation :D
                 player.swing(InteractionHand.MAIN_HAND, true);
 
-                // Player soundPlayer = new Player(player.getLevel(), player.getOnPos(), 0, player.getGameProfile(), null) {
-                //     @Override
-                //     public boolean isSpectator() {
-                //         return false;
-                //     }
-                //     @Override
-                //     public boolean isCreative() {
-                //         return false;
-                //     }
-                // };
-                // soundPlayer.playSound(SoundEvents.ARMOR_EQUIP_LEATHER, 1, 0.8f);
-                // soundPlayer.remove(Entity.RemovalReason.DISCARDED);
-
                 player.level.playSound(null, player, SoundEvents.ARMOR_EQUIP_LEATHER, SoundSource.PLAYERS, 1, 00.8f);
-
-                ServerPlayer serverPlayer = (ServerPlayer) player;
-
-                //serverPlayer.playSound(SoundEvents.ARMOR_EQUIP_LEATHER, 1, 0.8f);
             }
 
 

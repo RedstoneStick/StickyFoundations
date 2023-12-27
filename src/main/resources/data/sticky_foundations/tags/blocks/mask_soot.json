@@ -3,5 +3,9 @@
   "values": [
     "minecraft:basalt",
     "minecraft:coal_block"
+  ],
+  "optional": [
+    "mekanism:block_charcoal",
+    "immersiveengineering:coke"
   ]
 }
