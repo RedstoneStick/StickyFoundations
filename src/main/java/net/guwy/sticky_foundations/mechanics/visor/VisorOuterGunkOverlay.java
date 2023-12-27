@@ -4,6 +4,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.guwy.sticky_foundations.StickyFoundations;
 import net.guwy.sticky_foundations.index.SFConfigs;
+import net.guwy.sticky_foundations.index.SFTags;
 import net.minecraft.client.CameraType;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiComponent;
@@ -78,7 +79,8 @@ public class VisorOuterGunkOverlay {
                 Player player = Minecraft.getInstance().player;
                 ItemStack itemStack = player.getItemBySlot(EquipmentSlot.HEAD);
 
-                if(itemStack.getItem() instanceof IVisorItem){
+                if(itemStack.getItem() instanceof IVisorItem
+                        || itemStack.is(SFTags.Items.VISORS_THAT_GET_DIRTY)){
 
                     RenderSystem.enableBlend();
                     RenderSystem.setShader(GameRenderer::getPositionTexShader);

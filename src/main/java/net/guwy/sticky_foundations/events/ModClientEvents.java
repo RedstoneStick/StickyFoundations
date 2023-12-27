@@ -14,6 +14,7 @@ import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.LogicalSide;
@@ -41,6 +42,11 @@ public class ModClientEvents {
         @SubscribeEvent
         public static void onKeyInput(InputEvent.Key event){
             OnKeyInputHandler.init(event);
+        }
+
+        @SubscribeEvent
+        public static void onTooltipDisplay(ItemTooltipEvent event){
+            TooltipEventHandler.init(event);
         }
 
     }

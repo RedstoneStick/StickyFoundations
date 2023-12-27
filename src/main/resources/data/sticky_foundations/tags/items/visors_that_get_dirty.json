@@ -1,0 +1,34 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:dirt",
+    {
+      "id": "create:goggles",
+      "required": false
+    },
+    {
+      "id": "create:copper_diving_helmet",
+      "required": false
+    },
+    {
+      "id": "create:netherite_diving_helmet",
+      "required": false
+    },
+    {
+      "id": "mekanism:hazmat_mask",
+      "required": false
+    },
+    {
+      "id": "mekanism:scuba_mask",
+      "required": false
+    },
+    {
+      "id": "mekanism:mekasuit_helmet",
+      "required": false
+    },
+    {
+      "id": "pneumaticcraft:pneumatic_helmet",
+      "required": false
+    }
+  ]
+}

@@ -10,5 +10,7 @@ public class PlayerServerTickEventsOrganizer {
     public static void init(TickEvent.PlayerTickEvent event){
         int counter = event.player.tickCount;
         Player player = event.player;
+
+        VisorWearTick.process(player);
     }
 }

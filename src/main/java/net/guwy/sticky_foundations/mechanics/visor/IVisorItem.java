@@ -18,9 +18,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-/** Make sure to put "ProcessVisorGunk" in "onArmorTick"
- * And "VisorGunkTooltip" to "appendHoverText"
+/** Deprecated: add the item you want to have the mechanic into the stickyfoundations:visors_that_get_dirty tag instead
  */
+@Deprecated
 public interface IVisorItem {
 
 
@@ -50,11 +50,11 @@ public interface IVisorItem {
     }
 
 
-    /** Passes it to the VisorWearTick class for
-     * easier programming with the interface
+    /** Doesn't do anything since the interface has been deprecated,
+     * all of is being processed automatically now
      */
     default void ProcessVisorGunk(Player player){
-        VisorWearTick.process(player);
+        //VisorWearTick.process(player);
     }
 
 

@@ -2,8 +2,10 @@ package net.guwy.sticky_foundations.mechanics.visor;
 
 import net.guwy.sticky_foundations.index.SFTags;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -29,7 +31,8 @@ public class VisorWearTick {
             ItemStack itemStack = player.getItemBySlot(EquipmentSlot.HEAD);
             Level level = player.getLevel();
 
-            if(itemStack.getItem() instanceof IVisorItem){
+            if(itemStack.getItem() instanceof IVisorItem
+                    || itemStack.is(SFTags.Items.VISORS_THAT_GET_DIRTY)){
 
                 // Get the block right under the player
                 BlockPos pos = new BlockPos(player.getX(), player.getY() - 0.1, player.getZ());
@@ -87,13 +90,13 @@ public class VisorWearTick {
                 }
 
                 // Debug
-                // player.sendSystemMessage(Component.literal("sand: " + IVisorItem.getOuterSand(itemStack)));
-                // player.sendSystemMessage(Component.literal("dirt: " + IVisorItem.getOuterDirt(itemStack)));
-                // player.sendSystemMessage(Component.literal("mud: " + IVisorItem.getOuterMud(itemStack)));
-                // player.sendSystemMessage(Component.literal("sooth: " + IVisorItem.getOuterSoot(itemStack)));
-                // player.sendSystemMessage(Component.literal("water: " + IVisorItem.getOuterWater(itemStack)));
-                // player.sendSystemMessage(Component.literal("block: " + onBlock.getBlock().getName().getString()));
-                // player.sendSystemMessage(Component.literal("-----"));
+                 player.sendSystemMessage(Component.literal("sand: " + IVisorItem.getOuterSand(itemStack)));
+                 player.sendSystemMessage(Component.literal("dirt: " + IVisorItem.getOuterDirt(itemStack)));
+                 player.sendSystemMessage(Component.literal("mud: " + IVisorItem.getOuterMud(itemStack)));
+                 player.sendSystemMessage(Component.literal("sooth: " + IVisorItem.getOuterSoot(itemStack)));
+                 player.sendSystemMessage(Component.literal("water: " + IVisorItem.getOuterWater(itemStack)));
+                 player.sendSystemMessage(Component.literal("block: " + onBlock.getBlock().getName().getString()));
+                 player.sendSystemMessage(Component.literal("-----"));
             }
         }
     }
