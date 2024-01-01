@@ -23,28 +23,30 @@ public class VisorGunk {
     /** Put "pTooltipComponents.addAll(IVisorItem.VisorGunkTooltip(pStack));"
      * in a items append hover text to display visor gunk tooltips
      */
-    public static List<Component> VisorGunkTooltip(ItemStack pStack, ItemTooltipEvent event, int index){
-        List<Component> pTooltipComponents = new ArrayList<Component>();
+    public static List<Component> VisorGunkTooltip(ItemStack pStack, List<Component> pTooltipComponents, int index){
+        List<Component> newTooltipComponents = new ArrayList<Component>();
 
         double totalVisorGunk = VisorGunk.getOuterGunkSum(pStack);
         double visorWater = VisorGunk.getOuterWater(pStack);
 
         if(visorWater > 0){
-            pTooltipComponents.add(Component.translatable("tooltip.sticky_foundations.visor.outer.water"));
+            newTooltipComponents.add(Component.translatable("tooltip.sticky_foundations.visor.outer.water"));
         } else if (totalVisorGunk > 0.2){
-            pTooltipComponents.add(Component.translatable("tooltip.sticky_foundations.visor.outer.gunk"));
+            newTooltipComponents.add(Component.translatable("tooltip.sticky_foundations.visor.outer.gunk"));
         }
 
         if(visorWater > 0 || totalVisorGunk > 0.2){
-            pTooltipComponents.add(Component.translatable("tooltip.sticky_foundations.visor.outer.wipe"));
+            newTooltipComponents.add(Component.translatable("tooltip.sticky_foundations.visor.outer.wipe"));
 
             // Adds a space if there was already text in the existing line to make the tooltip more noticable
-            if(event.getToolTip().size() > index){
-                pTooltipComponents.add(Component.literal(""));
+            if(pTooltipComponents.size() > index){
+                if(pTooltipComponents.get(index).getString() != ""){
+                    newTooltipComponents.add(Component.literal(""));
+                }
             }
         }
 
-        return pTooltipComponents;
+        return newTooltipComponents;
     }
 
 
