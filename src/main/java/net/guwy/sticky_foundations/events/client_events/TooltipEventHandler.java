@@ -12,7 +12,7 @@ public class TooltipEventHandler {
 
         // Visor Gunk Tooltip
         if(itemStack.is(SFTags.Items.VISORS_THAT_GET_DIRTY)){
-            event.getToolTip().addAll(IVisorItem.VisorGunkTooltip(itemStack));
+            event.getToolTip().addAll(0, IVisorItem.VisorGunkTooltip(itemStack));
         }
     }
 }

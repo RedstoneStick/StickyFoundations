@@ -80,7 +80,6 @@ public class AirDensitySystem {
 
                         // Handle oxygen regen
                         AddOxygen(GetOxygenRegen(player.getY()));
-                        player.sendSystemMessage(Component.literal("Air Regen: " + GetOxygenRegen(player.getY())));
 
                         // Handle onscreen messages
                         // Onscreen messages are handled with the oxygen consumption
