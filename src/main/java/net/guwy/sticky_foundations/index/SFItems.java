@@ -1,10 +1,7 @@
 package net.guwy.sticky_foundations.index;
 
 import net.guwy.sticky_foundations.StickyFoundations;
-import net.guwy.sticky_foundations.content.items.AdminArmorItem;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;

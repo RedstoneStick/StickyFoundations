@@ -79,32 +79,31 @@ public class VisorOuterGunkOverlay {
                 Player player = Minecraft.getInstance().player;
                 ItemStack itemStack = player.getItemBySlot(EquipmentSlot.HEAD);
 
-                if(itemStack.getItem() instanceof IVisorItem
-                        || itemStack.is(SFTags.Items.VISORS_THAT_GET_DIRTY)){
+                if(itemStack.is(SFTags.Items.VISORS_THAT_GET_DIRTY)){
 
                     RenderSystem.enableBlend();
                     RenderSystem.setShader(GameRenderer::getPositionTexShader);
 
 
                     //Soot Overlay
-                    GeneralRender(poseStack, screenWidth, screenHeight, IVisorItem.getOuterSoot(itemStack),
+                    GeneralRender(poseStack, screenWidth, screenHeight, VisorGunk.getOuterSoot(itemStack),
                             SOOT_0_TEXTURE, SOOT_1_TEXTURE, SOOT_2_TEXTURE, SOOT_3_TEXTURE, SOOT_4_TEXTURE);
 
                     //Sand Overlay
-                    GeneralRender(poseStack, screenWidth, screenHeight, IVisorItem.getOuterSand(itemStack),
+                    GeneralRender(poseStack, screenWidth, screenHeight, VisorGunk.getOuterSand(itemStack),
                             SAND_0_TEXTURE, SAND_1_TEXTURE, SAND_2_TEXTURE, SAND_3_TEXTURE, SAND_4_TEXTURE);
 
                     //Mud Overlay
-                    GeneralRender(poseStack, screenWidth, screenHeight, IVisorItem.getOuterMud(itemStack),
+                    GeneralRender(poseStack, screenWidth, screenHeight, VisorGunk.getOuterMud(itemStack),
                             MUD_0_TEXTURE, MUD_1_TEXTURE, MUD_2_TEXTURE, MUD_3_TEXTURE, MUD_4_TEXTURE);
 
                     //Dirt Overlay
-                    GeneralRender(poseStack, screenWidth, screenHeight, IVisorItem.getOuterDirt(itemStack),
+                    GeneralRender(poseStack, screenWidth, screenHeight, VisorGunk.getOuterDirt(itemStack),
                             DIRT_0_TEXTURE, DIRT_1_TEXTURE, DIRT_2_TEXTURE, DIRT_3_TEXTURE, DIRT_4_TEXTURE);
 
                     //Water Overlay
                     if(!player.isUnderWater()) {
-                        WaterRender(poseStack, screenWidth, screenHeight, IVisorItem.getOuterWater(itemStack),
+                        WaterRender(poseStack, screenWidth, screenHeight, VisorGunk.getOuterWater(itemStack),
                                 WATER_BASE_TEXTURE, WATER_DROPLETS_TEXTURE);
                     }
 

@@ -5,6 +5,7 @@ import net.guwy.sticky_foundations.client.onscreen_message.SFMessagesOnDisplay;
 import net.guwy.sticky_foundations.compat.create.SFCreateAirDensityCompat;
 import net.guwy.sticky_foundations.compat.mekanism.SFMekanismAirDensityCompat;
 import net.guwy.sticky_foundations.index.SFConfigs;
+import net.guwy.sticky_foundations.utils.NumberUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffects;
@@ -116,15 +117,15 @@ public class AirDensitySystem {
             }
 
             else if (yLevel < altMaxRunning){
-                val = map(yLevel, altMaxRegen, altMaxRunning, 10, runningConsumption);
+                val = NumberUtils.map.mapDouble(yLevel, altMaxRegen, altMaxRunning, 10, runningConsumption);
             }
 
             else if (yLevel < altMaxIdle){
-                val = map(yLevel, altMaxRunning, altMaxIdle, runningConsumption, idleConsumption);
+                val = NumberUtils.map.mapDouble(yLevel, altMaxRunning, altMaxIdle, runningConsumption, idleConsumption);
             }
 
             else if (yLevel < altMax){
-                val = map(yLevel, altMaxIdle, altMax, idleConsumption, 0);
+                val = NumberUtils.map.mapDouble(yLevel, altMaxIdle, altMax, idleConsumption, 0);
             }
 
             else {
@@ -196,14 +197,6 @@ public class AirDensitySystem {
             else if (playerY > 128 && player.isSprinting()){
                 SFMessagesOnDisplay.addNewMessage(Component.translatable("onscreen_message.sticky_foundations.thin_air.low_air").getString());
             }
-        }
-
-
-
-        /** Map function from Arduino*/
-        private static double map(double x, double in_min, double in_max, double out_min, double out_max)
-        {
-            return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
         }
     }
 }

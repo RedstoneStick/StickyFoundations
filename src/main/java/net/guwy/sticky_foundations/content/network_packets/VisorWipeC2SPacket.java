@@ -1,13 +1,9 @@
 package net.guwy.sticky_foundations.content.network_packets;
 
-import com.mojang.brigadier.ParseResults;
-import net.guwy.sticky_foundations.mechanics.visor.IVisorItem;
-import net.minecraft.commands.CommandSourceStack;
+import net.guwy.sticky_foundations.mechanics.visor.VisorGunk;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.level.block.CommandBlock;
 import net.minecraftforge.network.NetworkEvent;
 
 import java.util.function.Supplier;
@@ -31,7 +27,7 @@ public class VisorWipeC2SPacket {
             ServerPlayer player = context.getSender();
             ServerLevel level = player.getLevel();
 
-            IVisorItem.WipeVisor(player);
+            VisorGunk.WipeVisor(player);
         });
         return true;
     }

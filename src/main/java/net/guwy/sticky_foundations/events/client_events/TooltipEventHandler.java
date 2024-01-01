@@ -1,9 +1,8 @@
 package net.guwy.sticky_foundations.events.client_events;
 
 import net.guwy.sticky_foundations.index.SFTags;
-import net.guwy.sticky_foundations.mechanics.visor.IVisorItem;
+import net.guwy.sticky_foundations.mechanics.visor.VisorGunk;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 
 public class TooltipEventHandler {
@@ -12,7 +11,7 @@ public class TooltipEventHandler {
 
         // Visor Gunk Tooltip
         if(itemStack.is(SFTags.Items.VISORS_THAT_GET_DIRTY)){
-            event.getToolTip().addAll(0, IVisorItem.VisorGunkTooltip(itemStack));
+            event.getToolTip().addAll(1, VisorGunk.VisorGunkTooltip(itemStack, event, 1));
         }
     }
 }

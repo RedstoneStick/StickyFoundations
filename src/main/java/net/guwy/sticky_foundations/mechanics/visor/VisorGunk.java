@@ -1,18 +1,14 @@
 package net.guwy.sticky_foundations.mechanics.visor;
 
-import dev.architectury.event.events.client.ClientTooltipEvent;
 import net.guwy.sticky_foundations.utils.ItemTagUtils;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.protocol.game.ClientboundSoundPacket;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,19 +16,18 @@ import java.util.List;
 
 /** Deprecated: add the item you want to have the mechanic into the stickyfoundations:visors_that_get_dirty tag instead
  */
-@Deprecated
-public interface IVisorItem {
+public class VisorGunk {
 
 
 
     /** Put "pTooltipComponents.addAll(IVisorItem.VisorGunkTooltip(pStack));"
      * in a items append hover text to display visor gunk tooltips
      */
-    static List<Component> VisorGunkTooltip(ItemStack pStack){
+    public static List<Component> VisorGunkTooltip(ItemStack pStack, ItemTooltipEvent event, int index){
         List<Component> pTooltipComponents = new ArrayList<Component>();
 
-        double totalVisorGunk = IVisorItem.getOuterGunkSum(pStack);
-        double visorWater = IVisorItem.getOuterWater(pStack);
+        double totalVisorGunk = VisorGunk.getOuterGunkSum(pStack);
+        double visorWater = VisorGunk.getOuterWater(pStack);
 
         if(visorWater > 0){
             pTooltipComponents.add(Component.translatable("tooltip.sticky_foundations.visor.outer.water"));
@@ -43,7 +38,10 @@ public interface IVisorItem {
         if(visorWater > 0 || totalVisorGunk > 0.2){
             pTooltipComponents.add(Component.translatable("tooltip.sticky_foundations.visor.outer.wipe"));
 
-            pTooltipComponents.add(Component.literal(""));  // Formatting
+            // Adds a space if there was already text in the existing line to make the tooltip more noticable
+            if(event.getToolTip().size() > index){
+                pTooltipComponents.add(Component.literal(""));
+            }
         }
 
         return pTooltipComponents;
@@ -53,7 +51,7 @@ public interface IVisorItem {
     /** Doesn't do anything since the interface has been deprecated,
      * all of is being processed automatically now
      */
-    default void ProcessVisorGunk(Player player){
+    void ProcessVisorGunk(Player player){
         //VisorWearTick.process(player);
     }
 
