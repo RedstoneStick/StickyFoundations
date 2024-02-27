@@ -2,15 +2,16 @@ package net.guwy.sticky_foundations.mechanics.air_density;
 
 import net.guwy.sticky_foundations.StickyFoundations;
 import net.guwy.sticky_foundations.client.onscreen_message.SFMessagesOnDisplay;
-import net.guwy.sticky_foundations.compat.create.SFCreateAirDensityCompat;
-import net.guwy.sticky_foundations.compat.mekanism.SFMekanismAirDensityCompat;
 import net.guwy.sticky_foundations.index.SFConfigs;
+import net.guwy.sticky_foundations.index.SFTags;
 import net.guwy.sticky_foundations.utils.NumberUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.TickEvent;
 
@@ -141,6 +142,7 @@ public class AirDensitySystem {
          */
         private static double GetOxygenConsumption(Player player){
             double consumption;
+            ItemStack helmetStack = player.getItemBySlot(EquipmentSlot.HEAD);
 
             // Base consumption
             consumption = IDLE_CONSUMPTION.get();
@@ -154,31 +156,15 @@ public class AirDensitySystem {
 
                 consumption = 0;
             }
-
             // Consumption negation with built in api supporting helmets
-            else if (player.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof IBreathingMaskAtHighAltitudes){
-
-                IBreathingMaskAtHighAltitudes breathingMask = (IBreathingMaskAtHighAltitudes) player.getItemBySlot(EquipmentSlot.HEAD).getItem();
+            else if (helmetStack.getItem() instanceof IBreathingMaskAtHighAltitudes breathingMask){
 
                 // If the value is true consumption = 0, else just keep as is
                 if(breathingMask.SupplyAirAtHighAltitudesClientCheck(player)) consumption = 0;
             }
 
-            // If all fails check for any mod compatibility
-            else {
-
-                // Consumption negation with create mod
-                if(StickyFoundations.isCreateLoaded()){
-
-                    if(SFCreateAirDensityCompat.shouldNegateAirConsumption(player)) consumption = 0;
-                }
-
-                // Consumption negation with mekanism mod
-                if(StickyFoundations.isMekanismLoaded()){
-
-                    if(SFMekanismAirDensityCompat.shouldNegateAirConsumption(player)) consumption = 0;
-                }
-            }
+            // If all fails check for tag compatability
+            else if (helmetStack.is(SFTags.Items.AIRTIGHT_HELMETS)) consumption = 0;
 
             // Handle onscreen messages
             if(consumption > 0) HandleOnScreenMessages(player);

@@ -1,15 +1,15 @@
 package net.guwy.sticky_foundations.mechanics.water_pressure;
 
-import net.guwy.sticky_foundations.StickyFoundations;
 import net.guwy.sticky_foundations.client.onscreen_message.SFMessagesOnDisplay;
-import net.guwy.sticky_foundations.compat.mekanism.SFMekanismWaterPressureCompat;
 import net.guwy.sticky_foundations.content.network_packets.WaterPressureDamageRequestC2SPacket;
 import net.guwy.sticky_foundations.index.SFConfigs;
 import net.guwy.sticky_foundations.index.SFNetworking;
+import net.guwy.sticky_foundations.index.SFTags;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
@@ -112,11 +112,8 @@ public class WaterPressureSystem {
 
 
     private static boolean isPlayerPressureProof(Player player){
-        boolean mekanismCompat = false;
-        if(StickyFoundations.isMekanismLoaded()) mekanismCompat = SFMekanismWaterPressureCompat.shouldNegateWaterPressure(player);
-
         return player.hasEffect(MobEffects.WATER_BREATHING)
                 || player.hasEffect(MobEffects.CONDUIT_POWER)
-                || mekanismCompat;
+                || player.getItemBySlot(EquipmentSlot.HEAD).is(SFTags.Items.AIRTIGHT_HELMETS);
     }
 }

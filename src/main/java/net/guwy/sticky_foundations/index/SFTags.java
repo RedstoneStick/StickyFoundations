@@ -33,6 +33,7 @@ public class SFTags {
 
     public static class Items {
         public static final TagKey<Item> VISORS_THAT_GET_DIRTY = tag("visors_that_get_dirty");
+        public static final TagKey<Item> AIRTIGHT_HELMETS = tag("airtight_helmets");
 
 
 

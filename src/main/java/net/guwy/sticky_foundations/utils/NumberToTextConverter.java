@@ -3,9 +3,12 @@ package net.guwy.sticky_foundations.utils;
 import net.minecraft.network.chat.Component;
 
 public class NumberToTextConverter {
-    private static final int BILLION = 1000000000;
-    private static final int MILLION = 1000000;
-    private static final int THOUSAND = 1000;
+    private static final int QUINTILLION = (int) Math.pow(10, 18);
+    private static final int QUADRILLION = (int) Math.pow(10, 15);
+    private static final int TRILLION = (int) Math.pow(10, 12);
+    private static final int BILLION = (int) Math.pow(10, 9);
+    private static final int MILLION = (int) Math.pow(10, 6);
+    private static final int THOUSAND = (int) Math.pow(10, 3);
 
 
     /** The naming didn't made sense,
@@ -16,28 +19,57 @@ public class NumberToTextConverter {
         return BigNumberToText(energy);
     }
 
-    public static String BigNumberToText(int energy){
+    public static String BigNumberToText(int number){
+        return BigLongToText(number);
+    }
+
+    public static String BigLongToText(long number){
         String text;
         double val;
+        long numAbs = Math.abs(number);
 
-        if(energy >= BILLION){
-            val = (double) energy / BILLION;
+        if(numAbs >= QUINTILLION){
+            val = (double) number / QUINTILLION;
             val = (Math.floor(val * 10)) / 10;
 
             text = Double.toString(val);
-            text = text + "B";
+            text = text + "E";
         }
 
-        else if(energy >= MILLION){
-            val = (double) energy / MILLION;
+        else if(numAbs >= QUADRILLION){
+            val = (double) number / QUADRILLION;
+            val = (Math.floor(val * 10)) / 10;
+
+            text = Double.toString(val);
+            text = text + "P";
+        }
+
+        else if(numAbs >= TRILLION){
+            val = (double) number / TRILLION;
+            val = (Math.floor(val * 10)) / 10;
+
+            text = Double.toString(val);
+            text = text + "T";
+        }
+
+        else if(numAbs >= BILLION){
+            val = (double) number / BILLION;
+            val = (Math.floor(val * 10)) / 10;
+
+            text = Double.toString(val);
+            text = text + "G";
+        }
+
+        else if(numAbs >= MILLION){
+            val = (double) number / MILLION;
             val = (Math.floor(val * 10)) / 10;
 
             text = Double.toString(val);
             text = text + "M";
         }
 
-        else if(energy >= THOUSAND){
-            val = (double) energy / THOUSAND;
+        else if(numAbs >= THOUSAND){
+            val = (double) number / THOUSAND;
             val = (Math.floor(val * 10)) / 10;
 
             text = Double.toString(val);
@@ -45,7 +77,7 @@ public class NumberToTextConverter {
         }
 
         else {
-            val = energy;
+            val = number;
             text = Integer.toString((int) val);
         }
         return text;

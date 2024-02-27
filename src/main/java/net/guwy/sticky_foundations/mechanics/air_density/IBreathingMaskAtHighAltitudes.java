@@ -8,9 +8,9 @@ import net.minecraft.world.entity.player.Player;
 /** Only works with helmets */
 public interface IBreathingMaskAtHighAltitudes {
 
-    /** Called every tick on the client side
+    /** Called every tick on the client side when air density system checks for helmets.
      *
-     * if you implement like an air supply, you can handle the decreasing in here
+     * If you implement an air supply, you can handle the decreasing in here
      */
     default boolean SupplyAirAtHighAltitudesClientCheck(Player clientPlayer){
         return true;

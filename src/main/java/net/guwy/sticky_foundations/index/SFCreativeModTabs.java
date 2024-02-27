@@ -7,7 +7,7 @@ public class SFCreativeModTabs {
     public static final CreativeModeTab MAIN = new CreativeModeTab("sticky_foundations_tab") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(SFMinerals.URANIUM_ORE.get());
+            return new ItemStack(SFMinerals.RAW_TITANIUM.get());
         }
     };
 }

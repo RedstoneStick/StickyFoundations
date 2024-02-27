@@ -1,0 +1,150 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:dirt",
+    {
+      "id": "powersuits:powerarmor_head",
+      "required": false
+    },
+    {
+      "id": "fallout_inspired_power_armor:t_5_1_helmet",
+      "required": false
+    },
+    {
+      "id": "fallout_inspired_power_armor:xo_2_helmet",
+      "required": false
+    },
+    {
+      "id": "fallout_inspired_power_armor:xo_1_helmet",
+      "required": false
+    },
+    {
+      "id": "fallout_inspired_power_armor:t_45_helmet",
+      "required": false
+    },
+    {
+      "id": "fallout_inspired_power_armor:x_03_helmet",
+      "required": false
+    },
+    {
+      "id": "fallout_inspired_power_armor:t_60_helmet",
+      "required": false
+    },
+    {
+      "id": "fallout_inspired_power_armor:ranger_combat_armor_helmet",
+      "required": false
+    },
+    {
+      "id": "fallout_inspired_power_armor:advanced_power_armor_helmet",
+      "required": false
+    },
+    {
+      "id": "fallout_inspired_power_armor:t_51_laser_helmet_helmet",
+      "required": false
+    },
+    {
+      "id": "fallout_inspired_power_armor:franks_helmet_helmet",
+      "required": false
+    },
+    {
+      "id": "fallout_inspired_power_armor:enclave_x_02_paintjob_helmet",
+      "required": false
+    },
+    {
+      "id": "fallout_inspired_power_armor:x_02_red_rocket_paintjob_helmet",
+      "required": false
+    },
+    {
+      "id": "fallout_inspired_power_armor:t_60outcast_paintjob_helmet",
+      "required": false
+    },
+    {
+      "id": "fallout_inspired_power_armor:reclaimed_t_51_helmet",
+      "required": false
+    },
+    {
+      "id": "fallout_inspired_power_armor:institute_x_03_helmet",
+      "required": false
+    },
+    {
+      "id": "fallout_inspired_power_armor:chief_t_51_helmet",
+      "required": false
+    },
+    {
+      "id": "fallout_inspired_power_armor:the_finale_helmet",
+      "required": false
+    },
+    {
+      "id": "fallout_inspired_power_armor:ryt_51_helmet",
+      "required": false
+    },
+    {
+      "id": "fallout_inspired_power_armor:ryt_45_helmet",
+      "required": false
+    },
+    {
+      "id": "fallout_inspired_power_armor:tesla_x_01_helmet",
+      "required": false
+    },
+    {
+      "id": "fallout_inspired_power_armor:enclave_x_02_orange_helmet",
+      "required": false
+    },
+    {
+      "id": "fallout_inspired_power_armor:t_51_makeshift_helmet",
+      "required": false
+    },
+    {
+      "id": "mekanism:hazmat_mask",
+      "required": false
+    },
+    {
+      "id": "mekanism:scuba_mask",
+      "required": false
+    },
+    {
+      "id": "mekanism:mekasuit_helmet",
+      "required": false
+    },
+    {
+      "id": "thinair:respirator",
+      "required": false
+    },
+    {
+      "id": "create:copper_diving_helmet",
+      "required": false
+    },
+    {
+      "id": "create:netherite_diving_helmet",
+      "required": false
+    },
+    {
+      "id": "ad_astra:space_helmet",
+      "required": false
+    },
+    {
+      "id": "ad_astra:netherite_space_helmet",
+      "required": false
+    },
+    {
+      "id": "ad_astra:jet_suit_helmet",
+      "required": false
+    },
+    {
+      "id": "pneumaticcraft:pneumatic_helmet",
+      "required": false
+    },
+    {
+      "id": "beyond_earth:space_helmet",
+      "required": false
+    },
+    {
+      "id": "beyond_earth:netherite_space_helmet",
+      "required": false
+    },
+    {
+      "id": "beyond_earth:jet_helmet",
+      "required": false
+    }
+  ]
+}

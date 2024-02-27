@@ -68,7 +68,7 @@ Hopefully works as intended
     side="BOTH"
 [[dependencies.sticky_foundations]]
     modId="create"
-    mandatory=true
+    mandatory=false
     versionRange="[0.5.1.c,)"
     ordering="NONE"
     side="BOTH"

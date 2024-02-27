@@ -82,12 +82,12 @@ public class SFConfigs {
             AIR_MAX_ALT_FOR_RUNNING_REGEN = BUILDER
                     .comment("The maximum altitude the air regen equals running + idle air consumption")
                     .comment("Cannot be more than Alt for Max Regen")
-                    .define("Alt for Running", 128);
+                    .define("Alt for Running", 256);
             BUILDER.comment(".");
             AIR_MAX_ALT_FOR_IDLE_REGEN = BUILDER
                     .comment("The maximum altitude the air regen equals idle air consumption")
                     .comment("Cannot be more than Alt for Running")
-                    .define("Alt for Idle", 256);
+                    .define("Alt for Idle", 364);
             BUILDER.comment(".");
             AIR_ALT_FOR_NO_REGEN = BUILDER
                     .comment("The maximum altitude the air regen is 0")

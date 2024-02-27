@@ -1,7 +1,6 @@
 package net.guwy.sticky_foundations.index;
 
 import net.guwy.sticky_foundations.StickyFoundations;
-import net.guwy.sticky_foundations.content.network_packets.CreateAirDensitySyncC2SPacket;
 import net.guwy.sticky_foundations.content.network_packets.VisorWipeC2SPacket;
 import net.guwy.sticky_foundations.content.network_packets.WaterPressureDamageRequestC2SPacket;
 import net.minecraft.resources.ResourceLocation;
@@ -31,12 +30,6 @@ public class SFNetworking {
         INSTANCE = net;
 
 
-
-         net.messageBuilder(CreateAirDensitySyncC2SPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
-                 .decoder(CreateAirDensitySyncC2SPacket::new)
-                 .encoder(CreateAirDensitySyncC2SPacket::toBytes)
-                 .consumerMainThread(CreateAirDensitySyncC2SPacket::handle)
-                 .add();
 
         net.messageBuilder(WaterPressureDamageRequestC2SPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
                 .decoder(WaterPressureDamageRequestC2SPacket::new)
