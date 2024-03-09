@@ -1,6 +1,7 @@
 package net.guwy.sticky_foundations;
 
 import com.mojang.logging.LogUtils;
+import net.guwy.sticky_foundations.egg.SpecialItems;
 import net.guwy.sticky_foundations.index.*;
 import net.guwy.sticky_foundations.world.feature.ModConfiguredFeatures;
 import net.guwy.sticky_foundations.world.feature.ModPlacedFeatures;
@@ -29,6 +30,7 @@ public class StickyFoundations {
     // Is mod loaded variables
     private static boolean createLoaded = false;
     private static boolean mekanismLoaded = false;
+    private static boolean pehkuiLoaded = false;
 
 
 
@@ -38,6 +40,9 @@ public class StickyFoundations {
 
         SFItems.register(eventBus);
         SFMinerals.register(eventBus);
+
+        SpecialItems.register(eventBus);
+        SFEntityTypes.register(eventBus);
 
         ModConfiguredFeatures.register(eventBus);
         ModPlacedFeatures.register(eventBus);
@@ -55,6 +60,7 @@ public class StickyFoundations {
         // Is mod loaded checks
         createLoaded = ModList.get().isLoaded("create");
         mekanismLoaded = ModList.get().isLoaded("mekanism");
+        pehkuiLoaded = ModList.get().isLoaded("pehkui");
     }
 
 
@@ -79,5 +85,9 @@ public class StickyFoundations {
     public static boolean isMekanismLoaded()
     {
         return mekanismLoaded;
+    }
+    public static boolean isPehkuiLoaded()
+    {
+        return pehkuiLoaded;
     }
 }

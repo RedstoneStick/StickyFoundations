@@ -179,6 +179,8 @@ dependencies {
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     minecraft 'net.minecraftforge:forge:1.19.2-43.2.21'
 
+    implementation fg.deobf("curse.maven:pehkui-319596:4823467")
+
     //implementation fg.deobf("com.simibubi.create:create-${create_minecraft_version}:${create_version}:slim") { transitive = false }
     //implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${flywheel_minecraft_version}:${flywheel_version}")
     //implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
@@ -189,7 +191,9 @@ dependencies {
     runtimeOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}"))
 
     //implementation fg.deobf("curse.maven:the_one_probe-245211:3965693")
-    implementation fg.deobf("curse.maven:jade-324717:4914105")
+    runtimeOnly fg.deobf("curse.maven:jade-324717:4914105")
+    runtimeOnly fg.deobf("curse.maven:overflowing_bars-852662:4515133")
+    runtimeOnly fg.deobf("curse.maven:puzzle_lib-495476:4600775")
 
     //implementation fg.deobf("curse.maven:mekanism-268560:4385637")
     //implementation fg.deobf("curse.maven:powah-633483:4183078")

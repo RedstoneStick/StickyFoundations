@@ -20,4 +20,15 @@ public class NumberUtils {
             return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
         }
     }
+
+    /**
+     * Quick rounds a number to set decimals
+     * @param num number to process
+     * @param rounding rounding (ex: 0.1, 0.01, 0.5...)
+     * @return rounded number
+     */
+    public static double quickRound(double num, double rounding){
+        double r = Math.pow(rounding, -1);
+        return Math.round(num * r) / r;
+    }
 }

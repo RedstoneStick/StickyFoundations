@@ -3,12 +3,15 @@ package net.guwy.sticky_foundations.events;
 import net.guwy.sticky_foundations.StickyFoundations;
 import net.guwy.sticky_foundations.client.onscreen_message.SFMessagesOnDisplay;
 import net.guwy.sticky_foundations.client.view_bobbing.ViewBobbing;
+import net.guwy.sticky_foundations.egg.redstone_stick.dragon.fangs.DragonFangsRenderer;
 import net.guwy.sticky_foundations.events.client_events.*;
+import net.guwy.sticky_foundations.index.SFEntityTypes;
 import net.guwy.sticky_foundations.index.SFMinerals;
 import net.guwy.sticky_foundations.mechanics.air_density.AirDensitySystem;
 import net.guwy.sticky_foundations.mechanics.water_pressure.WaterPressureSystem;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
@@ -64,6 +67,11 @@ public class ModClientEvents {
         @SubscribeEvent
         public static void onKeyRegister(RegisterKeyMappingsEvent event){
             OnKeyRegisterHandler.init(event);
+        }
+
+        @SubscribeEvent
+        public static void onClientSetup(FMLClientSetupEvent event) {
+            EntityRenderers.register(SFEntityTypes.DRAGON_FANGS.get(), DragonFangsRenderer::new);
         }
 
     }

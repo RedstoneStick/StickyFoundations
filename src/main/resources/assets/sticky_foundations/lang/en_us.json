@@ -181,5 +181,13 @@
 
 
   "key.category.sticky_foundations.main": "Sticky Foundations",
-  "key.sticky_foundations.crawl_key": "Crawl"
+
+
+  "death.attack.dragon_bite": "%1$s was bitten apart by %2$s",
+  "death.attack.dragon_overload": "%1$s overdosed dragon energy exposure",
+  "item.sticky_foundations.dragon_core": "Dragon Core",
+  "item.sticky_foundations.dragon_core.tooltip.state": "Power",
+  "item.sticky_foundations.dragon_core.tooltip.state.depleted": "Depleted",
+  "item.sticky_foundations.dragon_core.tooltip.state.suppressed": "Suppressed",
+  "item.sticky_foundations.dragon_core.tooltip.shift": "Hold <Shift> to display modifiers"
 }
