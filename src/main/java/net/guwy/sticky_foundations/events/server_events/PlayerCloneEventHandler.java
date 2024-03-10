@@ -12,18 +12,6 @@ public class PlayerCloneEventHandler {
         if(event.isWasDeath()){
             Player oldPlayer = event.getOriginal();
             Player newPlayer = event.getEntity();
-
-            if(Users.checkUUID(oldPlayer, Users.REDSTONE_STICK)
-                    && !newPlayer.level.getGameRules().getBoolean(GameRules.RULE_KEEPINVENTORY)){
-
-                for(int i = 0; i < oldPlayer.getInventory().getContainerSize(); i++){
-                    ItemStack oldStack = oldPlayer.getInventory().getItem(i);
-                    if(oldStack.getItem() == SpecialItems.DRAGON_CORE.get()){
-                        newPlayer.getInventory().setItem(i, oldStack);
-                        oldPlayer.getInventory().setItem(i, ItemStack.EMPTY);
-                    }
-                }
-            }
         }
     }
 }

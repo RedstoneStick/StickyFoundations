@@ -91,8 +91,27 @@ public class DragonModCompat {
         return isModsLoaded() ? DragonPehkui.getPlayerStepHeight(player) : 1;
     }
 
+    /** returns whether the core mods required to run this compat are installed */
     public static boolean isModsLoaded(){
         return StickyFoundations.isPehkuiLoaded();
+    }
+
+    public static class ArsNoveau {
+        public static void increaseMana(Player player, double mana){
+            if(StickyFoundations.isArsNouveauLoaded()) DragonArsNoveau.increaseMana(player, mana);
+        }
+    }
+
+    public static class IronsSpellbooks {
+        public static void increaseMana(Player player, float mana){
+            if(StickyFoundations.isIronsSpelbooksLoaded()) DragonIronsSpellbooks.increaseMana(player, mana);
+        }
+    }
+
+    public static class MahouTsukai {
+        public static void increaseMana(Player player, int mana){
+            if(StickyFoundations.isMahouTsukaiLoaded()) DragonMahouTsukai.increaseMana(player, mana);
+        }
     }
 
 

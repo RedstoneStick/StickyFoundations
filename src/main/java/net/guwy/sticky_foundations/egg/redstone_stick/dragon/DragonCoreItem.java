@@ -45,7 +45,7 @@ public class DragonCoreItem extends Item {
         super.inventoryTick(pStack, pLevel, pEntity, pSlotId, pIsSelected);
         if(!pEntity.level.isClientSide){
 
-            if(pEntity instanceof Player player && player.tickCount % 20 == 7 && DragonModCompat.isModsLoaded()){
+            if(DragonModCompat.isModsLoaded() && pEntity instanceof Player player){
                 if(Users.checkUUID(player, Users.REDSTONE_STICK)){
                     CompoundTag nbt = pStack.getTag() != null ? pStack.getTag() : new CompoundTag();
                     int state = nbt.getInt(C_DATA);
@@ -68,6 +68,17 @@ public class DragonCoreItem extends Item {
                 } else {
                     player.hurt(SFDamageSources.DRAGON_OVERLOAD, Float.MAX_VALUE);
                     pLevel.playSound(null, player, SoundEvents.BEACON_ACTIVATE, SoundSource.PLAYERS, 1, 1);
+                }
+
+                if(player.getFoodData().getFoodLevel() > 6){
+                    // Ars noveau
+                    DragonModCompat.ArsNoveau.increaseMana(player, 10);
+
+                    // Iron's spellbooks
+                    DragonModCompat.IronsSpellbooks.increaseMana(player, 1);
+
+                    // Mahou tsukai
+                    DragonModCompat.MahouTsukai.increaseMana(player, 10000);
                 }
             }
         }
@@ -160,5 +171,15 @@ public class DragonCoreItem extends Item {
     @Override
     public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) {
         return oldStack.getItem() != newStack.getItem();
+    }
+
+    @Override
+    public int getEntityLifespan(ItemStack itemStack, Level level) {
+        return 1;
+    }
+
+    @Override
+    public boolean onDroppedByPlayer(ItemStack item, Player player) {
+        return false;
     }
 }
