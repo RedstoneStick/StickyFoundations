@@ -172,14 +172,4 @@ public class DragonCoreItem extends Item {
     public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) {
         return oldStack.getItem() != newStack.getItem();
     }
-
-    @Override
-    public int getEntityLifespan(ItemStack itemStack, Level level) {
-        return 1;
-    }
-
-    @Override
-    public boolean onDroppedByPlayer(ItemStack item, Player player) {
-        return false;
-    }
 }
