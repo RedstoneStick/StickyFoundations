@@ -34,6 +34,7 @@ public class StickyFoundations {
     private static boolean arsNouveauLoaded = false;
     private static boolean ironsSpelbooksLoaded = false;
     private static boolean mahouTsukaiLoaded = false;
+    private static boolean manaNArtificeLoaded = false;
 
 
 
@@ -67,6 +68,7 @@ public class StickyFoundations {
         arsNouveauLoaded = ModList.get().isLoaded("ars_nouveau");
         ironsSpelbooksLoaded = ModList.get().isLoaded("irons_spellbooks");
         mahouTsukaiLoaded = ModList.get().isLoaded("mahoutsukai");
+        manaNArtificeLoaded = ModList.get().isLoaded("mna");
     }
 
 
@@ -107,5 +109,9 @@ public class StickyFoundations {
     public static boolean isMahouTsukaiLoaded()
     {
         return mahouTsukaiLoaded;
+    }
+    public static boolean isManaNArtificeLoaded()
+    {
+        return manaNArtificeLoaded;
     }
 }

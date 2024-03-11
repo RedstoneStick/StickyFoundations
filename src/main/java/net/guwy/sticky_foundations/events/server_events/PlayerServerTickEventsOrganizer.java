@@ -13,9 +13,7 @@ public class PlayerServerTickEventsOrganizer {
 
         VisorWearTick.process(player);
 
-        // every second offset to 7th tick (random offset)
-        if(player.tickCount % 20 == 7){
-            if(DragonModCompat.isModsLoaded()) DragonModCompat.serverTick(player);
-        }
+
+        if(DragonModCompat.isModsLoaded()) DragonModCompat.serverTick(player);
     }
 }

@@ -12,7 +12,9 @@ public class DragonPehkui {
     public static float getPlayerSize(Player player){
         return ScaleTypes.BASE.getScaleData(player).getScale();
     }
-
+    public static float getPlayerTargetSize(Player player){
+        return ScaleTypes.BASE.getScaleData(player).getTargetScale();
+    }
     public static float getPlayerAttack(Player player){
         return ScaleTypes.ATTACK.getScaleData(player).getScale();
     }

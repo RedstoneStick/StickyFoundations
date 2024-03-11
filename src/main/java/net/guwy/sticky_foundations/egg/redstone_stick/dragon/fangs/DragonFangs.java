@@ -1,5 +1,6 @@
 package net.guwy.sticky_foundations.egg.redstone_stick.dragon.fangs;
 
+import net.guwy.sticky_foundations.index.SFDamageSources;
 import net.guwy.sticky_foundations.index.SFEntityTypes;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -11,6 +12,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.EvokerFangs;
 import net.minecraft.world.level.Level;
 
@@ -25,6 +27,7 @@ public class DragonFangs extends EvokerFangs {
     public static final int ATTACK_TRIGGER_TICKS = 14;
     private int warmupDelayTicks;
     public float tilt;
+    public float damage = 8;
     private boolean sentSpikeEvent;
     private int lifeTicks = 22;
     private boolean clientSideAttackStarted;
@@ -38,12 +41,13 @@ public class DragonFangs extends EvokerFangs {
         this.tilt = new Random().nextFloat(45);
     }
 
-    public DragonFangs(Level pLevel, double pX, double pY, double pZ, float pYRot, int pWarmupDelay, LivingEntity pOwner) {
+    public DragonFangs(Level pLevel, double pX, double pY, double pZ, float pYRot, int pWarmupDelay, LivingEntity pOwner, float damage) {
         this(SFEntityTypes.DRAGON_FANGS.get(), pLevel);
         this.warmupDelayTicks = pWarmupDelay;
         this.setOwner(pOwner);
         this.setYRot(pYRot * (180F / (float)Math.PI));
         this.setPos(pX, pY, pZ);
+        this.damage = damage;
     }
 
     protected void defineSynchedData() {
@@ -128,13 +132,16 @@ public class DragonFangs extends EvokerFangs {
         LivingEntity livingentity = this.getOwner();
         if (pTarget.isAlive() && !pTarget.isInvulnerable() && pTarget != livingentity) {
             if (livingentity == null) {
-                pTarget.hurt(DamageSource.MAGIC, 6.0F);
+                pTarget.hurt(DamageSource.MAGIC, damage);
             } else {
                 if (livingentity.isAlliedTo(pTarget)) {
                     return;
                 }
 
-                pTarget.hurt(DamageSource.indirectMagic(this, livingentity), 6.0F);
+                pTarget.hurt(SFDamageSources.DragonBite(this, livingentity), damage);
+                if(this.owner instanceof Player player){
+                    player.getFoodData().eat(Math.round(damage), 0f);
+                }
             }
 
         }

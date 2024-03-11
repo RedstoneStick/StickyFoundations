@@ -43,8 +43,6 @@ public class SFNetworking {
                 .consumerMainThread(VisorWipeC2SPacket::handle)
                 .add();
 
-
-
     }
 
     public static <MSG> void sendToServer(MSG message) {

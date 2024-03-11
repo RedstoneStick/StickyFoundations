@@ -2,17 +2,21 @@ package net.guwy.sticky_foundations.egg.redstone_stick.dragon;
 
 import net.guwy.sticky_foundations.egg.Users;
 import net.guwy.sticky_foundations.index.SFDamageSources;
+import net.guwy.sticky_foundations.index.SFNetworking;
 import net.guwy.sticky_foundations.utils.NumberUtils;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -20,6 +24,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LightLayer;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -43,42 +48,47 @@ public class DragonCoreItem extends Item {
     @Override
     public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
         super.inventoryTick(pStack, pLevel, pEntity, pSlotId, pIsSelected);
-        if(!pEntity.level.isClientSide){
+        if(pEntity instanceof Player player){
+            if(!pEntity.level.isClientSide){
 
-            if(DragonModCompat.isModsLoaded() && pEntity instanceof Player player){
-                if(Users.checkUUID(player, Users.REDSTONE_STICK)){
-                    CompoundTag nbt = pStack.getTag() != null ? pStack.getTag() : new CompoundTag();
-                    int state = nbt.getInt(C_DATA);
+                if(DragonModCompat.isModsLoaded()){
+                    if(Users.checkUUID(player, Users.REDSTONE_STICK)){
+                        CompoundTag nbt = pStack.getTag() != null ? pStack.getTag() : new CompoundTag();
+                        int state = nbt.getInt(C_DATA);
 
-                    // check if the food is low
-                    if(player.getFoodData().getFoodLevel() <= 6){
-                        state = DEPLETED;
-                    } else if (state == DEPLETED){
-                        state = ON_1;
+                        // check if the food is low
+                        if(player.getFoodData().getFoodLevel() <= 6){
+                            state = DEPLETED;
+                        } else if (state == DEPLETED){
+                            state = ON_1;
+                        }
+
+                        nbt.putInt(C_DATA, state);
+                        pStack.setTag(nbt);
+
+
+                        // print state on action bar if holding
+                        if(player.getItemInHand(InteractionHand.MAIN_HAND) == pStack || player.getItemInHand(InteractionHand.OFF_HAND) == pStack){
+                            player.displayClientMessage(Component.literal(getStateText(pStack)), true);
+                        }
+                    } else {
+                        player.hurt(SFDamageSources.DRAGON_OVERLOAD, Float.MAX_VALUE);
+                        pLevel.playSound(null, player, SoundEvents.BEACON_ACTIVATE, SoundSource.PLAYERS, 1, 1);
                     }
 
-                    nbt.putInt(C_DATA, state);
-                    pStack.setTag(nbt);
+                    if(player.getFoodData().getFoodLevel() > 6){
+                        // Ars noveau
+                        DragonModCompat.ArsNoveau.increaseMana(player, 10);
 
+                        // Iron's spellbooks
+                        DragonModCompat.IronsSpellbooks.increaseMana(player, 1);
 
-                    // print state on action bar if holding
-                    if(player.getItemInHand(InteractionHand.MAIN_HAND) == pStack || player.getItemInHand(InteractionHand.OFF_HAND) == pStack){
-                        player.displayClientMessage(Component.literal(getStateText(pStack)), true);
+                        // Mahou tsukai
+                        DragonModCompat.MahouTsukai.increaseMana(player, 10000);
+
+                        // Mana n Artifice
+                        DragonModCompat.ManaNArtifice.restoreMana(player);
                     }
-                } else {
-                    player.hurt(SFDamageSources.DRAGON_OVERLOAD, Float.MAX_VALUE);
-                    pLevel.playSound(null, player, SoundEvents.BEACON_ACTIVATE, SoundSource.PLAYERS, 1, 1);
-                }
-
-                if(player.getFoodData().getFoodLevel() > 6){
-                    // Ars noveau
-                    DragonModCompat.ArsNoveau.increaseMana(player, 10);
-
-                    // Iron's spellbooks
-                    DragonModCompat.IronsSpellbooks.increaseMana(player, 1);
-
-                    // Mahou tsukai
-                    DragonModCompat.MahouTsukai.increaseMana(player, 10000);
                 }
             }
         }
@@ -100,7 +110,11 @@ public class DragonCoreItem extends Item {
 
                 state += pPlayer.isCrouching() ? -1 : +1;
 
-                //if(state == ON_5) pLevel.playSound(null, pPlayer, SoundEvents.BEACON_ACTIVATE, SoundSource.PLAYERS, 1, 1);
+                if(state == ON_5) {
+                    // plays on the feet
+                    pLevel.playSound(null, pPlayer, new SoundEvent(SoundEvents.ENDER_DRAGON_GROWL.getLocation(), 500), SoundSource.PLAYERS, 1, 1.5f);
+                    pLevel.playSound(null, pPlayer.getOnPos().offset(0, 30, 0), SoundEvents.ENDER_DRAGON_GROWL, SoundSource.PLAYERS, 1, 1.5f);
+                }
                 if(state == SUPPRESSED) pLevel.playSound(null, pPlayer, SoundEvents.CONDUIT_DEACTIVATE, SoundSource.PLAYERS, 1, 0.6f);
 
                 state = Math.max(SUPPRESSED, Math.min(ON_5, state));

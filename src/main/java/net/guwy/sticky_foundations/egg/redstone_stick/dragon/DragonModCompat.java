@@ -1,17 +1,22 @@
 package net.guwy.sticky_foundations.egg.redstone_stick.dragon;
 
+import com.hollingsworth.arsnouveau.common.potions.ModPotions;
 import net.guwy.sticky_foundations.StickyFoundations;
 import net.guwy.sticky_foundations.egg.Users;
 import net.guwy.sticky_foundations.egg.redstone_stick.dragon.fangs.DragonFangs;
 import net.guwy.sticky_foundations.index.SFDamageSources;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LightLayer;
 import virtuoel.pehkui.api.ScaleTypes;
 
 public class DragonModCompat {
@@ -19,12 +24,51 @@ public class DragonModCompat {
     public static void serverTick(Player player){
         if(Users.checkUUID(player, Users.REDSTONE_STICK)){
 
-            //if(player.getFoodData().getFoodLevel() <= 6 || getPlayerSize(player) != 1.5f) updateScale(player);
-            updateScale(player);
+            // every second on the 7th tick
+            if(player.tickCount % 20 == 7){
+                //if(player.getFoodData().getFoodLevel() <= 6 || getPlayerSize(player) != 1.5f) updateScale(player);
+                updateScale(player);
 
-            // by being called once a second it is equal to Hunger(I)
-            player.getFoodData().addExhaustion((float) Math.max(0, Math.min(4, (Math.pow(getPlayerSize(player), 2) - 1) * 0.05)));
-            //player.sendSystemMessage(Component.literal("exhaustion: " + player.getFoodData().getExhaustionLevel()));
+                // hunger
+                if(!player.isCreative())
+                    player.causeFoodExhaustion((float) Math.max(0, Math.min(4, (Math.pow(getPlayerSize(player), 2) - 1) * 0.05)));
+                //player.sendSystemMessage(Component.literal("exhaustion: " + player.getFoodData().getExhaustionLevel()));
+
+                // more oxygen
+                if(player.getAirSupply() != 0 && player.getAirSupply() != player.getMaxAirSupply())
+                    player.setAirSupply(Math.min(player.getMaxAirSupply(), player.getAirSupply() + 19));
+
+                // Flight
+                player.getAbilities().mayfly = player.getFoodData().getFoodLevel() > 6;
+                if(player.getAbilities().flying && !player.getAbilities().mayfly) player.getAbilities().flying = false;
+                player.onUpdateAbilities();
+
+                // Passive regen
+                if(player.getHealth() < player.getMaxHealth() && player.getFoodData().getFoodLevel() > 6 && !player.isCreative()){
+                    //player.sendSystemMessage(Component.literal("max health: " + player.getMaxHealth()));
+                    player.setHealth(player.getHealth() + 1);
+                    player.causeFoodExhaustion(1);
+                }
+
+                // night vision (not gud)
+                //int bLight = player.level.getBrightness(LightLayer.BLOCK, player.getOnPos().offset(0, 1, 0));
+                //int sLight = player.level.getBrightness(LightLayer.SKY, player.getOnPos().offset(0, 1, 0));
+                //if(bLight < 2 && sLight < 4) player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 2, 0, true, false, false));
+
+
+            }
+
+            // fireproof
+            if(getPlayerDefense(player) > 5)
+                player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 5, 0, true, false, false));
+
+            // freezeproof
+            if(player.getTicksFrozen() > 0)
+                player.setTicksFrozen(0);
+
+            // hunger consumption when flying
+            if(!player.isCreative() && player.getAbilities().flying)
+                player.causeFoodExhaustion(0.06f);
         }
     }
 
@@ -43,18 +87,19 @@ public class DragonModCompat {
                 float mobHealth = livingTarget.getHealth();
                 float playerHunger = 20 - player.getFoodData().getFoodLevel();
 
-                float maxDamage = (float) (Math.pow(playerSize, 3) - 1);
-                maxDamage = Math.min(playerHunger, Math.min(maxDamage, mobHealth));
+                float maxDamage = (float) Math.pow(playerSize, 3);
+                maxDamage = Math.min(playerHunger, maxDamage);
 
                 DragonFangs evokerFangs = new DragonFangs(level,
-                        livingTarget.getX(), livingTarget.getY() + (livingTarget.getBbHeight() / 2), livingTarget.getZ(), 0, 0, player);
+                        livingTarget.getX(), livingTarget.getY() + (livingTarget.getBbHeight() / 2), livingTarget.getZ(), 0, -4, player, maxDamage);
                 evokerFangs.setXRot(player.getXRot());
                 evokerFangs.setYRot(player.getYRot());
                 ScaleTypes.BASE.getScaleData(evokerFangs).setScale(playerSize);
                 level.addFreshEntity(evokerFangs);
 
-                livingTarget.hurt(SFDamageSources.DragonBite(evokerFangs, player), maxDamage / DragonModCompat.getPlayerAttack(player));
-                player.getFoodData().eat(Math.round(maxDamage), 0f);
+                // regen food is handled by the fangs
+                //livingTarget.hurt(SFDamageSources.DragonBite(evokerFangs, player), maxDamage / DragonModCompat.getPlayerAttack(player));
+                //player.getFoodData().eat(Math.round(maxDamage), 0f);
 
                 level.playSound(null, player, SoundEvents.GENERIC_EAT, SoundSource.PLAYERS, 1, 0.8f);
                 player.swing(InteractionHand.MAIN_HAND);
@@ -68,7 +113,9 @@ public class DragonModCompat {
     public static float getPlayerSize(Player player){
         return isModsLoaded() ? DragonPehkui.getPlayerSize(player) : 1;
     }
-
+    public static float getPlayerTargetSize(Player player){
+        return isModsLoaded() ? DragonPehkui.getPlayerTargetSize(player) : 1;
+    }
     public static float getPlayerAttack(Player player){
         return isModsLoaded() ? DragonPehkui.getPlayerAttack(player) : 1;
     }
@@ -111,6 +158,12 @@ public class DragonModCompat {
     public static class MahouTsukai {
         public static void increaseMana(Player player, int mana){
             if(StickyFoundations.isMahouTsukaiLoaded()) DragonMahouTsukai.increaseMana(player, mana);
+        }
+    }
+
+    public static class ManaNArtifice {
+        public static void restoreMana(Player player){
+            if(StickyFoundations.isManaNArtificeLoaded()) DragonManaNArtifice.restoreMana(player);
         }
     }
 
