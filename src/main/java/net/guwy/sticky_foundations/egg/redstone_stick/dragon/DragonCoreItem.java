@@ -18,6 +18,7 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -59,8 +60,10 @@ public class DragonCoreItem extends Item {
                         // check if the food is low
                         if(player.getFoodData().getFoodLevel() <= 6){
                             state = DEPLETED;
+                            DragonModCompat.updateScale(player);
                         } else if (state == DEPLETED){
-                            state = ON_1;
+                            state = SUPPRESSED;
+                            DragonModCompat.changeScale(player,state);
                         }
 
                         nbt.putInt(C_DATA, state);
@@ -73,10 +76,10 @@ public class DragonCoreItem extends Item {
                         }
                     } else {
                         player.hurt(SFDamageSources.DRAGON_OVERLOAD, Float.MAX_VALUE);
-                        pLevel.playSound(null, player, SoundEvents.BEACON_ACTIVATE, SoundSource.PLAYERS, 1, 1);
+                        pLevel.playSound(null, player, SoundEvents.ENDER_DRAGON_DEATH, SoundSource.PLAYERS, 1, 1);
                     }
 
-                    if(player.getFoodData().getFoodLevel() > 6){
+                    if(player.getFoodData().getFoodLevel() > 6 && DragonModCompat.getPlayerSize(player) > 1){
                         // Ars noveau
                         DragonModCompat.ArsNoveau.increaseMana(player, 10);
 
@@ -108,11 +111,11 @@ public class DragonCoreItem extends Item {
                 CompoundTag nbt = itemStack.getTag() != null ? itemStack.getTag() : new CompoundTag();
                 int state = nbt.getInt(C_DATA);
 
-                state += pPlayer.isCrouching() ? -1 : +1;
+                state += pPlayer.isCrouching() || pPlayer.isVisuallyCrawling() ? -1 : +1;
 
                 if(state == ON_5) {
                     // plays on the feet
-                    pLevel.playSound(null, pPlayer, new SoundEvent(SoundEvents.ENDER_DRAGON_GROWL.getLocation(), 500), SoundSource.PLAYERS, 1, 1.5f);
+                    pLevel.playSound(null, pPlayer, SoundEvents.ENDER_DRAGON_AMBIENT, SoundSource.PLAYERS, 1, 1.5f);
                     pLevel.playSound(null, pPlayer.getOnPos().offset(0, 30, 0), SoundEvents.ENDER_DRAGON_GROWL, SoundSource.PLAYERS, 1, 1.5f);
                 }
                 if(state == SUPPRESSED) pLevel.playSound(null, pPlayer, SoundEvents.CONDUIT_DEACTIVATE, SoundSource.PLAYERS, 1, 0.6f);
@@ -122,7 +125,16 @@ public class DragonCoreItem extends Item {
                 nbt.putInt(C_DATA, state);
                 itemStack.setTag(nbt);
 
-                DragonModCompat.updateScale(pPlayer);
+                float scale;
+                switch (state){
+                    case 1 -> scale = 1;        // 2m
+                    default -> scale = 1.5f;    // 3m
+                    case 3 -> scale = 2.5f;     // 5m
+                    case 4 -> scale = 5;        // 10m
+                    case 5 -> scale = 10;       // 20m
+                    case 6 -> scale = 25;       // 50m
+                }
+                DragonModCompat.changeScale(pPlayer,scale);
             }
         }
 
@@ -185,5 +197,10 @@ public class DragonCoreItem extends Item {
     @Override
     public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) {
         return oldStack.getItem() != newStack.getItem();
+    }
+
+    @Override
+    public int getEntityLifespan(ItemStack itemStack, Level level) {
+        return 1;
     }
 }

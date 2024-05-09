@@ -9,10 +9,10 @@ public class LivingDeathEventHandler {
     public static void init(LivingDeathEvent event) {
 
         if(event.getEntity() instanceof Player player){
-            for(int i = 0; i < player.getInventory().getContainerSize(); i++){
-                if(player.getInventory().getItem(i).getItem() == SpecialItems.DRAGON_CORE.get())
-                    player.getInventory().setItem(i, ItemStack.EMPTY);
-            }
+            //for(int i = 0; i < player.getInventory().getContainerSize(); i++){
+            //    if(player.getInventory().getItem(i).getItem() == SpecialItems.DRAGON_CORE.get())
+            //        player.getInventory().setItem(i, ItemStack.EMPTY);
+            //}
         }
     }
 }

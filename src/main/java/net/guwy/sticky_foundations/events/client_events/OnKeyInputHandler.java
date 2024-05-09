@@ -6,10 +6,8 @@ public class OnKeyInputHandler {
     public static void init(InputEvent.Key event){
 
         //if(event.getKey() == SFKeyBindings.CRAWL_KEY.getKey().getValue()){
-        //    if(event.getAction() == InputConstants.PRESS)
-        //        SFNetworking.sendToServer(new CrawlC2SPacket(true));
-        //    if(event.getAction() == InputConstants.RELEASE)
-        //        SFNetworking.sendToServer(new CrawlC2SPacket(false));
+            //if(event.getAction() == InputConstants.PRESS)
+            //if(event.getAction() == InputConstants.RELEASE)
         //}
     }
 }

@@ -78,6 +78,11 @@ import net.minecraftforge.fml.common.Mod;
                 LivingDeathEventHandler.init(event);
             }
 
+            @SubscribeEvent
+            public static void onLivingUseItemStart(LivingEntityUseItemEvent.Start event) {
+                LivingEntityUseItemEventHandler.init(event);
+            }
+
         }
 
         @Mod.EventBusSubscriber(modid = StickyFoundations.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
