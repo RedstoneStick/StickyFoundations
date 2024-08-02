@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 8,
-  "ingredient": {
-    "item": "sticky_foundations:palladium_foil"
-  },
-  "result": "sticky_foundations:palladium_wire"
-}

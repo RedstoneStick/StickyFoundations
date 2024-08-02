@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "sticky_foundations:resources/titanium/rutile_block_item"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 8,
-  "ingredient": {
-    "item": "sticky_foundations:steel_foil"
-  },
-  "result": "sticky_foundations:steel_wire"
-}
